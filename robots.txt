@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://option1buildersinc.com/sitemap.xml
+LLM-Content: https://option1buildersinc.com/llms.txt

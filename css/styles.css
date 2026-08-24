@@ -1,0 +1,805 @@
+/* Option 1 Builders — palette and type sampled from option1buildersinc.com */
+
+/* Palette sampled from the rendered live site (computed styles, by painted
+   area and element count) rather than from the theme's unused defaults. */
+:root{
+  --gold:#b79a61;
+  --gold-light:#c5a66b;
+  --gold-dark:#a78a55;
+  --ink:#202321;
+  --ink-2:#111111;
+  --ink-3:#000000;
+  --heading:#292e2e;
+  --body:#383d3e;
+  --muted:#555a59;
+  --line:#d9d9d6;
+  --line-warm:#e5dece;
+  --tint:#f8f8f6;
+  --white:#fff;
+  --wrap:1240px;
+  --radius:4px;
+  --shadow:0 3px 10px rgba(0,0,0,.10);
+  --shadow-lg:0 18px 40px rgba(32,35,33,.14);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+
+body{
+  margin:0;
+  font-family:'Montserrat',Arial,Helvetica,sans-serif;
+  font-size:17px;
+  line-height:1.75;
+  color:var(--body);
+  background:var(--white);
+  -webkit-font-smoothing:antialiased;
+}
+
+img,video{max-width:100%;height:auto;display:block}
+
+h1,h2,h3{
+  font-family:'Montserrat',Arial,sans-serif;
+  color:var(--heading);
+  line-height:1.18;
+  margin:0 0 .6em;
+  font-weight:700;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+}
+h1{font-size:clamp(2rem,5vw,3.9rem)}
+h2{font-size:clamp(1.6rem,3.2vw,2.5rem)}
+h3{font-size:1.16rem;letter-spacing:.3px}
+
+p{margin:0 0 1.1em}
+
+a{color:var(--heading);text-decoration:none}
+a:hover{color:var(--gold)}
+
+ul{margin:0;padding:0;list-style:none}
+
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.wrap--narrow{max-width:880px}
+.center{text-align:center}
+
+.skip-link{
+  position:absolute;left:-9999px;top:0;z-index:999;
+  background:var(--ink);color:#fff;padding:12px 20px;
+}
+.skip-link:focus{left:8px;top:8px;color:#fff}
+
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;text-align:center;
+  min-height:54px;padding:16px 34px;
+  font-size:13.5px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;
+  border:2px solid transparent;border-radius:var(--radius);
+  cursor:pointer;transition:background .25s,color .25s,border-color .25s,transform .25s;
+  box-shadow:var(--shadow);
+}
+.btn:hover{transform:translateY(-3px)}
+.btn--gold{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn--gold:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+.btn--white{background:#fff;border-color:#fff;color:var(--ink-2)}
+.btn--white:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn--dark{background:var(--ink);border-color:var(--ink);color:#fff}
+.btn--dark:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn--ghost{background:transparent;border-color:rgba(255,255,255,.75);color:#fff}
+.btn--ghost:hover{background:#fff;border-color:#fff;color:var(--ink-2)}
+/* Header CTA matches the live site's white pill. */
+.btn--pill{background:#fff;border-color:#fff;color:var(--ink-2);border-radius:40px}
+.btn--pill:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn--block{width:100%}
+
+.eyebrow{
+  font-size:12px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;
+  color:var(--gold);margin:0 0 12px;
+}
+/* Closing CTA needs clearance from the gallery or list it follows. */
+.section__cta{margin:52px 0 0}
+
+/* ---------- topbar + header ---------- */
+.topbar{background:var(--ink-2);color:#c9c9c4;font-size:12.5px}
+.topbar__in{display:flex;flex-wrap:wrap;gap:10px 26px;justify-content:center;padding-block:9px}
+.topbar__item{display:inline-flex;align-items:center;gap:7px;color:#c9c9c4}
+.topbar__link:hover{color:var(--gold)}
+.topbar__lic{color:var(--gold)}
+.topbar__lic strong{color:#fff;font-weight:600}
+
+.site-header{position:sticky;top:0;z-index:60;background:var(--ink);box-shadow:0 2px 14px rgba(0,0,0,.22)}
+.site-header__in{display:flex;align-items:center;gap:24px;min-height:92px}
+.brand img{width:150px;height:auto}
+
+.nav{margin-left:auto}
+.nav__list{display:flex;gap:26px}
+.nav__list a{
+  color:#fff;font-size:13px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;
+  padding:8px 0;display:inline-block;border-bottom:2px solid transparent;
+}
+.nav__list a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+
+.site-header__cta{display:flex;align-items:center;gap:16px}
+.phone{display:flex;flex-direction:column;line-height:1.25}
+.phone__label{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold)}
+.phone__num{font-size:18px;font-weight:700;color:#fff}
+.phone:hover .phone__num{color:var(--gold)}
+.site-header__cta .btn{min-height:46px;padding:12px 22px;font-size:12px}
+
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;background:transparent;border:1px solid rgba(255,255,255,.35);border-radius:var(--radius);cursor:pointer}
+.hamburger span{display:block;height:2px;width:22px;margin:0 auto;background:#fff;transition:transform .25s,opacity .25s}
+.hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;display:flex;align-items:center;justify-content:center;
+  min-height:660px;padding:96px 0 88px;overflow:hidden;background:var(--ink);
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:url("../images/hero.webp") center/cover no-repeat;
+  transform:scale(1.14);
+  animation:heroZoom 14s cubic-bezier(.16,.62,.28,1) forwards;
+}
+.hero__overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.42),rgba(0,0,0,.55))}
+.hero__in{position:relative;z-index:2;text-align:center;max-width:1180px}
+.hero__logo{width:132px;margin:0 auto 22px}
+/* Headline is held to a single line at every width. The glyph run measures
+   14.78x its font-size, so 5.7vw always clears the 48px of wrap padding,
+   and the 74px ceiling keeps it inside the 1180px container on wide screens. */
+.hero h1{
+  position:relative;color:#fff;text-shadow:0 3px 10px rgba(0,0,0,.55);
+  margin-bottom:28px;padding-bottom:26px;
+  font-size:min(5.7vw,74px);white-space:nowrap;
+}
+.hero__nb{white-space:nowrap}
+.hero h1::after{
+  content:"";position:absolute;left:50%;bottom:0;
+  width:96px;height:3px;background:var(--gold);transform:translateX(-50%);
+}
+.hero__sub{
+  color:#f0efe9;font-size:clamp(1rem,1.6vw,1.19rem);max-width:740px;margin:0 auto 34px;
+  text-shadow:0 2px 6px rgba(0,0,0,.5);
+}
+.hero__actions{display:flex;flex-wrap:wrap;gap:16px;justify-content:center}
+.hero__points{
+  display:flex;flex-wrap:wrap;justify-content:center;margin:40px 0 0;
+  color:#e3e0d8;font-size:13.5px;letter-spacing:.4px;
+}
+.hero__points span{padding:0 26px;border-left:1px solid rgba(255,255,255,.28)}
+.hero__points span:first-child{border-left:0}
+.hero__points strong{color:#fff;font-weight:700}
+
+/* ---------- badges ---------- */
+.badges{background:var(--ink);padding:26px 0}
+.badges__in{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:26px 46px}
+.badges img{
+  height:52px;width:auto;object-fit:contain;
+  filter:grayscale(1) brightness(0) invert(1);opacity:.82;transition:opacity .25s;
+}
+.badges img:hover{opacity:1}
+/* Award badges are solid-color art; inverting them erases the artwork. */
+.badges__color{filter:none!important;height:62px;opacity:1}
+
+/* ---------- sections ---------- */
+.section{padding:96px 0;position:relative;overflow:hidden}
+.section--tint{background:var(--tint)}
+
+/* Oversized ghost word sitting behind the section heading. */
+.watermark{
+  position:absolute;top:34px;left:50%;transform:translateX(-50%);
+  font-size:clamp(4rem,11vw,9.5rem);font-weight:800;line-height:1;
+  letter-spacing:6px;text-transform:uppercase;white-space:nowrap;
+  color:#fff;opacity:.045;pointer-events:none;user-select:none;
+}
+.section--dark{background:var(--ink);color:#d5d3cc}
+.section--dark h2,.section--dark h3{color:#fff}
+/* Buttons carry their own colour pairing; this rule is for body links only. */
+.section--dark a:not(.btn){color:#fff}
+.section--dark a:not(.btn):hover{color:var(--gold)}
+.section__intro{max-width:760px;margin:0 auto 52px}
+.section h2.center + .section__intro{margin-top:-6px}
+
+.grid{display:grid;gap:56px;align-items:center}
+.grid--intro{grid-template-columns:1.05fr .95fr;align-items:center}
+.grid--contact{grid-template-columns:1fr 1fr;align-items:start}
+
+.intro{padding:96px 0}
+.lead{font-size:1.06rem;color:var(--heading)}
+.intro .btn{margin-top:12px}
+
+/* ---------- floating image composition ---------- */
+.intro__media{position:relative;padding:0 0 46px 46px}
+
+/* Image sits above an offset gold rule so it reads as lifted off the page. */
+.framed{position:relative;margin:0;z-index:2}
+.framed img{
+  position:relative;z-index:2;width:100%;
+  border-radius:var(--radius);box-shadow:0 30px 60px rgba(32,35,33,.28);
+}
+.framed__rule{
+  position:absolute;z-index:1;inset:auto auto -26px -26px;
+  width:64%;height:74%;
+  border:3px solid var(--gold);border-radius:var(--radius);
+}
+.framed--dark .framed__rule{border-color:var(--gold)}
+
+.floatcard{
+  position:absolute;z-index:3;left:0;bottom:0;
+  display:flex;align-items:center;gap:14px;
+  padding:18px 24px;background:#fff;border-radius:var(--radius);
+  box-shadow:0 22px 44px rgba(32,35,33,.22);
+  animation:floaty 6s ease-in-out infinite;
+}
+.floatcard__mark{
+  display:flex;align-items:center;justify-content:center;flex:none;
+  width:42px;height:42px;border-radius:50%;
+  background:var(--gold);color:#fff;font-size:19px;line-height:1;
+}
+.floatcard__label{
+  font-size:11px;font-weight:600;line-height:1.5;letter-spacing:1.3px;
+  text-transform:uppercase;color:var(--muted);
+}
+.floatcard__label strong{display:block;color:var(--heading);font-size:13px;letter-spacing:.8px}
+
+.floatchip{
+  position:absolute;z-index:3;right:-16px;top:-30px;
+  width:150px;height:150px;object-fit:cover;
+  border:6px solid #fff;border-radius:var(--radius);
+  box-shadow:0 20px 40px rgba(32,35,33,.26);
+  animation:floaty 7.5s ease-in-out infinite reverse;
+}
+
+@keyframes floaty{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-14px)}
+}
+
+/* ---------- stats ---------- */
+/* Floating panel rather than a full-bleed band, so it straddles the
+   boundary between the two white sections and reads as a raised object. */
+.stats{background:transparent;padding:0;position:relative;z-index:6;margin-top:-46px}
+.stats__in{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center;
+  background:var(--gold);border-radius:var(--radius);
+  padding:42px 34px;
+  box-shadow:0 28px 56px rgba(32,35,33,.26);
+}
+.stat{display:flex;flex-direction:column;gap:4px;position:relative}
+.stat + .stat::before{
+  content:"";position:absolute;left:-12px;top:12%;height:76%;
+  width:1px;background:rgba(255,255,255,.38);
+}
+.stat__num{font-size:clamp(1.9rem,3.4vw,2.7rem);font-weight:700;color:#fff;line-height:1}
+.stat__label{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:#fff}
+
+/* ---------- cards ---------- */
+.cards{display:grid;gap:30px}
+.cards--3{grid-template-columns:repeat(3,1fr)}
+.cards--mini{margin-top:30px}
+
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  display:flex;flex-direction:column;
+  transition:box-shadow .35s ease,transform .35s ease;
+}
+/* The clip layer crops the photo; the tag lives outside it so it can
+   hang over the seam between image and card body. */
+.card__img{aspect-ratio:4/3;position:relative}
+.card__clip{
+  position:absolute;inset:0;overflow:hidden;display:block;
+  border-radius:var(--radius) var(--radius) 0 0;
+}
+.card__clip img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.card__clip::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(32,35,33,.55),transparent 46%);
+  opacity:.75;transition:opacity .35s ease;
+}
+/* Tag straddles the image / body seam. */
+.card__tag{
+  position:absolute;z-index:2;left:22px;bottom:-15px;
+  padding:8px 16px;background:var(--gold);color:#fff;
+  font-size:10.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;
+  border-radius:2px;box-shadow:0 8px 18px rgba(32,35,33,.3);
+}
+.card.is-in:hover,.card:hover{transform:translateY(-10px);box-shadow:0 30px 54px rgba(32,35,33,.22)}
+.card:hover .card__clip img{transform:scale(1.07)}
+.card:hover .card__clip::after{opacity:.4}
+.card__body{padding:38px 26px 30px;flex:1;display:flex;flex-direction:column}
+.card__body h3{border-bottom:2px solid var(--gold);display:inline-block;padding-bottom:8px}
+
+.card__meta{
+  margin:auto 0 0;padding:16px 18px;
+  background:var(--tint);border-left:2px solid var(--gold);
+  font-size:14.5px;line-height:1.65;color:var(--heading);
+}
+.card__meta span{
+  display:block;margin-bottom:4px;
+  font-size:11px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;color:var(--gold);
+}
+
+.mini{background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:var(--radius);padding:28px 26px}
+.mini h3{margin-bottom:10px}
+.mini p{margin:0;font-size:15.5px}
+.section--dark .mini{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14);border-left-color:var(--gold)}
+
+/* ---------- gallery ---------- */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.gallery__item{
+  margin:0;position:relative;overflow:hidden;border-radius:var(--radius);background:#111;
+  box-shadow:0 14px 30px rgba(0,0,0,.34);
+  transition:transform .4s ease,box-shadow .4s ease;
+}
+.gallery__item--wide{grid-column:span 2;grid-row:span 2}
+.gallery__item img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease,opacity .35s ease;aspect-ratio:4/3}
+.gallery__item--wide img{aspect-ratio:4/3.05}
+/* Gold frame draws itself inside the tile on hover. */
+.gallery__item::after{
+  content:"";position:absolute;inset:14px;pointer-events:none;
+  border:1px solid var(--gold);opacity:0;transform:scale(1.04);
+  transition:opacity .4s ease,transform .4s ease;
+}
+.gallery__item.is-in:hover,.gallery__item:hover{
+  transform:translateY(-10px);box-shadow:0 30px 54px rgba(0,0,0,.5);
+}
+.gallery__item:hover img{transform:scale(1.07);opacity:.72}
+.gallery__item:hover::after{opacity:1;transform:scale(1)}
+.gallery__item figcaption{
+  position:absolute;z-index:2;left:0;right:0;bottom:0;padding:30px 22px 16px;
+  background:linear-gradient(transparent,rgba(0,0,0,.85));
+  color:#fff;font-size:13px;letter-spacing:.4px;
+  transform:translateY(6px);transition:transform .4s ease;
+}
+.gallery__item:hover figcaption{transform:none}
+
+/* ---------- showcase ---------- */
+/* The source clip is 720x1280 (portrait). Cropping it into a 16:9 box would
+   throw away two thirds of the frame, so the stage is landscape and the clip
+   is centred on a blurred still of itself, the way players handle vertical video. */
+.stage-wrap{position:relative;max-width:1100px;margin:46px auto 0}
+.stage{
+  position:relative;aspect-ratio:16/9;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;gap:40px;padding:34px;
+  background:#0d0f0e;border-radius:var(--radius);
+  box-shadow:0 30px 60px rgba(32,35,33,.32);
+}
+.stage__bg{
+  position:absolute;z-index:0;inset:0;
+  background:url("../images/projects/project-01.jpg") center/cover no-repeat;
+  filter:blur(26px) brightness(.5) saturate(1.15);transform:scale(1.18);
+}
+/* Darkens the two flanks so the copy sitting on them stays legible. */
+.stage__scrim{
+  position:absolute;z-index:1;inset:0;
+  background:linear-gradient(90deg,rgba(8,10,9,.72),rgba(8,10,9,.15) 32%,rgba(8,10,9,.15) 68%,rgba(8,10,9,.72));
+}
+/* Fallback text only paints if the browser cannot play the source. */
+.stage video{
+  color:#fff;
+  position:relative;z-index:2;flex:none;height:100%;width:auto;max-width:100%;
+  aspect-ratio:9/16;object-fit:cover;background:#000;display:block;
+  border-radius:2px;
+  box-shadow:0 0 0 1px rgba(255,255,255,.14),0 18px 44px rgba(0,0,0,.55);
+}
+.stage__side,.stage__points{position:relative;z-index:3;flex:1;max-width:320px;color:#fff}
+.stage__kicker{
+  font-size:11.5px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;
+  color:var(--gold);margin:0 0 12px;
+}
+.stage__note{margin:0;font-size:15px;line-height:1.6;color:#e8e6e0}
+.stage__points{list-style:none;margin:0;padding:0;display:grid;gap:18px}
+.stage__points li{position:relative;padding-left:28px;font-size:14.5px;line-height:1.5;color:#e8e6e0}
+.stage__points li::before{
+  content:"";position:absolute;left:0;top:6px;width:9px;height:9px;
+  background:var(--gold);transform:rotate(45deg);
+}
+
+/* ---------- reviews ---------- */
+.stars{color:var(--gold);letter-spacing:3px;margin:0 0 12px;font-size:17px}
+.review{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:38px 28px 30px;display:flex;flex-direction:column;position:relative;
+  box-shadow:0 12px 28px rgba(32,35,33,.07);
+  transition:transform .35s ease,box-shadow .35s ease;
+}
+.review.is-in:hover,.review:hover{transform:translateY(-8px);box-shadow:0 26px 46px rgba(32,35,33,.15)}
+/* Oversized quote mark floats over the card's top edge. */
+.review::before{
+  content:"\201C";position:absolute;top:-26px;left:24px;
+  font-family:Georgia,'Times New Roman',serif;font-size:104px;line-height:1;
+  color:var(--gold);opacity:.28;pointer-events:none;
+}
+.review blockquote{margin:0 0 18px;font-size:15.5px;line-height:1.75;color:var(--body)}
+.review__by{margin:auto 0 0;font-weight:600;color:var(--ink);font-size:14.5px}
+.review__by span{font-weight:400;color:#8a8a84;font-size:13px}
+
+/* ---------- supplier partners ---------- */
+/* One full-width rail per category. These logos run from 1.9:1 to 11:1, so
+   they need the width of the row; a three-across grid flattens the wordmarks. */
+.partners{display:grid;gap:18px}
+.partner{
+  display:grid;grid-template-columns:280px minmax(0,1fr);gap:36px;align-items:center;
+  margin:0;padding:26px 32px;background:#fff;
+  border:1px solid var(--line);border-left:3px solid var(--gold);
+  border-radius:var(--radius);box-shadow:var(--shadow);
+  transition:transform .4s ease,box-shadow .4s ease;
+}
+.partner.is-in:hover,.partner:hover{transform:translateY(-6px);box-shadow:0 24px 42px rgba(32,35,33,.14)}
+.partner__cat h3{margin:0 0 7px;font-size:.98rem;letter-spacing:1.4px;text-transform:uppercase}
+.partner__cat p{margin:0;font-size:13px;color:var(--muted)}
+
+.partner__logos{
+  display:flex;gap:30px;list-style:none;margin:0;padding:0;align-items:center;
+}
+.partner__logos li{
+  flex:1 1 0;min-width:0;height:56px;
+  display:flex;align-items:center;justify-content:center;
+}
+.partner__logos img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+
+/* ---------- project manager ---------- */
+.manager__in{
+  display:grid;grid-template-columns:360px minmax(0,1fr);
+  gap:64px;align-items:center;
+}
+
+.manager__photo{position:relative;padding:0 0 28px 28px}
+.manager__frame{position:relative;z-index:2;margin:0}
+.manager__frame img{
+  display:block;width:100%;height:auto;
+  border-radius:var(--radius);box-shadow:0 30px 60px rgba(0,0,0,.55);
+}
+.manager__rule{
+  position:absolute;z-index:1;inset:auto auto 0 0;
+  width:74%;height:60%;
+  border:3px solid var(--gold);border-radius:var(--radius);
+}
+
+.pills{display:flex;flex-wrap:wrap;gap:10px;list-style:none;margin:0 0 24px;padding:0}
+.pills li{
+  padding:8px 16px;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.22);border-radius:40px;
+  font-size:11.5px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;
+  color:#e6e3da;
+}
+
+/* The heading needs the full column to stay on two lines; the prose below
+   is capped separately so the measure stays readable. */
+.manager__body h2{margin:0 0 18px}
+.manager__hl{color:var(--gold)}
+.manager .lead{color:#d5d3cc;margin:0 0 24px;max-width:640px}
+
+.manager__list{list-style:none;margin:0 0 32px;padding:0;display:grid;gap:13px;max-width:660px}
+.manager__list li{position:relative;padding-left:28px;color:#c7c4bb;font-size:.97rem}
+.manager__list li::before{
+  content:"";position:absolute;left:0;top:.45em;width:11px;height:11px;
+  border:2px solid var(--gold);border-radius:50%;
+}
+
+/* Award rail. Several badges carry dark ink artwork, so each one needs a
+   white tile to stay legible against the dark section. */
+.awards{margin-top:66px;padding-top:40px;border-top:1px solid rgba(255,255,255,.14)}
+.awards__title{
+  margin:0 0 26px;text-align:center;
+  font-size:12px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;
+  color:var(--gold);
+}
+.awards__list{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(6,1fr);gap:16px;
+}
+.awards__list li{
+  display:flex;align-items:center;justify-content:center;
+  min-height:120px;padding:16px 12px;
+  background:#fff;border-radius:var(--radius);
+  transition:transform .35s ease;
+}
+.awards__list li:hover{transform:translateY(-6px)}
+.awards__list img{display:block;width:auto;height:84px}
+
+/* ---------- process ---------- */
+/* A single gold rule runs behind the row; each numbered disc sits on it. */
+.steps{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:26px;
+  list-style:none;margin:34px 0 0;padding:26px 0 0;position:relative;
+}
+.steps::before{
+  content:"";position:absolute;top:26px;left:12%;right:12%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold) 14%,var(--gold) 86%,transparent);
+}
+.step{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:44px 26px 30px;position:relative;
+  box-shadow:0 12px 28px rgba(32,35,33,.08);
+  transition:transform .35s ease,box-shadow .35s ease;
+}
+.step.is-in:hover,.step:hover{transform:translateY(-8px);box-shadow:0 26px 46px rgba(32,35,33,.16)}
+.step__n{
+  position:absolute;top:-26px;left:50%;transform:translateX(-50%);
+  display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;
+  background:var(--gold);color:#fff;font-weight:700;font-size:18px;border-radius:50%;
+  box-shadow:0 10px 22px rgba(183,154,97,.5);border:4px solid #fff;
+}
+.step h3{margin-bottom:10px}
+.step p{margin:0;font-size:15.5px}
+
+/* ---------- areas ---------- */
+.areas{display:grid;grid-template-columns:repeat(4,1fr);gap:46px 30px;margin-top:46px}
+.areas__col h3{
+  font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--gold);margin:0 0 18px;padding:0;border:0;line-height:1.35;
+}
+.places{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.places li{
+  position:relative;padding-left:25px;font-size:15px;line-height:1.4;color:var(--body);
+}
+.places li::before{
+  content:"";position:absolute;left:0;top:1px;width:13px;height:17px;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23b79a61'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z'/%3E%3C/svg%3E") no-repeat center/contain;
+}
+.areas__note{margin:52px auto 0;max-width:640px;font-size:15px;color:var(--muted)}
+.areas__note a{color:var(--gold);font-weight:600}
+.areas__note a:hover{text-decoration:underline}
+
+/* ---------- contact ---------- */
+.nap{display:grid;gap:18px;margin:26px 0 30px}
+.nap li{padding-left:16px;border-left:2px solid var(--gold);font-size:15.5px;line-height:1.65}
+.nap strong{color:#fff;font-size:12px;letter-spacing:1.6px;text-transform:uppercase}
+.showroom-card{border-radius:var(--radius);box-shadow:var(--shadow-lg)}
+
+.formcard{
+  background:#fff;border-radius:var(--radius);padding:36px 32px 34px;color:var(--body);
+  position:relative;box-shadow:0 34px 68px rgba(0,0,0,.42);
+  border-top:3px solid var(--gold);
+}
+/* Lifts the form off the dark band. */
+.formcard::before{
+  content:"";position:absolute;inset:auto -18px -18px auto;width:56%;height:58%;
+  border:1px solid rgba(183,154,97,.5);border-radius:var(--radius);z-index:-1;
+}
+.formcard h3{color:var(--ink);border-bottom:2px solid var(--gold);display:inline-block;padding-bottom:8px;margin-bottom:22px}
+.form{display:grid;gap:16px}
+.field{display:grid;gap:6px}
+.field label{font-size:12px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--ink)}
+.field input,.field select,.field textarea{
+  width:100%;min-height:50px;padding:13px 14px;
+  font-family:inherit;font-size:15.5px;color:var(--ink);
+  background:#fdfcf9;border:1px solid var(--line);border-radius:var(--radius);
+  transition:border-color .2s,box-shadow .2s;
+}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,161,90,.18);outline:none;
+}
+.form__note{margin:4px 0 0;font-size:13px;color:#8a8a84;text-align:center}
+
+/* ---------- faq ---------- */
+.faq{display:grid;gap:12px}
+.faq__item{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.faq__item summary{
+  cursor:pointer;list-style:none;padding:20px 54px 20px 24px;position:relative;
+  font-weight:600;font-size:15.5px;color:var(--ink);min-height:56px;
+}
+.faq__item summary::-webkit-details-marker{display:none}
+.faq__item summary::after{
+  content:"+";position:absolute;right:22px;top:50%;transform:translateY(-50%);
+  font-size:24px;font-weight:400;color:var(--gold);line-height:1;
+}
+.faq__item[open] summary::after{content:"\2013"}
+.faq__item[open] summary{background:var(--tint)}
+.faq__item summary:hover{color:var(--gold)}
+.faq__a{padding:4px 24px 22px}
+.faq__a p{margin:0;font-size:15.5px}
+
+/* ---------- closing ---------- */
+.closing{background:var(--tint);border-top:1px solid var(--line);padding:80px 0}
+.closing .hero__actions{margin-top:28px}
+
+/* ---------- footer ---------- */
+.site-footer{background:var(--ink-2);color:#a9a9a3;padding:70px 0 0;font-size:15px}
+.footer__grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:48px}
+.site-footer h3{color:#fff;font-size:13px;letter-spacing:1.8px;margin-bottom:18px;border-bottom:1px solid rgba(255,255,255,.14);padding-bottom:12px}
+.site-footer img{width:160px;margin-bottom:16px}
+.site-footer p{font-size:14.5px;line-height:1.7}
+.site-footer ul{display:grid;gap:10px}
+.site-footer li,.site-footer address{font-size:14.5px;font-style:normal;line-height:1.8}
+.site-footer a{color:#a9a9a3}
+.site-footer a:hover{color:var(--gold)}
+.footer__lic{color:var(--gold);font-size:13px;letter-spacing:.3px}
+.social{display:flex!important;flex-direction:row;gap:18px!important;margin-top:16px}
+.social a{font-size:13px;letter-spacing:.6px;text-transform:uppercase;font-weight:600}
+.footer__bar{
+  display:flex;flex-wrap:wrap;gap:12px 26px;justify-content:space-between;align-items:center;
+  border-top:1px solid rgba(255,255,255,.12);padding-block:22px;font-size:13.5px;
+}
+.footer__bar p{margin:0}
+.footer__bar ul{display:flex;gap:22px}
+
+/* ---------- sticky mobile cta ---------- */
+.sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;box-shadow:0 -3px 16px rgba(0,0,0,.22)}
+.sticky-cta a{
+  flex:1;display:flex;align-items:center;justify-content:center;min-height:58px;
+  background:var(--gold);color:#fff;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;
+}
+.sticky-cta__alt{background:var(--ink)!important;color:#fff!important}
+
+/* ---------- responsive ---------- */
+@media (max-width:1080px){
+  .grid--intro,.grid--contact{grid-template-columns:1fr;gap:40px}
+  .stage{gap:28px;padding:26px}
+  .stage__side,.stage__points{max-width:250px}
+  .stage__note{font-size:14px}
+  .stage__points li{font-size:13.5px;padding-left:24px}
+  .stage__points{gap:14px}
+  .cards--3{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .steps::before{display:none}
+  .areas{grid-template-columns:repeat(3,1fr);gap:40px 26px}
+  .footer__grid{grid-template-columns:1fr 1fr;gap:34px}
+  .intro__media{margin-top:26px}
+  .manager__in{grid-template-columns:300px minmax(0,1fr);gap:44px}
+  .awards__list{grid-template-columns:repeat(3,1fr)}
+  .partner{grid-template-columns:220px minmax(0,1fr);gap:26px;padding:24px 26px}
+  .partner__logos{gap:20px}
+}
+
+@media (max-width:900px){
+  .hamburger{display:flex}
+  .nav{
+    position:absolute;top:100%;left:0;right:0;background:var(--ink);
+    max-height:0;overflow:hidden;transition:max-height .3s ease;
+    border-top:1px solid rgba(255,255,255,.12);
+  }
+  .nav.is-open{max-height:420px}
+  .nav__list{flex-direction:column;gap:0;padding:8px 24px 20px}
+  .nav__list a{display:block;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+  .site-header__in{position:relative;min-height:78px}
+  .site-header__cta .btn{display:none}
+  .brand img{width:124px}
+
+  /* Three columns need ~940px. Below that the stage drops its fixed ratio and
+     stacks (clip, then copy) and narrows, so the clip is not marooned in blur. */
+  .stage-wrap{max-width:470px}
+  .stage{aspect-ratio:auto;flex-direction:column;gap:26px;padding:28px 24px 32px}
+  .stage video{height:auto;width:100%;max-width:250px}
+  /* flex:1 has a 0 basis, which can collapse these once the height is auto. */
+  .stage__side,.stage__points{flex:none;width:100%;max-width:none;text-align:center}
+  .stage__points li{text-align:left;padding-left:26px;font-size:14.5px}
+  .stage__scrim{background:rgba(8,10,9,.48)}
+}
+
+@media (max-width:780px){
+  body{font-size:16px}
+  .section,.intro{padding:64px 0}
+  .hero{min-height:560px;padding:72px 0 68px}
+  .hero__logo{width:104px}
+  /* Topbar keeps only the licence line on phones; the address, hours and
+     email would push the hero down by ~60px and all repeat in the footer. */
+  .topbar__item--wide{display:none}
+  .topbar__in{padding-block:7px}
+  .cards--3,.gallery,.steps{grid-template-columns:1fr}
+  /* Two columns keeps 48 cities compact instead of an endless scroll. */
+  .areas{grid-template-columns:1fr 1fr;gap:32px 18px;margin-top:34px}
+  .places li{font-size:14px;padding-left:22px}
+  .areas__note{margin-top:36px}
+  .gallery__item--wide{grid-column:span 1;grid-row:span 1}
+  .stats{margin-top:-28px}
+  .stats__in{grid-template-columns:1fr 1fr;gap:30px 20px;padding:34px 22px}
+  .stat + .stat::before{display:none}
+
+  /* Floating composition collapses to a single stacked image on phones. */
+  .intro__media{padding:0 0 34px 0}
+  .framed__rule{display:none}
+  .floatchip{width:96px;height:96px;right:-10px;top:-18px;border-width:4px}
+  .floatcard{padding:14px 18px;gap:11px}
+  .floatcard__num{font-size:1.9rem}
+  .floatcard__label{font-size:10px;letter-spacing:1px}
+  .formcard::before{display:none}
+  .stage-wrap{margin-top:32px}
+  .topbar__in{font-size:11.5px;gap:6px 16px}
+  .sticky-cta{display:flex}
+  body{padding-bottom:58px}
+  .formcard{padding:28px 22px}
+  .footer__grid{grid-template-columns:1fr;gap:30px}
+  .footer__bar{justify-content:center;text-align:center}
+  /* Vertical rules only make sense while the items sit on one line. */
+  .hero__points{flex-direction:column;gap:9px;font-size:12.5px}
+  .hero__points span{padding:0;border-left:0}
+  .btn{width:100%;max-width:340px}
+  .hero__actions{flex-direction:column;align-items:center}
+  .manager__in{grid-template-columns:1fr;gap:34px}
+  .manager__photo{width:100%;max-width:320px;margin:0 auto;padding:0 0 20px 20px}
+  .manager__rule{width:70%;height:54%}
+  .manager__body .btn{max-width:none}
+  .awards{margin-top:48px;padding-top:32px}
+  .awards__list{grid-template-columns:repeat(2,1fr);gap:12px}
+  .awards__list li{min-height:104px;padding:14px 10px}
+  .awards__list img{height:72px}
+  /* Side by side on a phone would squash the wide wordmarks to a few pixels
+     tall, so each logo takes the full card width instead. */
+  .partner{grid-template-columns:1fr;gap:20px;padding:24px 22px;text-align:center}
+  .partner__logos{flex-direction:column;gap:18px}
+  .partner__logos li{height:42px}
+}
+
+/* Below 600px a single line would force the headline down to ~22px, weaker than
+   the subhead. It breaks to two lines instead, always between "in" and "Encino". */
+@media (max-width:599px){
+  .hero h1{white-space:normal;font-size:min(9vw,36px)}
+}
+
+@media (max-width:520px){
+  .topbar__item:nth-child(3){display:none}
+  .phone__label{display:none}
+  .phone__num{font-size:15.5px}
+  .badges img{height:38px}
+  .badges__in{gap:20px 26px}
+}
+
+/* ============================================================
+   Entrance animation
+   Effects are gated behind .js-anim, which main.js adds to <html>.
+   Without JS the page renders fully visible and unanimated.
+   ============================================================ */
+
+@keyframes heroZoom{to{transform:scale(1)}}
+
+@keyframes riseIn{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:none}
+}
+
+@keyframes lineGrow{
+  from{width:0;opacity:0}
+  to{width:96px;opacity:1}
+}
+
+/* Hero: staggered rise on load */
+.js-anim .hero__logo,
+.js-anim .hero h1,
+.js-anim .hero__sub,
+.js-anim .hero__actions,
+.js-anim .hero__points{
+  opacity:0;
+  animation:riseIn .72s cubic-bezier(.22,.61,.36,1) forwards;
+}
+.js-anim .hero__logo{animation-delay:.08s}
+.js-anim .hero h1{animation-delay:.2s}
+.js-anim .hero__sub{animation-delay:.34s}
+.js-anim .hero__actions{animation-delay:.46s}
+.js-anim .hero__points{animation-delay:.58s}
+
+.js-anim .hero h1::after{
+  animation:lineGrow .7s cubic-bezier(.22,.61,.36,1) .62s backwards;
+}
+
+/* Scroll reveal */
+.js-anim [data-reveal]{
+  opacity:0;
+  transform:translateY(34px);
+  transition:opacity .75s cubic-bezier(.22,.61,.36,1),transform .75s cubic-bezier(.22,.61,.36,1);
+  transition-delay:var(--d,0s);
+  will-change:opacity,transform;
+}
+.js-anim [data-reveal].is-in{opacity:1;transform:none;will-change:auto}
+
+/* Media panels get a slightly deeper travel */
+.js-anim [data-reveal="media"]{transform:translateY(44px) scale(.97)}
+.js-anim [data-reveal="media"].is-in{transform:none}
+
+/* Header condenses once you leave the hero */
+.site-header__in{transition:min-height .3s ease}
+.site-header.is-stuck{background:rgba(17,17,17,.97);backdrop-filter:blur(6px)}
+.site-header.is-stuck .site-header__in{min-height:70px}
+.site-header.is-stuck .brand img{width:124px;transition:width .3s ease}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important;transition-delay:0ms!important;scroll-behavior:auto!important}
+  .js-anim [data-reveal]{opacity:1!important;transform:none!important}
+  .hero::before{transform:scale(1)}
+  .floatcard,.floatchip{animation:none!important}
+}

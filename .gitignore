@@ -1,0 +1,20 @@
+# Screenshots captured while building/verifying the page, not part of the site
+shots/
+
+# Scratch harnesses used for rendering and auditing
+shot.html
+audit.html
+sheet.html
+rwd-test.html
+rwd-shot.html
+measure.html
+color-probe.html
+live.html
+audit-out.txt
+*.ps1
+
+# OS / editor
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
