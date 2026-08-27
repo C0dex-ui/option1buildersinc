@@ -118,7 +118,7 @@ ul{margin:0;padding:0;list-style:none}
   color:#fff;font-size:13px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;
   padding:8px 0;display:inline-block;border-bottom:2px solid transparent;
 }
-.nav__list a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+.nav__list a:hover,.nav__list a.is-current{color:var(--gold);border-bottom-color:var(--gold)}
 
 .site-header__cta{display:flex;align-items:center;gap:16px}
 .phone{display:flex;flex-direction:column;line-height:1.25}
@@ -171,6 +171,22 @@ ul{margin:0;padding:0;list-style:none}
 .hero__points span{padding:0 26px;border-left:1px solid rgba(255,255,255,.28)}
 .hero__points span:first-child{border-left:0}
 .hero__points strong{color:#fff;font-weight:700}
+
+/* Inner pages keep the same hero treatment — overlay, gold rule, Montserrat —
+   just a shorter band so the page content starts sooner. */
+.hero--page{min-height:420px;padding:72px 0 64px}
+.hero--page .hero__in{max-width:920px}
+.hero--page h1{
+  font-size:clamp(1.7rem,3.6vw,2.85rem);margin-bottom:18px;padding-bottom:20px;
+}
+.crumbs{
+  display:flex;flex-wrap:wrap;gap:6px 8px;justify-content:center;
+  margin:0 0 16px;font-size:12px;font-weight:600;letter-spacing:1.4px;
+  text-transform:uppercase;color:#c9c9c4;
+}
+.crumbs a{color:#e6e3da}
+.crumbs a:hover{color:var(--gold)}
+.crumbs [aria-current="page"]{color:var(--gold)}
 
 /* ---------- badges ---------- */
 .badges{background:var(--ink);padding:26px 0}
@@ -623,6 +639,21 @@ ul{margin:0;padding:0;list-style:none}
 .closing .watermark{top:-.28em;font-size:clamp(3.2rem,8.5vw,7rem)}
 .closing .hero__actions{margin-top:28px}
 
+/* ---------- blog listing ---------- */
+.blog-list{display:grid;gap:28px}
+.blog-card{
+  display:grid;grid-template-columns:280px minmax(0,1fr);gap:36px;align-items:center;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;box-shadow:var(--shadow);
+  transition:transform .4s ease,box-shadow .4s ease;
+}
+.blog-card:hover{transform:translateY(-8px);box-shadow:0 26px 46px rgba(32,35,33,.15)}
+.blog-card img{width:100%;height:220px;object-fit:cover}
+.blog-card__body{padding:8px 28px 8px 0}
+.blog-card__meta{margin:0 0 10px;font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold);font-weight:600}
+.blog-card h3{margin:0 0 12px}
+.blog-card p{margin:0 0 18px}
+
 /* ---------- footer ---------- */
 .site-footer{background:var(--ink-2);color:#a9a9a3;padding:70px 0 0;font-size:15px}
 .footer__grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:40px;padding-bottom:48px}
@@ -700,6 +731,10 @@ ul{margin:0;padding:0;list-style:none}
   body{font-size:16px}
   .section,.intro{padding:64px 0}
   .hero{min-height:560px;padding:72px 0 68px}
+  .hero--page{min-height:360px;padding:56px 0 52px}
+  .blog-card{grid-template-columns:1fr;gap:0}
+  .blog-card img{height:200px}
+  .blog-card__body{padding:24px 22px 26px}
   .hero__logo{width:104px}
   /* Topbar keeps only the licence line on phones; the address, hours and
      email would push the hero down by ~60px and all repeat in the footer. */
