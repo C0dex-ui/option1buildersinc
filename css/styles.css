@@ -24,7 +24,7 @@
 
 *,*::before,*::after{box-sizing:border-box}
 
-html{scroll-behavior:smooth;scroll-padding-top:120px}
+html{scroll-behavior:smooth;scroll-padding-top:120px;overflow-x:hidden}
 
 body{
   margin:0;
@@ -34,6 +34,8 @@ body{
   color:var(--body);
   background:var(--white);
   -webkit-font-smoothing:antialiased;
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
 }
 
 img,video{max-width:100%;height:auto;display:block}
@@ -109,7 +111,7 @@ ul{margin:0;padding:0;list-style:none}
 .topbar__lic strong{color:#fff;font-weight:600}
 
 .site-header{position:sticky;top:0;z-index:60;background:var(--ink);box-shadow:0 2px 14px rgba(0,0,0,.22)}
-.site-header__in{display:flex;align-items:center;gap:24px;min-height:92px}
+.site-header__in{display:flex;align-items:center;gap:24px;min-height:92px;min-width:0}
 .brand img{width:150px;height:auto}
 
 .nav{margin-left:auto}
@@ -120,14 +122,14 @@ ul{margin:0;padding:0;list-style:none}
 }
 .nav__list a:hover,.nav__list a.is-current{color:var(--gold);border-bottom-color:var(--gold)}
 
-.site-header__cta{display:flex;align-items:center;gap:16px}
-.phone{display:flex;flex-direction:column;line-height:1.25}
+.site-header__cta{display:flex;align-items:center;gap:16px;flex:none}
+.phone{display:flex;flex-direction:column;line-height:1.25;margin-left:40px;flex:none}
 .phone__label{font-size:10.5px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold)}
 .phone__num{font-size:18px;font-weight:700;color:#fff}
 .phone:hover .phone__num{color:var(--gold)}
 .site-header__cta .btn{min-height:46px;padding:12px 22px;font-size:12px}
 
-.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;background:transparent;border:1px solid rgba(255,255,255,.35);border-radius:var(--radius);cursor:pointer}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;background:transparent;border:1px solid rgba(255,255,255,.35);border-radius:var(--radius);cursor:pointer;-webkit-tap-highlight-color:transparent}
 .hamburger span{display:block;height:2px;width:22px;margin:0 auto;background:#fff;transition:transform .25s,opacity .25s}
 .hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .hamburger[aria-expanded="true"] span:nth-child(2){opacity:0}
@@ -153,6 +155,7 @@ ul{margin:0;padding:0;list-style:none}
   position:relative;color:#fff;text-shadow:0 3px 10px rgba(0,0,0,.55);
   margin-bottom:28px;padding-bottom:26px;
   font-size:clamp(1.85rem,4.1vw,3.35rem);line-height:1.12;white-space:normal;
+  overflow-wrap:break-word;
 }
 .hero__nb{display:block;white-space:nowrap}
 .hero h1::after{
@@ -677,13 +680,20 @@ ul{margin:0;padding:0;list-style:none}
 /* ---------- sticky mobile cta ---------- */
 .sticky-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:70;box-shadow:0 -3px 16px rgba(0,0,0,.22)}
 .sticky-cta a{
-  flex:1;display:flex;align-items:center;justify-content:center;min-height:58px;
-  background:var(--gold);color:#fff;font-weight:700;font-size:14px;letter-spacing:1px;text-transform:uppercase;
+  display:flex;align-items:center;justify-content:center;
+  min-height:58px;padding:0 8px;background:var(--gold);color:#fff;font-weight:700;
+  font-size:12px;letter-spacing:0;text-transform:uppercase;white-space:nowrap;
 }
 .sticky-cta__alt{background:var(--ink)!important;color:#fff!important}
 
 /* ---------- responsive ---------- */
 @media (max-width:1080px){
+  /* Extra phone offset plus full nav is ~28px wider; tighten gaps so the
+     bar still fits on 1024–1080 laptops without wrapping or a hamburger. */
+  .nav__list{gap:18px}
+  .site-header__in{gap:18px}
+  .phone{margin-left:24px}
+  .brand img{width:132px}
   .grid--intro,.grid--contact{grid-template-columns:1fr;gap:40px}
   .stage{gap:28px;padding:26px}
   .stage__side,.stage__points{max-width:250px}
@@ -703,6 +713,7 @@ ul{margin:0;padding:0;list-style:none}
 }
 
 @media (max-width:900px){
+  html{scroll-padding-top:90px}
   .hamburger{display:flex}
   .nav{
     position:absolute;top:100%;left:0;right:0;background:var(--ink);
@@ -713,7 +724,9 @@ ul{margin:0;padding:0;list-style:none}
   .nav__list{flex-direction:column;gap:0;padding:8px 24px 20px}
   .nav__list a{display:block;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}
   .site-header__in{position:relative;min-height:78px}
+  .site-header__cta{margin-left:auto;gap:18px}
   .site-header__cta .btn{display:none}
+  .phone{margin-left:0}
   .brand img{width:124px}
 
   /* Three columns need ~940px. Below that the stage drops its fixed ratio and
@@ -725,16 +738,23 @@ ul{margin:0;padding:0;list-style:none}
   .stage__side,.stage__points{flex:none;width:100%;max-width:none;text-align:center}
   .stage__points li{text-align:left;padding-left:26px;font-size:14.5px}
   .stage__scrim{background:rgba(8,10,9,.48)}
+  /* Image-left cards get tight once the hamburger layout is on. */
+  .blog-card{grid-template-columns:1fr;gap:0}
+  .blog-card img{height:220px}
+  .blog-card__body{padding:24px 22px 26px}
+  /* Encino / Valley line is longer than a nowrap 700px frame. */
+  .hero__nb{white-space:normal}
 }
 
 @media (max-width:780px){
   body{font-size:16px}
   .section,.intro{padding:64px 0}
-  .hero{min-height:560px;padding:72px 0 68px}
-  .hero--page{min-height:360px;padding:56px 0 52px}
-  .blog-card{grid-template-columns:1fr;gap:0}
+  .hero{min-height:560px;padding:72px 0 128px}
+  .hero--page{min-height:360px;padding:56px 0 110px}
   .blog-card img{height:200px}
-  .blog-card__body{padding:24px 22px 26px}
+  .field input,.field select,.field textarea{font-size:16px}
+  .sticky-cta{padding-bottom:env(safe-area-inset-bottom,0px)}
+  .wrap{padding:0 18px}
   .hero__logo{width:104px}
   /* Topbar keeps only the licence line on phones; the address, hours and
      email would push the hero down by ~60px and all repeat in the footer. */
@@ -760,8 +780,8 @@ ul{margin:0;padding:0;list-style:none}
   .formcard::before{display:none}
   .stage-wrap{margin-top:32px}
   .topbar__in{font-size:11.5px;gap:6px 16px}
-  .sticky-cta{display:flex}
-  body{padding-bottom:58px}
+  .sticky-cta{display:grid;grid-template-columns:1fr 1fr}
+  body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
   .formcard{padding:28px 22px}
   .footer__grid{grid-template-columns:1fr;gap:30px}
   .footer__bar{justify-content:center;text-align:center}
@@ -788,14 +808,22 @@ ul{margin:0;padding:0;list-style:none}
 /* On phones the two phrases wrap independently so "Installation" does not
    overflow the 390px frame. */
 @media (max-width:599px){
-  .hero h1{font-size:clamp(1.7rem,8vw,2.05rem)}
-  .hero__nb{white-space:normal}
+  .hero h1{
+    font-size:clamp(1.42rem,6.8vw,1.78rem);letter-spacing:.15px;
+    padding-left:2px;padding-right:2px;
+  }
+  .hero--page h1{font-size:clamp(1.38rem,6.4vw,1.7rem)}
+  h2{font-size:clamp(1.32rem,6.2vw,1.7rem);letter-spacing:.2px}
 }
 
 @media (max-width:520px){
   .topbar__item:nth-child(3){display:none}
   .phone__label{display:none}
-  .phone__num{font-size:15.5px}
+  .phone__num{font-size:14.5px}
+  .brand img{width:110px}
+  .site-header.is-stuck .brand img{width:110px}
+  .site-header__cta{gap:12px}
+  .hamburger{width:44px;height:44px}
   .badges img{height:38px}
   .badges__in{gap:20px 26px}
 }

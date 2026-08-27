@@ -24,6 +24,14 @@
         toggle.setAttribute('aria-label', 'Open menu');
       }
     });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 900 && nav.classList.contains('is-open')) {
+        nav.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Open menu');
+      }
+    });
   }
 
   /* ---------- one FAQ answer open at a time ---------- */
