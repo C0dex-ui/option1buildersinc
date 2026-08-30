@@ -1,0 +1,36 @@
+{
+  "status": "imported-on-localwp",
+  "stack": {
+    "theme": "hello-elementor",
+    "plugins": ["elementor", "happy-elementor-addons", "novamira"],
+    "noElementorPro": true,
+    "chrome": "happy-addons-theme-builder"
+  },
+  "pageTemplate": "elementor_header_footer",
+  "homeBands": [
+    "hero",
+    "badges",
+    "intro",
+    "stats",
+    "services",
+    "partners",
+    "projects",
+    "showcase",
+    "why",
+    "reviews",
+    "manager",
+    "process",
+    "areas",
+    "estimate",
+    "faq",
+    "closing"
+  ],
+  "chrome": ["topbar", "header", "footer", "sticky-cta"],
+  "form": "[o1b_estimate]",
+  "draft": "elementor/home-draft.json",
+  "notes": [
+    "home-draft.json is a mechanical extract (schema-valid, 325 nodes). Refine before import: drop skip-link, move nav into Happy Addons header, split the 5 merged bands into the 16 listed sections, replace the form with the shortcode widget.",
+    "Header and footer stay out of page canvas — same as Ground Truth.",
+    "Do not invent slugs. Live paths only: /, /services/, /projects/, /about-us/, /blog/, /contact-us/."
+  ]
+}

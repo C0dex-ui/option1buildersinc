@@ -1,0 +1,48 @@
+{
+  "o1b-primary": {
+    "name": "Option 1 Primary",
+    "location": "primary",
+    "items": [
+      {
+        "title": "Services",
+        "path": "/services/",
+        "children": [
+          { "title": "Artificial Grass Installation", "path": "/services/artificial-grass-installation/" },
+          { "title": "Paver Installation", "path": "/services/paver-installation/" },
+          { "title": "Landscape Design & Installation", "path": "/services/landscape-design-installation/" },
+          { "title": "Stepping Stones & Pathways", "path": "/services/stepping-stones-pathways/" },
+          { "title": "Concrete, DG & Gravel", "path": "/services/concrete-dg-gravel/" },
+          { "title": "Irrigation & Drainage", "path": "/services/irrigation-drainage/" },
+          { "title": "Vinyl Fencing", "path": "/services/vinyl-fencing/" }
+        ]
+      },
+      { "title": "Projects", "path": "/projects/" },
+      { "title": "About Us", "path": "/about-us/" },
+      { "title": "Blog", "path": "/blog/" },
+      { "title": "Contact", "path": "/contact-us/" }
+    ]
+  },
+  "o1b-footer-services": {
+    "name": "Option 1 Footer Services",
+    "items": [
+      { "title": "Artificial Grass Installation", "path": "/services/artificial-grass-installation/" },
+      { "title": "Paver Installation", "path": "/services/paver-installation/" },
+      { "title": "Landscape Design & Installation", "path": "/services/landscape-design-installation/" },
+      { "title": "Stepping Stones & Pathways", "path": "/services/stepping-stones-pathways/" },
+      { "title": "Concrete, DG & Gravel", "path": "/services/concrete-dg-gravel/" },
+      { "title": "Irrigation & Drainage", "path": "/services/irrigation-drainage/" },
+      { "title": "Vinyl Fencing", "path": "/services/vinyl-fencing/" }
+    ]
+  },
+  "o1b-footer-pages": {
+    "name": "Option 1 Footer Pages",
+    "items": [
+      { "title": "Home", "path": "/" },
+      { "title": "Services", "path": "/services/" },
+      { "title": "Projects", "path": "/projects/" },
+      { "title": "About Us", "path": "/about-us/" },
+      { "title": "Blog", "path": "/blog/" },
+      { "title": "Contact Us", "path": "/contact-us/" }
+    ]
+  }
+}

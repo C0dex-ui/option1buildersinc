@@ -1,0 +1,122 @@
+{
+  "count": 13,
+  "pages": [
+    {
+      "key": "home",
+      "title": "Home",
+      "slug": "home",
+      "path": "/",
+      "parent": "",
+      "template": "elementor_header_footer",
+      "source": "index.html"
+    },
+    {
+      "key": "services",
+      "title": "Services",
+      "slug": "services",
+      "path": "/services/",
+      "parent": "",
+      "template": "elementor_header_footer",
+      "source": "services/index.html"
+    },
+    {
+      "key": "artificial-grass-installation",
+      "title": "Artificial Grass Installation",
+      "slug": "artificial-grass-installation",
+      "path": "/services/artificial-grass-installation/",
+      "parent": "services",
+      "template": "elementor_header_footer",
+      "source": "services/artificial-grass-installation/index.html"
+    },
+    {
+      "key": "paver-installation",
+      "title": "Paver Installation",
+      "slug": "paver-installation",
+      "path": "/services/paver-installation/",
+      "parent": "services",
+      "template": "elementor_header_footer",
+      "source": "services/paver-installation/index.html"
+    },
+    {
+      "key": "landscape-design-installation",
+      "title": "Landscape Design & Installation",
+      "slug": "landscape-design-installation",
+      "path": "/services/landscape-design-installation/",
+      "parent": "services",
+      "template": "elementor_header_footer",
+      "source": "services/landscape-design-installation/index.html"
+    },
+    {
+      "key": "stepping-stones-pathways",
+      "title": "Stepping Stones & Pathways",
+      "slug": "stepping-stones-pathways",
+      "path": "/services/stepping-stones-pathways/",
+      "parent": "services",
+      "template": "elementor_header_footer",
+      "source": "services/stepping-stones-pathways/index.html"
+    },
+    {
+      "key": "concrete-dg-gravel",
+      "title": "Concrete, DG & Gravel",
+      "slug": "concrete-dg-gravel",
+      "path": "/services/concrete-dg-gravel/",
+      "parent": "services",
+      "template": "elementor_header_footer",
+      "source": "services/concrete-dg-gravel/index.html"
+    },
+    {
+      "key": "irrigation-drainage",
+      "title": "Irrigation & Drainage",
+      "slug": "irrigation-drainage",
+      "path": "/services/irrigation-drainage/",
+      "parent": "services",
+      "template": "elementor_header_footer",
+      "source": "services/irrigation-drainage/index.html"
+    },
+    {
+      "key": "vinyl-fencing",
+      "title": "Vinyl Fencing",
+      "slug": "vinyl-fencing",
+      "path": "/services/vinyl-fencing/",
+      "parent": "services",
+      "template": "elementor_header_footer",
+      "source": "services/vinyl-fencing/index.html"
+    },
+    {
+      "key": "projects",
+      "title": "Projects",
+      "slug": "projects",
+      "path": "/projects/",
+      "parent": "",
+      "template": "elementor_header_footer",
+      "source": "projects/index.html"
+    },
+    {
+      "key": "about-us",
+      "title": "About Us",
+      "slug": "about-us",
+      "path": "/about-us/",
+      "parent": "",
+      "template": "elementor_header_footer",
+      "source": "about-us/index.html"
+    },
+    {
+      "key": "blog",
+      "title": "Blog",
+      "slug": "blog",
+      "path": "/blog/",
+      "parent": "",
+      "template": "elementor_header_footer",
+      "source": "blog/index.html"
+    },
+    {
+      "key": "contact-us",
+      "title": "Contact Us",
+      "slug": "contact-us",
+      "path": "/contact-us/",
+      "parent": "",
+      "template": "elementor_header_footer",
+      "source": "contact-us/index.html"
+    }
+  ]
+}

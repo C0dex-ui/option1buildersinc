@@ -1,0 +1,33 @@
+{
+  "live": "https://option1buildersinc.com",
+  "local": "https://option-1-builders.local",
+  "company": "Option 1 Builders",
+  "legalName": "Option 1 Builders Inc",
+  "tagline": "Artificial Grass Installation in Encino",
+  "phone": "818-297-2475",
+  "phoneHref": "tel:+18182972475",
+  "email": "info.option1builders@gmail.com",
+  "address": "16400 Ventura Blvd, Suite 319, Encino, CA 91436",
+  "hours": "Mon-Sun 8:00 AM - 6:00 PM",
+  "license": "1122918",
+  "placeId": "ChIJWyHrDeGZwoARK-QXB6Zp1TI",
+  "designKit": "option1-builders",
+  "theme": "hello-elementor",
+  "plugins": [
+    "elementor",
+    "elementor-pro",
+    "novamira"
+  ],
+  "noNewPlugins": true,
+  "headerFooter": "elementor-pro-theme-builder",
+  "headerWidgets": ["theme-site-logo", "nav-menu"],
+  "doNotCopyLocalIds": true,
+  "shortcodes": [
+    "o1b_estimate"
+  ],
+  "social": {
+    "facebook": "https://www.facebook.com/profile.php?id=61582882491939",
+    "instagram": "https://www.instagram.com/option_1builders",
+    "google": "https://www.google.com/maps/place/?q=place_id:ChIJWyHrDeGZwoARK-QXB6Zp1TI"
+  }
+}

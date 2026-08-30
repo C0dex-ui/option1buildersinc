@@ -115,12 +115,44 @@ ul{margin:0;padding:0;list-style:none}
 .brand img{width:150px;height:auto}
 
 .nav{margin-left:auto}
-.nav__list{display:flex;gap:26px}
+.nav__list{display:flex;align-items:center;gap:26px}
+.nav__list > li{list-style:none}
+.nav__item--has-sub{position:relative;display:flex;align-items:center;gap:4px}
 .nav__list a{
   color:#fff;font-size:13px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;
   padding:8px 0;display:inline-block;border-bottom:2px solid transparent;
 }
 .nav__list a:hover,.nav__list a.is-current{color:var(--gold);border-bottom-color:var(--gold)}
+.nav__toggle{
+  display:none;align-items:center;justify-content:center;
+  width:36px;height:36px;margin:0;padding:0;flex:none;
+  background:transparent;border:1px solid rgba(255,255,255,.28);border-radius:var(--radius);
+  cursor:pointer;color:#fff;
+}
+.nav__toggle span{
+  display:block;width:8px;height:8px;
+  border-right:2px solid #fff;border-bottom:2px solid #fff;
+  transform:rotate(45deg) translate(-2px,-2px);
+}
+.nav__item--has-sub.is-open .nav__toggle span{transform:rotate(225deg) translate(-1px,-1px)}
+.nav__sub{
+  display:none;position:absolute;top:100%;left:50%;
+  transform:translateX(-50%);min-width:280px;margin:0;padding:12px 0 10px;
+  background:var(--ink);box-shadow:0 18px 40px rgba(0,0,0,.4);
+  border:1px solid rgba(255,255,255,.1);z-index:80;
+}
+.nav__sub:before{
+  content:"";position:absolute;left:0;right:0;bottom:100%;height:12px;
+}
+.nav__sub li{list-style:none}
+.nav__sub a{
+  display:block;padding:10px 20px;white-space:nowrap;border-bottom:none;
+  font-size:12px;letter-spacing:.6px;
+}
+.nav__sub a:hover,.nav__sub a.is-current{background:rgba(183,154,97,.14);border-bottom:none}
+.nav__item--has-sub:hover .nav__sub,
+.nav__item--has-sub:focus-within .nav__sub,
+.nav__item--has-sub.is-open .nav__sub{display:block}
 
 .site-header__cta{display:flex;align-items:center;gap:16px;flex:none}
 .phone{display:flex;flex-direction:column;line-height:1.25;margin-left:40px;flex:none}
@@ -208,6 +240,36 @@ ul{margin:0;padding:0;list-style:none}
 .section{padding:96px 0;position:relative;overflow:hidden;isolation:isolate}
 .section--tint{background:var(--tint)}
 .section > .wrap{position:relative}
+.service-media{margin:28px 0 0;border-radius:var(--radius);overflow:hidden}
+.service-media img{display:block;width:100%;height:auto}
+.service-media--frame{aspect-ratio:4/3}
+.service-media--frame img{width:100%;height:100%;object-fit:cover;object-position:center}
+.service-blocks{display:grid;gap:22px;margin-top:36px}
+.service-block h3{margin-bottom:10px}
+.service-panel{margin-top:48px}
+.service-panel + .wrap{margin-top:40px}
+.service-highlights{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:22px;margin-top:28px;align-items:stretch;
+}
+.service-highlights > .mini{
+  height:100%;min-width:0;
+  display:flex;flex-direction:column;
+}
+.service-highlights > .mini p{flex:1;margin:0}
+.service-mid-cta{margin:40px 0 8px;justify-content:center}
+.service-trust{margin:28px 0 0}
+.service-cta-band{background:#181818;padding:56px 0}
+.service-cta-band__in{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;
+  gap:28px 48px;align-items:center;
+}
+.service-cta-band .eyebrow{color:var(--gold);margin:0 0 10px}
+.service-cta-band h2{color:#fff;margin:0 0 12px}
+.service-cta-band p{color:#d5d3cc;text-align:left;max-width:560px;margin:0}
+.service-cta-band .hero__actions{justify-content:flex-end;margin:0;flex-wrap:nowrap}
+.awards--light{border-top-color:var(--line);margin-top:8px}
+.service-review{max-width:760px;margin:40px auto 0}
 
 /* Oversized ghost word sitting behind the section heading. The em-based
    offset keeps it straddling the heading at every clamped font size. */
@@ -314,18 +376,27 @@ ul{margin:0;padding:0;list-style:none}
 .stat__label{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:#fff}
 
 /* ---------- cards ---------- */
-.cards{display:grid;gap:30px}
+.cards{display:grid;gap:30px;align-items:stretch}
 .cards--3{grid-template-columns:repeat(3,1fr)}
 .cards--mini{margin-top:30px}
+.cards--7 > .card:nth-child(7){grid-column:1}
 
 .card{
   background:#fff;border:1px solid var(--line);border-radius:var(--radius);
-  display:flex;flex-direction:column;
+  display:flex;flex-direction:column;height:100%;min-width:0;
   transition:box-shadow .35s ease,transform .35s ease;
+}
+.card__hit{
+  display:flex;flex-direction:column;flex:1;height:100%;min-width:0;
+  color:inherit;text-decoration:none;
 }
 /* The clip layer crops the photo; the tag lives outside it so it can
    hang over the seam between image and card body. */
-.card__img{aspect-ratio:4/3;position:relative}
+.card__img{aspect-ratio:4/3;position:relative;flex:none;background:var(--tint)}
+.card__img--empty .card__clip{
+  background:linear-gradient(180deg,#f3f2ed 0%,#e6e4dd 100%);
+}
+.card__img--empty .card__clip::after{opacity:.2}
 .card__clip{
   position:absolute;inset:0;overflow:hidden;display:block;
   border-radius:var(--radius) var(--radius) 0 0;
@@ -544,6 +615,7 @@ ul{margin:0;padding:0;list-style:none}
   display:grid;grid-template-columns:repeat(4,1fr);gap:26px;
   list-style:none;margin:34px 0 0;padding:26px 0 0;position:relative;
 }
+.steps.steps--3{grid-template-columns:repeat(3,1fr)}
 .steps::before{
   content:"";position:absolute;top:26px;left:12%;right:12%;height:1px;
   background:linear-gradient(90deg,transparent,var(--gold) 14%,var(--gold) 86%,transparent);
@@ -701,7 +773,14 @@ ul{margin:0;padding:0;list-style:none}
   .stage__points li{font-size:13.5px;padding-left:24px}
   .stage__points{gap:14px}
   .cards--3{grid-template-columns:repeat(2,1fr)}
+  .service-highlights{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:1fr}
+  .cards--7 > .card:nth-child(7){
+    grid-column:auto;
+    width:auto;
+    justify-self:stretch;
+  }
   .steps{grid-template-columns:repeat(2,1fr)}
+  .steps.steps--3{grid-template-columns:repeat(2,minmax(0,1fr))}
   .steps::before{display:none}
   .areas{grid-template-columns:repeat(3,1fr);gap:40px 26px}
   .footer__grid{grid-template-columns:1fr 1fr;gap:34px}
@@ -720,9 +799,21 @@ ul{margin:0;padding:0;list-style:none}
     max-height:0;overflow:hidden;transition:max-height .3s ease;
     border-top:1px solid rgba(255,255,255,.12);
   }
-  .nav.is-open{max-height:420px}
-  .nav__list{flex-direction:column;gap:0;padding:8px 24px 20px}
-  .nav__list a{display:block;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav.is-open{max-height:min(80vh,760px);overflow-y:auto}
+  .nav__list{flex-direction:column;align-items:stretch;gap:0;padding:8px 24px 20px}
+  .nav__list > li{border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav__list a{display:block;padding:14px 0;border-bottom:none}
+  .nav__item--has-sub{flex-wrap:wrap;gap:0}
+  .nav__item--has-sub > a{flex:1;min-width:0}
+  .nav__toggle{display:flex;margin:8px 0}
+  .nav__sub{
+    position:static;transform:none;display:none;width:100%;min-width:0;
+    box-shadow:none;border:none;padding:0 0 10px 12px;background:transparent;
+  }
+  .nav__item--has-sub:hover .nav__sub,
+  .nav__item--has-sub:focus-within .nav__sub{display:none}
+  .nav__item--has-sub.is-open .nav__sub{display:block}
+  .nav__sub a{padding:10px 0;font-size:12px}
   .site-header__in{position:relative;min-height:78px}
   .site-header__cta{margin-left:auto;gap:18px}
   .site-header__cta .btn{display:none}
@@ -760,7 +851,9 @@ ul{margin:0;padding:0;list-style:none}
      email would push the hero down by ~60px and all repeat in the footer. */
   .topbar__item--wide{display:none}
   .topbar__in{padding-block:7px}
-  .cards--3,.gallery,.steps{grid-template-columns:1fr}
+  .cards--3,.gallery,.steps,.steps.steps--3{grid-template-columns:1fr}
+  .service-highlights{grid-template-columns:1fr;grid-auto-rows:auto}
+  .cards--7 > .card:nth-child(7){grid-column:auto;width:auto;justify-self:stretch}
   /* Two columns keeps 48 cities compact instead of an endless scroll. */
   .areas{grid-template-columns:1fr 1fr;gap:32px 18px;margin-top:34px}
   .places li{font-size:14px;padding-left:22px}
@@ -790,6 +883,9 @@ ul{margin:0;padding:0;list-style:none}
   .hero__points span{padding:0;border-left:0}
   .btn{width:100%;max-width:340px}
   .hero__actions{flex-direction:column;align-items:center}
+  .service-mid-cta{align-items:center}
+  .service-cta-band__in{grid-template-columns:1fr}
+  .service-cta-band .hero__actions{justify-content:flex-start;flex-wrap:wrap}
   .manager__in{grid-template-columns:1fr;gap:34px}
   .manager__photo{width:100%;max-width:320px;margin:0 auto;padding:0 0 20px 20px}
   .manager__rule{width:70%;height:54%}

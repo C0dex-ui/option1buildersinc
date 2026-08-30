@@ -1,0 +1,96 @@
+{
+  "company": "Option 1 Builders",
+  "legalName": "Option 1 Builders Inc",
+  "phone": "818-297-2475",
+  "phoneHref": "tel:+18182972475",
+  "email": "info.option1builders@gmail.com",
+  "address": {
+    "street": "16400 Ventura Blvd, Suite 319",
+    "city": "Encino",
+    "state": "CA",
+    "zip": "91436",
+    "full": "16400 Ventura Blvd, Suite 319, Encino, CA 91436"
+  },
+  "hours": "Mon–Sun 8:00 AM – 6:00 PM",
+  "license": "1122918",
+  "placeId": "ChIJWyHrDeGZwoARK-QXB6Zp1TI",
+  "palette": {
+    "gold": "#b79a61",
+    "ink": "#202321",
+    "ink2": "#111111",
+    "heading": "#292e2e",
+    "body": "#383d3e",
+    "line": "#d9d9d6",
+    "tint": "#f8f8f6"
+  },
+  "font": "Montserrat",
+  "form": {
+    "shortcode": "[o1b_estimate]",
+    "fields": ["name", "phone", "email", "city", "service", "details"],
+    "services": [
+      "Artificial grass installation",
+      "Paver patio or walkway",
+      "Paver or concrete driveway",
+      "Full yard transformation",
+      "Stepping stones, DG or gravel",
+      "Irrigation or drainage",
+      "Vinyl fencing",
+      "Not sure — need advice"
+    ],
+    "recipient": "info.option1builders@gmail.com"
+  },
+  "pages": {
+    "home": {
+      "title": "Artificial Grass Installation Encino | Licensed & Insured | 15-Year Warranty",
+      "h1": "Artificial Grass Installation in Encino & the San Fernando Valley"
+    },
+    "about-us": {
+      "title": "Landscaping Company Encino | Licensed Since 2002",
+      "h1": "A Landscaping Company in Encino, CA"
+    },
+    "services": {
+      "title": "Landscaping Services Encino | Turf, Pavers & Yards",
+      "h1": "Landscaping Services in Encino"
+    },
+    "projects": {
+      "title": "Landscaping Projects Encino | Real Yards We Built",
+      "h1": "Landscaping Projects in Encino"
+    },
+    "contact-us": {
+      "title": "Free Estimate Encino | Licensed Option 1 Builders",
+      "h1": "Request a Free Estimate in Encino"
+    },
+    "blog": {
+      "title": "Encino Landscaping Blog | Option 1 Builders Tips",
+      "h1": "Encino Landscaping Blog"
+    },
+    "artificial-grass-installation": {
+      "title": "Artificial Grass Installation Encino | Option 1 Builders",
+      "h1": "Artificial Grass Installation in Encino"
+    },
+    "paver-installation": {
+      "title": "Paver Installation Encino CA | Option 1 Builders",
+      "h1": "Paver Installation in Encino"
+    },
+    "landscape-design-installation": {
+      "title": "Landscape Design Encino CA | Option 1 Builders",
+      "h1": "Landscape Design & Installation in Encino"
+    },
+    "stepping-stones-pathways": {
+      "title": "Stepping Stones Encino CA | Option 1 Builders",
+      "h1": "Stepping Stones & Pathways in Encino"
+    },
+    "concrete-dg-gravel": {
+      "title": "Concrete DG Gravel Encino | Option 1 Builders",
+      "h1": "Concrete, DG & Gravel in Encino"
+    },
+    "irrigation-drainage": {
+      "title": "Irrigation Drainage Encino | Option 1 Builders",
+      "h1": "Irrigation & Drainage in Encino"
+    },
+    "vinyl-fencing": {
+      "title": "Vinyl Fencing Encino CA | Option 1 Builders",
+      "h1": "Vinyl Fencing in Encino"
+    }
+  }
+}

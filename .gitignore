@@ -1,5 +1,8 @@
 # Screenshots captured while building/verifying the page, not part of the site
 shots/
+wordpress/extract-out/
+wordpress/preview-out/
+wordpress/.tmp/
 
 # Scratch harnesses used for rendering and auditing
 shot.html
@@ -12,6 +15,9 @@ color-probe.html
 live.html
 audit-out.txt
 *.ps1
+
+# Python
+**/__pycache__/
 
 # OS / editor
 Thumbs.db
