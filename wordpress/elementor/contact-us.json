@@ -1,7 +1,7 @@
 {
   "content": [
     {
-      "id": "ba176a3",
+      "id": "648cdb4",
       "elType": "container",
       "isInner": false,
       "settings": {
@@ -73,7 +73,7 @@
       },
       "elements": [
         {
-          "id": "194c92a",
+          "id": "0dc75fb",
           "elType": "widget",
           "widgetType": "text-editor",
           "isInner": false,
@@ -109,7 +109,7 @@
           "elements": []
         },
         {
-          "id": "f5fe8ae",
+          "id": "0bdd007",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -155,7 +155,7 @@
           "elements": []
         },
         {
-          "id": "17f3cbc",
+          "id": "6284656",
           "elType": "widget",
           "widgetType": "text-editor",
           "isInner": false,
@@ -190,7 +190,7 @@
           "elements": []
         },
         {
-          "id": "59f1160",
+          "id": "faea3ec",
           "elType": "container",
           "isInner": true,
           "settings": {
@@ -218,7 +218,7 @@
           },
           "elements": [
             {
-              "id": "af93920",
+              "id": "33d7a6c",
               "elType": "widget",
               "widgetType": "button",
               "isInner": false,
@@ -273,7 +273,7 @@
               "elements": []
             },
             {
-              "id": "a6a1efb",
+              "id": "96cab10",
               "elType": "widget",
               "widgetType": "button",
               "isInner": false,
@@ -343,7 +343,7 @@
       ]
     },
     {
-      "id": "52e6e5c",
+      "id": "7b2056c",
       "elType": "container",
       "isInner": false,
       "settings": {
@@ -390,7 +390,7 @@
       },
       "elements": [
         {
-          "id": "bc8c8d5",
+          "id": "cd9ed9e",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -430,7 +430,7 @@
           "elements": []
         },
         {
-          "id": "f34ce8a",
+          "id": "97eb697",
           "elType": "container",
           "isInner": true,
           "settings": {
@@ -459,7 +459,7 @@
           },
           "elements": [
             {
-              "id": "e70c439",
+              "id": "ee21bab",
               "elType": "container",
               "isInner": true,
               "settings": {
@@ -488,7 +488,7 @@
               },
               "elements": [
                 {
-                  "id": "10520e4",
+                  "id": "3853c7e",
                   "elType": "widget",
                   "widgetType": "heading",
                   "isInner": false,
@@ -525,7 +525,7 @@
                   "elements": []
                 },
                 {
-                  "id": "31b7612",
+                  "id": "22ba769",
                   "elType": "widget",
                   "widgetType": "heading",
                   "isInner": false,
@@ -562,7 +562,7 @@
                   "elements": []
                 },
                 {
-                  "id": "1543d45",
+                  "id": "9367425",
                   "elType": "widget",
                   "widgetType": "text-editor",
                   "isInner": false,
@@ -593,7 +593,7 @@
                   "elements": []
                 },
                 {
-                  "id": "6602299",
+                  "id": "267ffad",
                   "elType": "container",
                   "isInner": true,
                   "settings": {
@@ -611,7 +611,7 @@
                   },
                   "elements": [
                     {
-                      "id": "48fb011",
+                      "id": "a861054",
                       "elType": "widget",
                       "widgetType": "heading",
                       "isInner": false,
@@ -648,7 +648,7 @@
                       "elements": []
                     },
                     {
-                      "id": "7837a63",
+                      "id": "8c6fb67",
                       "elType": "widget",
                       "widgetType": "text-editor",
                       "isInner": false,
@@ -681,7 +681,7 @@
                   ]
                 },
                 {
-                  "id": "9b8b178",
+                  "id": "a3b445e",
                   "elType": "container",
                   "isInner": true,
                   "settings": {
@@ -699,7 +699,7 @@
                   },
                   "elements": [
                     {
-                      "id": "cc97e25",
+                      "id": "fc1e060",
                       "elType": "widget",
                       "widgetType": "heading",
                       "isInner": false,
@@ -736,7 +736,7 @@
                       "elements": []
                     },
                     {
-                      "id": "c99cc98",
+                      "id": "d4a058f",
                       "elType": "widget",
                       "widgetType": "text-editor",
                       "isInner": false,
@@ -769,7 +769,7 @@
                   ]
                 },
                 {
-                  "id": "6ce9167",
+                  "id": "86e4464",
                   "elType": "container",
                   "isInner": true,
                   "settings": {
@@ -787,7 +787,7 @@
                   },
                   "elements": [
                     {
-                      "id": "1f945a0",
+                      "id": "06561c9",
                       "elType": "widget",
                       "widgetType": "heading",
                       "isInner": false,
@@ -824,7 +824,7 @@
                       "elements": []
                     },
                     {
-                      "id": "e315280",
+                      "id": "1487ebf",
                       "elType": "widget",
                       "widgetType": "text-editor",
                       "isInner": false,
@@ -857,7 +857,7 @@
                   ]
                 },
                 {
-                  "id": "171bc1e",
+                  "id": "0531433",
                   "elType": "container",
                   "isInner": true,
                   "settings": {
@@ -875,7 +875,7 @@
                   },
                   "elements": [
                     {
-                      "id": "ea3c4b5",
+                      "id": "2998e60",
                       "elType": "widget",
                       "widgetType": "heading",
                       "isInner": false,
@@ -912,7 +912,7 @@
                       "elements": []
                     },
                     {
-                      "id": "6fc5785",
+                      "id": "1d05c0e",
                       "elType": "widget",
                       "widgetType": "text-editor",
                       "isInner": false,
@@ -945,7 +945,7 @@
                   ]
                 },
                 {
-                  "id": "6bb4255",
+                  "id": "1f81e81",
                   "elType": "widget",
                   "widgetType": "image",
                   "isInner": false,
@@ -970,7 +970,7 @@
               ]
             },
             {
-              "id": "574d1a8",
+              "id": "4dcf187",
               "elType": "container",
               "isInner": true,
               "settings": {
@@ -999,7 +999,7 @@
               },
               "elements": [
                 {
-                  "id": "1e209a6",
+                  "id": "03a4cc0",
                   "elType": "container",
                   "isInner": true,
                   "settings": {
@@ -1019,7 +1019,7 @@
                   },
                   "elements": [
                     {
-                      "id": "5245c2b",
+                      "id": "bf33ddd",
                       "elType": "widget",
                       "widgetType": "heading",
                       "isInner": false,
@@ -1057,7 +1057,7 @@
                       "elements": []
                     },
                     {
-                      "id": "8a0f726",
+                      "id": "e3994fe",
                       "elType": "widget",
                       "widgetType": "shortcode",
                       "isInner": false,
@@ -1083,7 +1083,7 @@
       ]
     },
     {
-      "id": "ef062f3",
+      "id": "baf1771",
       "elType": "container",
       "isInner": false,
       "settings": {
@@ -1129,7 +1129,7 @@
       },
       "elements": [
         {
-          "id": "4fff888",
+          "id": "1f2c0db",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -1169,7 +1169,7 @@
           "elements": []
         },
         {
-          "id": "a30968d",
+          "id": "77e1769",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -1206,7 +1206,7 @@
           "elements": []
         },
         {
-          "id": "deb6650",
+          "id": "b53c356",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -1243,29 +1243,29 @@
           "elements": []
         },
         {
-          "id": "c498660",
+          "id": "3721e5d",
           "elType": "widget",
           "widgetType": "accordion",
           "isInner": false,
           "settings": {
             "tabs": [
               {
-                "_id": "b4e1460",
+                "_id": "00bd442",
                 "tab_title": "Is the estimate really free?",
                 "tab_content": "<p>Yes. The on-site walkthrough and the written scope are free. You are not charged to have us measure the yard or explain the base and drainage.</p>"
               },
               {
-                "_id": "22e36be",
+                "_id": "47e6357",
                 "tab_title": "How soon can you come out?",
                 "tab_content": "<p>Call 818-297-2475 and we will find the next open walkthrough. Some Google reviews mention a wait when the crew is booked. We tell you that date up front.</p>"
               },
               {
-                "_id": "bc70869",
+                "_id": "708b9f2",
                 "tab_title": "Do you give prices over the phone?",
                 "tab_content": "<p>Not a final number. Price depends on demolition, grade, turf pile, and drainage. We measure on site and send a written number tied to a specific spec.</p>"
               },
               {
-                "_id": "c801515",
+                "_id": "60b54eb",
                 "tab_title": "What should I have ready?",
                 "tab_content": "<p>Your address, whether it is the front or back yard, a rough square footage if you have it, and whether you have dogs. Photos help if you cannot meet in person at first.</p>"
               }
@@ -1296,7 +1296,7 @@
       ]
     },
     {
-      "id": "8d4851b",
+      "id": "ce85d01",
       "elType": "container",
       "isInner": false,
       "settings": {
@@ -1342,7 +1342,7 @@
       },
       "elements": [
         {
-          "id": "716a13d",
+          "id": "e0f494b",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -1382,7 +1382,7 @@
           "elements": []
         },
         {
-          "id": "80b1feb",
+          "id": "ce977d5",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -1419,7 +1419,7 @@
           "elements": []
         },
         {
-          "id": "9cca22e",
+          "id": "3b385e8",
           "elType": "widget",
           "widgetType": "text-editor",
           "isInner": false,
@@ -1450,7 +1450,7 @@
           "elements": []
         },
         {
-          "id": "ea2f372",
+          "id": "6c601ff",
           "elType": "container",
           "isInner": true,
           "settings": {
@@ -1478,7 +1478,7 @@
           },
           "elements": [
             {
-              "id": "5692293",
+              "id": "fea3054",
               "elType": "widget",
               "widgetType": "button",
               "isInner": false,
@@ -1533,7 +1533,7 @@
               "elements": []
             },
             {
-              "id": "4973dc7",
+              "id": "55242dd",
               "elType": "widget",
               "widgetType": "button",
               "isInner": false,

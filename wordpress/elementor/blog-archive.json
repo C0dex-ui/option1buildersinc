@@ -1,7 +1,7 @@
 {
   "content": [
     {
-      "id": "9d3f51e",
+      "id": "c34d231",
       "elType": "container",
       "isInner": false,
       "settings": {
@@ -73,7 +73,7 @@
       },
       "elements": [
         {
-          "id": "9a5dea7",
+          "id": "b4cb8a2",
           "elType": "widget",
           "widgetType": "text-editor",
           "isInner": false,
@@ -109,7 +109,7 @@
           "elements": []
         },
         {
-          "id": "33de8df",
+          "id": "f413691",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -155,7 +155,7 @@
           "elements": []
         },
         {
-          "id": "5202fd6",
+          "id": "91a798a",
           "elType": "widget",
           "widgetType": "text-editor",
           "isInner": false,
@@ -190,7 +190,7 @@
           "elements": []
         },
         {
-          "id": "450f3bf",
+          "id": "148dca4",
           "elType": "container",
           "isInner": true,
           "settings": {
@@ -218,7 +218,7 @@
           },
           "elements": [
             {
-              "id": "f145cee",
+              "id": "9795703",
               "elType": "widget",
               "widgetType": "button",
               "isInner": false,
@@ -273,7 +273,7 @@
               "elements": []
             },
             {
-              "id": "2fd1dcf",
+              "id": "13c543e",
               "elType": "widget",
               "widgetType": "button",
               "isInner": false,
@@ -343,7 +343,7 @@
       ]
     },
     {
-      "id": "1d8e6f4",
+      "id": "94b66e4",
       "elType": "container",
       "isInner": false,
       "settings": {
@@ -389,7 +389,7 @@
       },
       "elements": [
         {
-          "id": "58b208a",
+          "id": "e159180",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -429,7 +429,7 @@
           "elements": []
         },
         {
-          "id": "386ae8c",
+          "id": "5830969",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -466,7 +466,7 @@
           "elements": []
         },
         {
-          "id": "d670be1",
+          "id": "9bd7e3e",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -503,7 +503,7 @@
           "elements": []
         },
         {
-          "id": "083dfa8",
+          "id": "10eb5e2",
           "elType": "widget",
           "widgetType": "text-editor",
           "isInner": false,
@@ -534,7 +534,7 @@
           "elements": []
         },
         {
-          "id": "47bf959",
+          "id": "6b90e41",
           "elType": "widget",
           "widgetType": "archive-posts",
           "isInner": false,
@@ -647,7 +647,7 @@
       ]
     },
     {
-      "id": "6fea4ab",
+      "id": "dfb1c00",
       "elType": "container",
       "isInner": false,
       "settings": {
@@ -693,7 +693,7 @@
       },
       "elements": [
         {
-          "id": "860ab2c",
+          "id": "c83f135",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -733,7 +733,7 @@
           "elements": []
         },
         {
-          "id": "5f5c6a8",
+          "id": "6108144",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -774,7 +774,7 @@
           "elements": []
         },
         {
-          "id": "e9d7deb",
+          "id": "220610b",
           "elType": "widget",
           "widgetType": "text-editor",
           "isInner": false,
@@ -806,7 +806,7 @@
           "elements": []
         },
         {
-          "id": "6049d3e",
+          "id": "87bf01b",
           "elType": "container",
           "isInner": true,
           "settings": {
@@ -834,7 +834,7 @@
           },
           "elements": [
             {
-              "id": "609eae1",
+              "id": "641d463",
               "elType": "widget",
               "widgetType": "button",
               "isInner": false,
@@ -889,7 +889,7 @@
               "elements": []
             },
             {
-              "id": "04436cf",
+              "id": "b489724",
               "elType": "widget",
               "widgetType": "button",
               "isInner": false,

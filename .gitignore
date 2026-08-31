@@ -16,6 +16,10 @@ live.html
 audit-out.txt
 *.ps1
 
+# Secrets and NeuronWriter local cache
+.env
+.neuronwriter/
+
 # Python
 **/__pycache__/
 

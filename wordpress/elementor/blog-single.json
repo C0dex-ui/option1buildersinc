@@ -1,7 +1,7 @@
 {
   "content": [
     {
-      "id": "232b628",
+      "id": "d7f0b78",
       "elType": "container",
       "isInner": false,
       "settings": {
@@ -73,7 +73,7 @@
       },
       "elements": [
         {
-          "id": "0f29f7c",
+          "id": "d83ada0",
           "elType": "widget",
           "widgetType": "breadcrumbs",
           "isInner": false,
@@ -110,7 +110,7 @@
           "elements": []
         },
         {
-          "id": "24cfa21",
+          "id": "ca2f45e",
           "elType": "widget",
           "widgetType": "theme-post-title",
           "isInner": false,
@@ -159,7 +159,7 @@
           "elements": []
         },
         {
-          "id": "de0f13f",
+          "id": "3193bac",
           "elType": "widget",
           "widgetType": "theme-post-excerpt",
           "isInner": false,
@@ -196,7 +196,7 @@
           "elements": []
         },
         {
-          "id": "a21e6d1",
+          "id": "cb53821",
           "elType": "container",
           "isInner": true,
           "settings": {
@@ -224,7 +224,7 @@
           },
           "elements": [
             {
-              "id": "76e5fd4",
+              "id": "1d6fb00",
               "elType": "widget",
               "widgetType": "button",
               "isInner": false,
@@ -279,7 +279,7 @@
               "elements": []
             },
             {
-              "id": "f8c7929",
+              "id": "de8f53f",
               "elType": "widget",
               "widgetType": "button",
               "isInner": false,
@@ -349,7 +349,7 @@
       ]
     },
     {
-      "id": "971496b",
+      "id": "7aa4229",
       "elType": "container",
       "isInner": false,
       "settings": {
@@ -395,7 +395,7 @@
       },
       "elements": [
         {
-          "id": "e4333cf",
+          "id": "58a48d0",
           "elType": "widget",
           "widgetType": "theme-post-featured-image",
           "isInner": false,
@@ -434,7 +434,7 @@
           "elements": []
         },
         {
-          "id": "c8f4f62",
+          "id": "cdd4ac9",
           "elType": "widget",
           "widgetType": "post-info",
           "isInner": false,
@@ -442,7 +442,7 @@
             "view": "inline",
             "icon_list": [
               {
-                "_id": "b473284",
+                "_id": "7de219d",
                 "type": "terms",
                 "taxonomy": "category",
                 "selected_icon": {
@@ -451,7 +451,7 @@
                 }
               },
               {
-                "_id": "97a76f9",
+                "_id": "6cc1f63",
                 "type": "date",
                 "selected_icon": {
                   "value": "",
@@ -490,7 +490,7 @@
           "elements": []
         },
         {
-          "id": "32be1be",
+          "id": "bb4a7de",
           "elType": "widget",
           "widgetType": "theme-post-content",
           "isInner": false,
@@ -523,7 +523,7 @@
       ]
     },
     {
-      "id": "56eef50",
+      "id": "d325308",
       "elType": "container",
       "isInner": false,
       "settings": {
@@ -569,7 +569,7 @@
       },
       "elements": [
         {
-          "id": "1ddbef5",
+          "id": "bce19f0",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -609,7 +609,7 @@
           "elements": []
         },
         {
-          "id": "af19364",
+          "id": "5641182",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -650,7 +650,7 @@
           "elements": []
         },
         {
-          "id": "1c14831",
+          "id": "7de72c8",
           "elType": "widget",
           "widgetType": "text-editor",
           "isInner": false,
@@ -682,7 +682,7 @@
           "elements": []
         },
         {
-          "id": "629d0c6",
+          "id": "81ebdf3",
           "elType": "container",
           "isInner": true,
           "settings": {
@@ -710,7 +710,7 @@
           },
           "elements": [
             {
-              "id": "e79245a",
+              "id": "7f4d9e8",
               "elType": "widget",
               "widgetType": "button",
               "isInner": false,
@@ -765,7 +765,7 @@
               "elements": []
             },
             {
-              "id": "d9ec58e",
+              "id": "edf29b0",
               "elType": "widget",
               "widgetType": "button",
               "isInner": false,

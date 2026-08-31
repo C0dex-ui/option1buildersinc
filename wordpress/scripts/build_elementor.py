@@ -6,7 +6,7 @@ import json
 import secrets
 from pathlib import Path
 
-from gen_service_html import BY_SLUG, SERVICES
+from gen_service_html import BY_SLUG, SERVICES, SHARED_HIGHLIGHTS
 
 OUT = Path(__file__).resolve().parents[1] / "elementor"
 
@@ -48,6 +48,8 @@ def container(settings, elements, inner=False):
 def widget(wtype, settings):
     s = dict(settings)
     s.setdefault("_margin", dim(0, 0, 0, 0, True))
+    if "css_classes" in s and "_css_classes" not in s:
+        s["_css_classes"] = s["css_classes"]
     return {"id": uid(), "elType": "widget", "widgetType": wtype, "isInner": False, "settings": s, "elements": []}
 
 
@@ -461,36 +463,39 @@ def hero_bg(extra=None):
     return s
 
 
-def page_hero(h1, sub, crumb, secondary=None, primary=None, crumbs=None):
+def page_hero(h1, sub, crumb, secondary=None, primary=None, crumbs=None, chips=None):
     sec = secondary or ("Call 818-297-2475", "tel:+18182972475", "ghost")
     pri = primary or ("Book a Free Estimate", "/contact-us/", "gold")
     trail = crumbs or f'<p><a href="/" style="color:#c9c9c4">Home</a> / {crumb}</p>'
+    kids = [
+        text(
+            trail,
+            MUTED,
+            12,
+            True,
+            extra=ty(size=12, weight="600", transform="uppercase", ls=1.4, lh=1.4),
+        ),
+        heading(
+            h1,
+            "h1",
+            WHITE,
+            46,
+            True,
+            extra={
+                **ty(size=46, weight="700", transform="uppercase", lh=1.12, ls=0.5, extra={
+                    "typography_font_size_tablet": slider(34),
+                    "typography_font_size_mobile": slider(28),
+                }),
+                "css_classes": "o1b-h-rule",
+            },
+        ),
+        text(f"<p>{sub}</p>", "#f0efe9", 19, True, extra={"typography_font_size_mobile": slider(16)}),
+        actions(pri, sec),
+    ]
+    if chips:
+        kids.append(text(chips, "#e3e0d8", 13.5, True, extra={"css_classes": "o1b-hero-points"}))
     return band(
-        [
-            text(
-                trail,
-                MUTED,
-                12,
-                True,
-                extra=ty(size=12, weight="600", transform="uppercase", ls=1.4, lh=1.4),
-            ),
-            heading(
-                h1,
-                "h1",
-                WHITE,
-                46,
-                True,
-                extra={
-                    **ty(size=46, weight="700", transform="uppercase", lh=1.12, ls=0.5, extra={
-                        "typography_font_size_tablet": slider(34),
-                        "typography_font_size_mobile": slider(28),
-                    }),
-                    "css_classes": "o1b-h-rule",
-                },
-            ),
-            text(f"<p>{sub}</p>", "#f0efe9", 19, True, extra={"typography_font_size_mobile": slider(16)}),
-            actions(pri, sec),
-        ],
+        kids,
         None,
         72,
         "o1b-page-hero o1b-h-rule",
@@ -771,6 +776,7 @@ def card(key, tag, h3, p, meta, href=None):
         "background_color": WHITE,
     }
     if href:
+        box["html_tag"] = "a"
         box["link"] = {"url": href, "is_external": "", "nofollow": ""}
     return col(
         [
@@ -1034,6 +1040,142 @@ def manager_photo():
 
 def award_tile(key):
     return container({"content_width": "full", "css_classes": "o1b-award"}, [img(key)], True)
+
+
+AWARD_KEYS = [
+    "award-best-remodeler",
+    "award-excellence-2026",
+    "award-remodel",
+    "award-angi-2025",
+    "award-houzz-2023",
+    "award-trusted",
+]
+
+
+def awards_row(light=False):
+    css = "o1b-awards o1b-awards--light" if light else "o1b-awards"
+    return container(
+        {
+            "content_width": "full",
+            "css_classes": css,
+            "padding": dim(8 if light else 40, 0, 0, 0),
+        },
+        [
+            heading(
+                "Awards & recognition",
+                "p",
+                GOLD,
+                12,
+                True,
+                extra=ty(size=12, weight="600", transform="uppercase", ls=2.4),
+            ),
+            row(
+                [col([award_tile(key)], 16) for key in AWARD_KEYS],
+                16,
+                {"flex_align_items": "stretch"},
+            ),
+        ],
+        True,
+    )
+
+
+def assembled_highlights(svc):
+    specific = list(svc["highlights"])
+    fill = SHARED_HIGHLIGHTS[: max(0, 4 - len(specific))]
+    return specific + fill
+
+
+def service_hero_chips(svc):
+    strong, rest = svc.get("hero_chip") or ("Since", "2002")
+    return (
+        "<p><span><strong>5.0</strong> from 31 Google reviews</span>"
+        f"<span><strong>{strong}</strong> {rest}</span>"
+        "<span><strong>Licensed &amp; insured</strong> · CA #1122918</span></p>"
+    )
+
+
+def service_cta_band():
+    return band(
+        [
+            row(
+                [
+                    col(
+                        [
+                            eyebrow("Get a written number"),
+                            heading(
+                                "Request a Free Estimate",
+                                "h2",
+                                WHITE,
+                                36,
+                                extra={"typography_font_size_mobile": slider(26)},
+                            ),
+                            text(
+                                "<p>Tell us about the yard. We follow up to schedule a walkthrough, measure on site, and send a written scope.</p>",
+                                "#d5d3cc",
+                                17,
+                            ),
+                        ],
+                        58,
+                    ),
+                    col(
+                        [
+                            actions(
+                                ("Book a Free Estimate", "/contact-us/", "gold"),
+                                ("Call 818-297-2475", "tel:+18182972475", "ghost"),
+                                False,
+                            )
+                        ],
+                        42,
+                        {"css_classes": "o1b-cta-band-actions", "flex_justify_content": "flex-end"},
+                    ),
+                ],
+                48,
+                {"css_classes": "o1b-cta-band-in", "flex_align_items": "center"},
+            )
+        ],
+        "#181818",
+        56,
+        "o1b-cta-band o1b-dark",
+    )
+
+
+ESTIMATE_STEPS = [
+    ("1", "Walk the property", "We schedule a walkthrough and talk through how you actually use the yard. The on-site walkthrough is free."),
+    ("2", "Measure on site", "We measure the space. You are not charged to have us measure the yard or explain the base and drainage."),
+    ("3", "Written scope", "We send a written number tied to a specific spec, not a per-foot guess over the phone."),
+]
+
+
+def service_estimate(svc):
+    return [
+        eyebrow("How a free estimate works"),
+        heading(svc["h2_estimate"], "h2", HEADING, 36, extra={"typography_font_size_mobile": slider(26)}),
+        container(
+            {
+                "content_width": "full",
+                "flex_direction": "row",
+                "flex_gap": gap(26),
+                "padding": dim(26, 0, 0, 0),
+                "css_classes": "o1b-steps o1b-steps-3",
+            },
+            [step_card(n, h, p) for n, h, p in ESTIMATE_STEPS],
+            True,
+        ),
+        container(
+            {
+                "content_width": "full",
+                "css_classes": "o1b-mid-cta",
+                "padding": dim(40, 0, 8, 0),
+            },
+            [
+                actions(
+                    ("Book a Free Estimate", "/contact-us/", "gold"),
+                    ("Call 818-297-2475", "tel:+18182972475", "dark"),
+                )
+            ],
+            True,
+        ),
+    ]
 
 
 def stats_row():
@@ -1332,25 +1474,7 @@ def build_home():
                 ],
                 64,
             ),
-            container(
-                {"content_width": "full", "css_classes": "o1b-awards", "padding": dim(40, 0, 0, 0)},
-                [
-                    heading("Awards & recognition", "p", GOLD, 12, True, extra=ty(size=12, weight="600", transform="uppercase", ls=2.4)),
-                    row(
-                        [
-                            col([award_tile("award-best-remodeler")], 16),
-                            col([award_tile("award-excellence-2026")], 16),
-                            col([award_tile("award-remodel")], 16),
-                            col([award_tile("award-angi-2025")], 16),
-                            col([award_tile("award-houzz-2023")], 16),
-                            col([award_tile("award-trusted")], 16),
-                        ],
-                        16,
-                        {"flex_align_items": "stretch"},
-                    ),
-                ],
-                True,
-            ),
+            awards_row(),
         ],
         INK,
         96,
@@ -2033,29 +2157,73 @@ def build_service_page(svc):
     )
     overview = [
         eyebrow("What we install"),
-        heading(f'{svc["card_h3"]} in Encino', "h2", HEADING, 36, extra={"typography_font_size_mobile": slider(26)}),
         text(f"<p>{svc['lead']}</p>", BODY, 17),
     ]
     if svc["image"]:
-        overview.append(img(svc["image"].replace(".jpg", "")))
+        key = svc["image"].replace(".jpg", "")
+        cls = "o1b-service-media"
+        if svc.get("media_frame"):
+            cls += " o1b-service-media--frame"
+        overview.append(img(key, {"css_classes": cls}))
+    overview += [
+        eyebrow("Why homeowners call"),
+        heading(svc["h2_includes"], "h2", HEADING, 36, extra={"typography_font_size_mobile": slider(26)}),
+        row(
+            [mini(h, p) for h, p in assembled_highlights(svc)],
+            22,
+            {"css_classes": "o1b-highlights"},
+        ),
+    ]
+    includes = []
     for title, para in svc["blocks"]:
-        overview.append(heading(title, "h2", HEADING, 24, extra={"css_classes": "o1b-service-h"}))
-        overview.append(text(f"<p>{para}</p>", BODY, 17))
+        includes.append(
+            heading(
+                title,
+                "h3",
+                HEADING,
+                20,
+                extra={
+                    **ty(size=20, weight="700", lh=1.3),
+                    "typography_text_transform": "none",
+                    "css_classes": "o1b-service-h",
+                },
+            )
+        )
+        includes.append(text(f"<p>{para}</p>", BODY, 17))
+    if svc.get("blog_note"):
+        _href, label = svc["blog_note"]
+        includes.append(
+            text(
+                f'<p>Read <a href="/blog/#turf-base">{label}</a> on the Encino landscaping blog.</p>',
+                BODY,
+                17,
+            )
+        )
+    trust = text(
+        "<p>Option 1 Builders is licensed, bonded, and insured under California license #1122918. The Encino showroom is at 16400 Ventura Blvd, Suite 319. We measure on site and send a written scope. See <a href=\"/about-us/\">about this Encino landscaping company</a>, walk <a href=\"/projects/\">finished Encino projects</a>, or <a href=\"/contact-us/\">request a written estimate</a>.</p>",
+        BODY,
+        16,
+        extra={"css_classes": "o1b-pullout o1b-service-trust"},
+    )
     related = [BY_SLUG[slug] for slug in svc["related"]]
     return tpl(
         svc["nav"],
         [
-            page_hero(svc["h1"], svc["hero_sub"], svc["nav"], crumbs=crumbs),
-            band(overview, WHITE, 96, "o1b-watermark o1b-wm-services"),
+            page_hero(
+                svc["h1"],
+                svc["hero_sub"],
+                svc["nav"],
+                crumbs=crumbs,
+                chips=service_hero_chips(svc),
+            ),
+            band(overview, WHITE, 96, "o1b-watermark o1b-watermark-left o1b-wm-services"),
+            service_cta_band(),
+            band(includes + service_estimate(svc) + [trust], WHITE, 96, "o1b-service-scope"),
             band(
-                [
-                    eyebrow("Related services", True),
-                    heading("Other Work We Quote on Its Own", "h2", HEADING, 36, True),
-                    service_cards(related, "/services/", seven=False),
-                ],
+                [awards_row(True), review_feed()],
                 TINT,
                 96,
-                "o1b-watermark o1b-wm-services",
+                "o1b-watermark o1b-wm-reviews",
             ),
             band(
                 [
@@ -2066,6 +2234,16 @@ def build_service_page(svc):
                 WHITE,
                 96,
                 "o1b-watermark o1b-wm-faq",
+            ),
+            band(
+                [
+                    eyebrow("Related services", True),
+                    heading("Other Work We Quote on Its Own", "h2", HEADING, 36, True),
+                    service_cards(related, "/services/", seven=False),
+                ],
+                TINT,
+                96,
+                "o1b-watermark o1b-wm-services",
             ),
             closing(svc["closing_h2"], svc["closing_p"]),
         ],

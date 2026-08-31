@@ -43,6 +43,9 @@ if (!function_exists('o1b_media_files')) {
       'project-06' => 'projects/project-06.jpg',
       'project-09' => 'projects/project-09.jpg',
       'project-10' => 'projects/project-10.jpg',
+      'project-11' => 'projects/project-11.jpg',
+      'project-12' => 'projects/project-12.jpg',
+      'project-13' => 'projects/project-13.jpg',
       'badge-google' => 'badges/google.png',
       'badge-houzz' => 'badges/houzz.png',
       'badge-bbb' => 'badges/bbb.png',
@@ -116,6 +119,20 @@ function o1b_attach_uploaded_src() {
   return $out;
 }
 
+if (!function_exists('o1b_service_children')) {
+function o1b_service_children() {
+  return [
+    'artificial-grass-installation' => 'Artificial Grass Installation',
+    'paver-installation' => 'Paver Installation',
+    'landscape-design-installation' => 'Landscape Design & Installation',
+    'stepping-stones-pathways' => 'Stepping Stones & Pathways',
+    'concrete-dg-gravel' => 'Concrete, DG & Gravel',
+    'irrigation-drainage' => 'Irrigation & Drainage',
+    'vinyl-fencing' => 'Vinyl Fencing',
+  ];
+}
+}
+
 if (!function_exists('o1b_build_menu')) {
 function o1b_build_menu($slug, $name, $items, $page_ids) {
   $menu = wp_get_nav_menu_object($slug);
@@ -136,28 +153,63 @@ function o1b_build_menu($slug, $name, $items, $page_ids) {
     }
   }
   foreach ($items as $item) {
-    $path = trim((string) ($item['path'] ?? ''), '/');
-    $hash = '';
-    if (strpos($path, '#') !== false) {
-      [$path, $hash] = explode('#', $path, 2);
-      $hash = '#' . $hash;
-    }
-    $key = $path === '' ? 'home' : $path;
-    $page_id = (int) ($page_ids[$key] ?? 0);
-    if (!$page_id) {
-      continue;
-    }
-    $url = get_permalink($page_id) . ($hash !== '#' ? $hash : '');
-    wp_update_nav_menu_item($menu_id, 0, [
-      'menu-item-title' => $item['title'],
-      'menu-item-object' => 'page',
-      'menu-item-object-id' => $page_id,
-      'menu-item-type' => 'post_type',
-      'menu-item-status' => 'publish',
-      'menu-item-url' => $url,
-    ]);
+    o1b_menu_add_item($menu_id, $item, $page_ids, 0);
   }
   return $menu_id;
+}
+}
+
+if (!function_exists('o1b_menu_add_item')) {
+function o1b_menu_add_item($menu_id, $item, $page_ids, $parent_item = 0) {
+  $path = trim((string) ($item['path'] ?? ''), '/');
+  $hash = '';
+  if (strpos($path, '#') !== false) {
+    [$path, $hash] = explode('#', $path, 2);
+    $hash = '#' . $hash;
+  }
+  $key = $path === '' ? 'home' : basename($path);
+  $page_id = (int) ($page_ids[$key] ?? 0);
+  if (!$page_id) {
+    return 0;
+  }
+  $url = get_permalink($page_id) . ($hash !== '#' ? $hash : '');
+  $id = wp_update_nav_menu_item($menu_id, 0, [
+    'menu-item-title' => $item['title'],
+    'menu-item-object' => 'page',
+    'menu-item-object-id' => $page_id,
+    'menu-item-type' => 'post_type',
+    'menu-item-status' => 'publish',
+    'menu-item-parent-id' => (int) $parent_item,
+    'menu-item-url' => $url,
+  ]);
+  foreach ($item['children'] ?? [] as $child) {
+    o1b_menu_add_item($menu_id, $child, $page_ids, $id);
+  }
+  return (int) $id;
+}
+}
+
+if (!function_exists('o1b_ensure_live_page')) {
+function o1b_ensure_live_page($title, $slug, $parent_id = 0) {
+  $path = $parent_id ? (get_page_uri($parent_id) . '/' . $slug) : $slug;
+  $found = get_page_by_path($path, OBJECT, 'page');
+  if ($found) {
+    $id = (int) $found->ID;
+    if ((int) $found->post_parent !== (int) $parent_id) {
+      wp_update_post(['ID' => $id, 'post_parent' => (int) $parent_id]);
+    }
+    if ($found->post_status !== 'publish') {
+      wp_update_post(['ID' => $id, 'post_status' => 'publish']);
+    }
+    return $id;
+  }
+  return (int) wp_insert_post([
+    'post_type' => 'page',
+    'post_status' => 'publish',
+    'post_title' => $title,
+    'post_name' => $slug,
+    'post_parent' => (int) $parent_id,
+  ]);
 }
 }
 
@@ -285,8 +337,85 @@ function o1b_create_live_pages() {
     update_post_meta($ids[$key], '_wp_page_template', 'elementor_header_footer');
     update_post_meta($ids[$key], '_elementor_edit_mode', 'builder');
   }
+  $ids = o1b_create_service_children($ids);
   update_option('o1b_page_ids', $ids);
   return $ids;
+}
+
+function o1b_create_service_children($ids) {
+  $parent = (int) ($ids['services'] ?? 0);
+  if (!$parent) {
+    return $ids;
+  }
+  foreach (o1b_service_children() as $slug => $title) {
+    if (!empty($ids[$slug]) && get_post((int) $ids[$slug]) && get_post_status((int) $ids[$slug]) === 'publish') {
+      continue;
+    }
+    $ids[$slug] = o1b_ensure_live_page($title, $slug, $parent);
+    update_post_meta($ids[$slug], '_wp_page_template', 'elementor_header_footer');
+    update_post_meta($ids[$slug], '_elementor_edit_mode', 'builder');
+  }
+  return $ids;
+}
+
+function o1b_live_menus($ids) {
+  $service_children = [];
+  foreach (o1b_service_children() as $slug => $title) {
+    $service_children[] = ['title' => $title, 'path' => '/services/' . $slug . '/'];
+  }
+
+  o1b_build_menu('o1b-primary', 'Option 1 Primary', [
+    [
+      'title' => 'Services',
+      'path' => '/services/',
+      'children' => $service_children,
+    ],
+    ['title' => 'Projects', 'path' => '/projects/'],
+    ['title' => 'About Us', 'path' => '/about-us/'],
+    ['title' => 'Blog', 'path' => '/blog/'],
+    ['title' => 'Contact', 'path' => '/contact-us/'],
+  ], $ids);
+
+  o1b_build_menu('o1b-footer-services', 'Option 1 Footer Services', $service_children, $ids);
+
+  o1b_build_menu('o1b-footer-pages', 'Option 1 Footer Pages', [
+    ['title' => 'Home', 'path' => '/'],
+    ['title' => 'Services', 'path' => '/services/'],
+    ['title' => 'Projects', 'path' => '/projects/'],
+    ['title' => 'About Us', 'path' => '/about-us/'],
+    ['title' => 'Blog', 'path' => '/blog/'],
+    ['title' => 'Contact Us', 'path' => '/contact-us/'],
+  ], $ids);
+
+  $locations = get_theme_mod('nav_menu_locations', []);
+  $primary = wp_get_nav_menu_object('o1b-primary');
+  if ($primary) {
+    $locations['menu-1'] = (int) $primary->term_id;
+    $locations['primary'] = (int) $primary->term_id;
+    set_theme_mod('nav_menu_locations', $locations);
+  }
+}
+
+function o1b_ensure_service_children() {
+  $ids = get_option('o1b_page_ids', []);
+  if (!is_array($ids)) {
+    $ids = [];
+  }
+  if (empty($ids['services'])) {
+    $found = get_page_by_path('services', OBJECT, 'page');
+    if ($found) {
+      $ids['services'] = (int) $found->ID;
+    }
+  }
+  $ids = o1b_create_service_children($ids);
+  update_option('o1b_page_ids', $ids);
+  o1b_live_menus($ids);
+  flush_rewrite_rules(false);
+  $urls = [];
+  foreach (array_keys(o1b_service_children()) as $slug) {
+    $urls[$slug] = !empty($ids[$slug]) ? get_permalink((int) $ids[$slug]) : '';
+  }
+  return ['pages' => $ids, 'urls' => $urls];
 }
 
 function o1b_draft_skyline_footer() {
@@ -321,44 +450,26 @@ function o1b_live_bootstrap() {
     update_option('page_for_posts', $ids['blog']);
   }
 
-  o1b_build_menu('o1b-primary', 'Option 1 Primary', [
-    ['title' => 'Services', 'path' => '/services/'],
-    ['title' => 'Projects', 'path' => '/projects/'],
-    ['title' => 'About Us', 'path' => '/about-us/'],
-    ['title' => 'Blog', 'path' => '/blog/'],
-    ['title' => 'Contact', 'path' => '/contact-us/'],
-  ], $ids);
-
-  o1b_build_menu('o1b-footer-services', 'Option 1 Footer Services', [
-    ['title' => 'Artificial Grass Installation', 'path' => '/services/#turf'],
-    ['title' => 'Paver Installation', 'path' => '/services/#pavers'],
-    ['title' => 'Landscape Design & Installation', 'path' => '/services/#design'],
-    ['title' => 'Stepping Stones & Pathways', 'path' => '/services/#stones'],
-    ['title' => 'Concrete, DG & Gravel', 'path' => '/services/#finishes'],
-    ['title' => 'Irrigation & Drainage', 'path' => '/services/#irrigation'],
-  ], $ids);
-
-  o1b_build_menu('o1b-footer-pages', 'Option 1 Footer Pages', [
-    ['title' => 'Home', 'path' => '/'],
-    ['title' => 'Services', 'path' => '/services/'],
-    ['title' => 'Projects', 'path' => '/projects/'],
-    ['title' => 'About Us', 'path' => '/about-us/'],
-    ['title' => 'Blog', 'path' => '/blog/'],
-    ['title' => 'Contact Us', 'path' => '/contact-us/'],
-  ], $ids);
-
-  $locations = get_theme_mod('nav_menu_locations', []);
-  $primary = wp_get_nav_menu_object('o1b-primary');
-  if ($primary) {
-    $locations['menu-1'] = (int) $primary->term_id;
-    $locations['primary'] = (int) $primary->term_id;
-    set_theme_mod('nav_menu_locations', $locations);
-  }
+  o1b_live_menus($ids);
 
   $media = o1b_attach_uploaded_src();
   $kit = o1b_apply_kit();
   $footer = o1b_draft_skyline_footer();
   flush_rewrite_rules(false);
+
+  $urls = [
+    'home' => home_url('/'),
+    'services' => get_permalink($ids['services']),
+    'projects' => get_permalink($ids['projects']),
+    'about-us' => get_permalink($ids['about-us']),
+    'blog' => get_permalink($ids['blog']),
+    'contact-us' => get_permalink($ids['contact-us']),
+  ];
+  foreach (array_keys(o1b_service_children()) as $slug) {
+    if (!empty($ids[$slug])) {
+      $urls[$slug] = get_permalink((int) $ids[$slug]);
+    }
+  }
 
   return [
     'drafted' => $drafted,
@@ -368,13 +479,6 @@ function o1b_live_bootstrap() {
     'skyline_footer' => $footer,
     'theme' => wp_get_theme()->get_stylesheet(),
     'front' => (int) get_option('page_on_front'),
-    'urls' => [
-      'home' => home_url('/'),
-      'services' => get_permalink($ids['services']),
-      'projects' => get_permalink($ids['projects']),
-      'about-us' => get_permalink($ids['about-us']),
-      'blog' => get_permalink($ids['blog']),
-      'contact-us' => get_permalink($ids['contact-us']),
-    ],
+    'urls' => $urls,
   ];
 }

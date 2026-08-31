@@ -196,6 +196,13 @@ function o1b_import_all() {
     'home' => 'home',
     'about-us' => 'about-us',
     'services' => 'services',
+    'artificial-grass-installation' => 'artificial-grass-installation',
+    'paver-installation' => 'paver-installation',
+    'landscape-design-installation' => 'landscape-design-installation',
+    'stepping-stones-pathways' => 'stepping-stones-pathways',
+    'concrete-dg-gravel' => 'concrete-dg-gravel',
+    'irrigation-drainage' => 'irrigation-drainage',
+    'vinyl-fencing' => 'vinyl-fencing',
     'projects' => 'projects',
     'contact-us' => 'contact-us',
   ];

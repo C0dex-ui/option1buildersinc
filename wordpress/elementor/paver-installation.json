@@ -1,7 +1,7 @@
 {
   "content": [
     {
-      "id": "45bd1cd",
+      "id": "dd229d9",
       "elType": "container",
       "isInner": false,
       "settings": {
@@ -73,7 +73,7 @@
       },
       "elements": [
         {
-          "id": "a8ac028",
+          "id": "dc151f3",
           "elType": "widget",
           "widgetType": "text-editor",
           "isInner": false,
@@ -109,7 +109,7 @@
           "elements": []
         },
         {
-          "id": "58f5cbb",
+          "id": "474a44f",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -155,7 +155,7 @@
           "elements": []
         },
         {
-          "id": "1f751c9",
+          "id": "6c61a40",
           "elType": "widget",
           "widgetType": "text-editor",
           "isInner": false,
@@ -190,7 +190,7 @@
           "elements": []
         },
         {
-          "id": "0d51eba",
+          "id": "711a222",
           "elType": "container",
           "isInner": true,
           "settings": {
@@ -218,7 +218,7 @@
           },
           "elements": [
             {
-              "id": "ee1cb6c",
+              "id": "5bf7e5c",
               "elType": "widget",
               "widgetType": "button",
               "isInner": false,
@@ -273,7 +273,7 @@
               "elements": []
             },
             {
-              "id": "acddbd9",
+              "id": "b8de61b",
               "elType": "widget",
               "widgetType": "button",
               "isInner": false,
@@ -339,11 +339,43 @@
               "elements": []
             }
           ]
+        },
+        {
+          "id": "f390abb",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "isInner": false,
+          "settings": {
+            "editor": "<p><span><strong>5.0</strong> from 31 Google reviews</span><span><strong>Since</strong> 2002</span><span><strong>Licensed &amp; insured</strong> · CA #1122918</span></p>",
+            "text_color": "#e3e0d8",
+            "align": "center",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+              "unit": "px",
+              "size": 13.5
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+              "unit": "em",
+              "size": 1.75
+            },
+            "css_classes": "o1b-hero-points",
+            "_margin": {
+              "unit": "px",
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0",
+              "isLinked": true
+            }
+          },
+          "elements": []
         }
       ]
     },
     {
-      "id": "7bee0b8",
+      "id": "a5709e7",
       "elType": "container",
       "isInner": false,
       "settings": {
@@ -385,11 +417,11 @@
         },
         "background_background": "classic",
         "background_color": "#ffffff",
-        "css_classes": "o1b-watermark o1b-wm-services"
+        "css_classes": "o1b-watermark o1b-watermark-left o1b-wm-services"
       },
       "elements": [
         {
-          "id": "ebc0b0b",
+          "id": "46cdad6",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -397,8 +429,8 @@
             "title": "Services",
             "header_size": "p",
             "title_color": "#202321",
-            "align": "center",
-            "css_classes": "o1b-ghost",
+            "align": "left",
+            "css_classes": "o1b-ghost o1b-ghost-left",
             "_position": "absolute",
             "z_index": 0,
             "typography_typography": "custom",
@@ -429,7 +461,7 @@
           "elements": []
         },
         {
-          "id": "84c83b6",
+          "id": "7eafe21",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -466,12 +498,103 @@
           "elements": []
         },
         {
-          "id": "6eaeca3",
+          "id": "64bdf63",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "isInner": false,
+          "settings": {
+            "editor": "<p>Option 1 Builders installs pavers and hardscape in Encino. Pavers are set on a compacted base with bedding sand and edge restraints, which is what keeps them from shifting or sinking later. That is where the labor goes.</p>",
+            "text_color": "#383d3e",
+            "align": "left",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+              "unit": "px",
+              "size": 17
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+              "unit": "em",
+              "size": 1.75
+            },
+            "_margin": {
+              "unit": "px",
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0",
+              "isLinked": true
+            }
+          },
+          "elements": []
+        },
+        {
+          "id": "76b0d4e",
+          "elType": "widget",
+          "widgetType": "image",
+          "isInner": false,
+          "settings": {
+            "image": {
+              "url": "{{media_url:project-09}}",
+              "id": "{{media:project-09}}"
+            },
+            "image_size": "full",
+            "css_classes": "o1b-service-media o1b-service-media--frame",
+            "_margin": {
+              "unit": "px",
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0",
+              "isLinked": true
+            }
+          },
+          "elements": []
+        },
+        {
+          "id": "b0a1d07",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
           "settings": {
-            "title": "Paver Installation & Hardscape in Encino",
+            "title": "Why homeowners call",
+            "header_size": "p",
+            "title_color": "#b79a61",
+            "align": "left",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+              "unit": "px",
+              "size": 12
+            },
+            "typography_font_weight": "600",
+            "typography_text_transform": "uppercase",
+            "typography_line_height": {
+              "unit": "em",
+              "size": 1.4
+            },
+            "typography_letter_spacing": {
+              "unit": "px",
+              "size": 2.4
+            },
+            "_margin": {
+              "unit": "px",
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0",
+              "isLinked": true
+            }
+          },
+          "elements": []
+        },
+        {
+          "id": "b4936f4",
+          "elType": "widget",
+          "widgetType": "heading",
+          "isInner": false,
+          "settings": {
+            "title": "What This Paver Installation Includes",
             "header_size": "h2",
             "title_color": "#292e2e",
             "align": "left",
@@ -507,26 +630,26 @@
           "elements": []
         },
         {
-          "id": "d1b9b1a",
-          "elType": "widget",
-          "widgetType": "text-editor",
-          "isInner": false,
+          "id": "29f12bc",
+          "elType": "container",
+          "isInner": true,
           "settings": {
-            "editor": "<p>Option 1 Builders installs pavers and hardscape in Encino. Pavers are set on a compacted base with bedding sand and edge restraints, which is what keeps them from shifting or sinking later. That is where the labor goes.</p>",
-            "text_color": "#383d3e",
-            "align": "left",
-            "typography_typography": "custom",
-            "typography_font_family": "Montserrat",
-            "typography_font_size": {
-              "unit": "px",
-              "size": 17
+            "content_width": "full",
+            "flex_direction": "row",
+            "flex_direction_tablet": "column",
+            "flex_direction_mobile": "column",
+            "flex_wrap": "nowrap",
+            "flex_wrap_tablet": "wrap",
+            "flex_wrap_mobile": "wrap",
+            "flex_gap": {
+              "column": "22",
+              "row": "22",
+              "isLinked": true,
+              "unit": "px"
             },
-            "typography_font_weight": "400",
-            "typography_line_height": {
-              "unit": "em",
-              "size": 1.75
-            },
-            "_margin": {
+            "flex_align_items": "stretch",
+            "css_classes": "o1b-highlights",
+            "padding": {
               "unit": "px",
               "top": "0",
               "right": "0",
@@ -535,20 +658,602 @@
               "isLinked": true
             }
           },
-          "elements": []
-        },
-        {
-          "id": "d35b1de",
-          "elType": "widget",
-          "widgetType": "image",
-          "isInner": false,
-          "settings": {
-            "image": {
-              "url": "{{media_url:project-09}}",
-              "id": "{{media:project-09}}"
+          "elements": [
+            {
+              "id": "925edc3",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "content_width": "full",
+                "flex_direction": "column",
+                "width_tablet": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 32
+                },
+                "padding": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "0",
+                  "left": "0",
+                  "isLinked": true
+                }
+              },
+              "elements": [
+                {
+                  "id": "084c878",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "content_width": "full",
+                    "css_classes": "o1b-mini",
+                    "background_background": "classic",
+                    "background_color": "#ffffff",
+                    "padding": {
+                      "unit": "px",
+                      "top": "28",
+                      "right": "26",
+                      "bottom": "28",
+                      "left": "26",
+                      "isLinked": false
+                    },
+                    "border_border": "solid",
+                    "border_width": {
+                      "unit": "px",
+                      "top": "1",
+                      "right": "1",
+                      "bottom": "1",
+                      "left": "1",
+                      "isLinked": true
+                    },
+                    "border_color": "#d9d9d6",
+                    "flex_direction": "column"
+                  },
+                  "elements": [
+                    {
+                      "id": "0d00bb6",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "isInner": false,
+                      "settings": {
+                        "title": "Compacted base and restraints",
+                        "header_size": "h3",
+                        "title_color": "#292e2e",
+                        "align": "left",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 18
+                        },
+                        "typography_font_weight": "700",
+                        "typography_text_transform": "uppercase",
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.18
+                        },
+                        "typography_letter_spacing": {
+                          "unit": "px",
+                          "size": 0.5
+                        },
+                        "_margin": {
+                          "unit": "px",
+                          "top": "0",
+                          "right": "0",
+                          "bottom": "0",
+                          "left": "0",
+                          "isLinked": true
+                        }
+                      },
+                      "elements": []
+                    },
+                    {
+                      "id": "b9635ad",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "isInner": false,
+                      "settings": {
+                        "editor": "<p>Pavers are set on a compacted base with bedding sand and edge restraints, which is what keeps them from shifting.</p>",
+                        "text_color": "#383d3e",
+                        "align": "left",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15.5
+                        },
+                        "typography_font_weight": "400",
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.75
+                        },
+                        "_margin": {
+                          "unit": "px",
+                          "top": "0",
+                          "right": "0",
+                          "bottom": "0",
+                          "left": "0",
+                          "isLinked": true
+                        }
+                      },
+                      "elements": []
+                    }
+                  ]
+                }
+              ]
             },
-            "image_size": "full",
-            "_margin": {
+            {
+              "id": "b8a4e03",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "content_width": "full",
+                "flex_direction": "column",
+                "width_tablet": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 32
+                },
+                "padding": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "0",
+                  "left": "0",
+                  "isLinked": true
+                }
+              },
+              "elements": [
+                {
+                  "id": "2b7ff95",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "content_width": "full",
+                    "css_classes": "o1b-mini",
+                    "background_background": "classic",
+                    "background_color": "#ffffff",
+                    "padding": {
+                      "unit": "px",
+                      "top": "28",
+                      "right": "26",
+                      "bottom": "28",
+                      "left": "26",
+                      "isLinked": false
+                    },
+                    "border_border": "solid",
+                    "border_width": {
+                      "unit": "px",
+                      "top": "1",
+                      "right": "1",
+                      "bottom": "1",
+                      "left": "1",
+                      "isLinked": true
+                    },
+                    "border_color": "#d9d9d6",
+                    "flex_direction": "column"
+                  },
+                  "elements": [
+                    {
+                      "id": "79e1ee0",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "isInner": false,
+                      "settings": {
+                        "title": "Licensed, bonded, insured",
+                        "header_size": "h3",
+                        "title_color": "#292e2e",
+                        "align": "left",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 18
+                        },
+                        "typography_font_weight": "700",
+                        "typography_text_transform": "uppercase",
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.18
+                        },
+                        "typography_letter_spacing": {
+                          "unit": "px",
+                          "size": 0.5
+                        },
+                        "_margin": {
+                          "unit": "px",
+                          "top": "0",
+                          "right": "0",
+                          "bottom": "0",
+                          "left": "0",
+                          "isLinked": true
+                        }
+                      },
+                      "elements": []
+                    },
+                    {
+                      "id": "3a4ca33",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "isInner": false,
+                      "settings": {
+                        "editor": "<p>Licensed, bonded, and insured under California license #1122918. You can verify that number with the CSLB.</p>",
+                        "text_color": "#383d3e",
+                        "align": "left",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15.5
+                        },
+                        "typography_font_weight": "400",
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.75
+                        },
+                        "_margin": {
+                          "unit": "px",
+                          "top": "0",
+                          "right": "0",
+                          "bottom": "0",
+                          "left": "0",
+                          "isLinked": true
+                        }
+                      },
+                      "elements": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "1dabd32",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "content_width": "full",
+                "flex_direction": "column",
+                "width_tablet": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 32
+                },
+                "padding": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "0",
+                  "left": "0",
+                  "isLinked": true
+                }
+              },
+              "elements": [
+                {
+                  "id": "5f55310",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "content_width": "full",
+                    "css_classes": "o1b-mini",
+                    "background_background": "classic",
+                    "background_color": "#ffffff",
+                    "padding": {
+                      "unit": "px",
+                      "top": "28",
+                      "right": "26",
+                      "bottom": "28",
+                      "left": "26",
+                      "isLinked": false
+                    },
+                    "border_border": "solid",
+                    "border_width": {
+                      "unit": "px",
+                      "top": "1",
+                      "right": "1",
+                      "bottom": "1",
+                      "left": "1",
+                      "isLinked": true
+                    },
+                    "border_color": "#d9d9d6",
+                    "flex_direction": "column"
+                  },
+                  "elements": [
+                    {
+                      "id": "d66a7df",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "isInner": false,
+                      "settings": {
+                        "title": "Written scope after the measure",
+                        "header_size": "h3",
+                        "title_color": "#292e2e",
+                        "align": "left",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 18
+                        },
+                        "typography_font_weight": "700",
+                        "typography_text_transform": "uppercase",
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.18
+                        },
+                        "typography_letter_spacing": {
+                          "unit": "px",
+                          "size": 0.5
+                        },
+                        "_margin": {
+                          "unit": "px",
+                          "top": "0",
+                          "right": "0",
+                          "bottom": "0",
+                          "left": "0",
+                          "isLinked": true
+                        }
+                      },
+                      "elements": []
+                    },
+                    {
+                      "id": "448c1f9",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "isInner": false,
+                      "settings": {
+                        "editor": "<p>We measure on site and send a written number tied to a specific spec, not a per-foot guess over the phone.</p>",
+                        "text_color": "#383d3e",
+                        "align": "left",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15.5
+                        },
+                        "typography_font_weight": "400",
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.75
+                        },
+                        "_margin": {
+                          "unit": "px",
+                          "top": "0",
+                          "right": "0",
+                          "bottom": "0",
+                          "left": "0",
+                          "isLinked": true
+                        }
+                      },
+                      "elements": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "7ca6935",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "content_width": "full",
+                "flex_direction": "column",
+                "width_tablet": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 32
+                },
+                "padding": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "0",
+                  "left": "0",
+                  "isLinked": true
+                }
+              },
+              "elements": [
+                {
+                  "id": "aa79e92",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "content_width": "full",
+                    "css_classes": "o1b-mini",
+                    "background_background": "classic",
+                    "background_color": "#ffffff",
+                    "padding": {
+                      "unit": "px",
+                      "top": "28",
+                      "right": "26",
+                      "bottom": "28",
+                      "left": "26",
+                      "isLinked": false
+                    },
+                    "border_border": "solid",
+                    "border_width": {
+                      "unit": "px",
+                      "top": "1",
+                      "right": "1",
+                      "bottom": "1",
+                      "left": "1",
+                      "isLinked": true
+                    },
+                    "border_color": "#d9d9d6",
+                    "flex_direction": "column"
+                  },
+                  "elements": [
+                    {
+                      "id": "8d85b68",
+                      "elType": "widget",
+                      "widgetType": "heading",
+                      "isInner": false,
+                      "settings": {
+                        "title": "Encino showroom",
+                        "header_size": "h3",
+                        "title_color": "#292e2e",
+                        "align": "left",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 18
+                        },
+                        "typography_font_weight": "700",
+                        "typography_text_transform": "uppercase",
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.18
+                        },
+                        "typography_letter_spacing": {
+                          "unit": "px",
+                          "size": 0.5
+                        },
+                        "_margin": {
+                          "unit": "px",
+                          "top": "0",
+                          "right": "0",
+                          "bottom": "0",
+                          "left": "0",
+                          "isLinked": true
+                        }
+                      },
+                      "elements": []
+                    },
+                    {
+                      "id": "9a42a72",
+                      "elType": "widget",
+                      "widgetType": "text-editor",
+                      "isInner": false,
+                      "settings": {
+                        "editor": "<p>Compare turf, pavers, and finish materials at full size at 16400 Ventura Blvd, Suite 319.</p>",
+                        "text_color": "#383d3e",
+                        "align": "left",
+                        "typography_typography": "custom",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 15.5
+                        },
+                        "typography_font_weight": "400",
+                        "typography_line_height": {
+                          "unit": "em",
+                          "size": 1.75
+                        },
+                        "_margin": {
+                          "unit": "px",
+                          "top": "0",
+                          "right": "0",
+                          "bottom": "0",
+                          "left": "0",
+                          "isLinked": true
+                        }
+                      },
+                      "elements": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8b47b9b",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "boxed_width": {
+          "unit": "px",
+          "size": 1240
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+          "column": "0",
+          "row": "0",
+          "isLinked": true,
+          "unit": "px"
+        },
+        "padding": {
+          "unit": "px",
+          "top": "56",
+          "right": "24",
+          "bottom": "56",
+          "left": "24",
+          "isLinked": false
+        },
+        "padding_tablet": {
+          "unit": "px",
+          "top": "72",
+          "right": "20",
+          "bottom": "72",
+          "left": "20",
+          "isLinked": false
+        },
+        "padding_mobile": {
+          "unit": "px",
+          "top": "56",
+          "right": "18",
+          "bottom": "56",
+          "left": "18",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#181818",
+        "css_classes": "o1b-cta-band o1b-dark"
+      },
+      "elements": [
+        {
+          "id": "f6bcc2e",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "flex_direction_tablet": "column",
+            "flex_direction_mobile": "column",
+            "flex_wrap": "nowrap",
+            "flex_wrap_tablet": "wrap",
+            "flex_wrap_mobile": "wrap",
+            "flex_gap": {
+              "column": "48",
+              "row": "48",
+              "isLinked": true,
+              "unit": "px"
+            },
+            "flex_align_items": "center",
+            "css_classes": "o1b-cta-band-in",
+            "padding": {
               "unit": "px",
               "top": "0",
               "right": "0",
@@ -557,29 +1262,402 @@
               "isLinked": true
             }
           },
-          "elements": []
+          "elements": [
+            {
+              "id": "6895972",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "content_width": "full",
+                "flex_direction": "column",
+                "width_tablet": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 58
+                },
+                "padding": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "0",
+                  "left": "0",
+                  "isLinked": true
+                }
+              },
+              "elements": [
+                {
+                  "id": "5be1adb",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "isInner": false,
+                  "settings": {
+                    "title": "Get a written number",
+                    "header_size": "p",
+                    "title_color": "#b79a61",
+                    "align": "left",
+                    "typography_typography": "custom",
+                    "typography_font_family": "Montserrat",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 12
+                    },
+                    "typography_font_weight": "600",
+                    "typography_text_transform": "uppercase",
+                    "typography_line_height": {
+                      "unit": "em",
+                      "size": 1.4
+                    },
+                    "typography_letter_spacing": {
+                      "unit": "px",
+                      "size": 2.4
+                    },
+                    "_margin": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "83c64b0",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "isInner": false,
+                  "settings": {
+                    "title": "Request a Free Estimate",
+                    "header_size": "h2",
+                    "title_color": "#ffffff",
+                    "align": "left",
+                    "typography_typography": "custom",
+                    "typography_font_family": "Montserrat",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 36
+                    },
+                    "typography_font_weight": "700",
+                    "typography_text_transform": "uppercase",
+                    "typography_line_height": {
+                      "unit": "em",
+                      "size": 1.18
+                    },
+                    "typography_letter_spacing": {
+                      "unit": "px",
+                      "size": 0.5
+                    },
+                    "typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 26
+                    },
+                    "_margin": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "db8c285",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "isInner": false,
+                  "settings": {
+                    "editor": "<p>Tell us about the yard. We follow up to schedule a walkthrough, measure on site, and send a written scope.</p>",
+                    "text_color": "#d5d3cc",
+                    "align": "left",
+                    "typography_typography": "custom",
+                    "typography_font_family": "Montserrat",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 17
+                    },
+                    "typography_font_weight": "400",
+                    "typography_line_height": {
+                      "unit": "em",
+                      "size": 1.75
+                    },
+                    "_margin": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "fdd3252",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "content_width": "full",
+                "flex_direction": "column",
+                "width_tablet": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 42
+                },
+                "css_classes": "o1b-cta-band-actions",
+                "flex_justify_content": "flex-end",
+                "padding": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "0",
+                  "left": "0",
+                  "isLinked": true
+                }
+              },
+              "elements": [
+                {
+                  "id": "706bcce",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "content_width": "full",
+                    "flex_direction": "row",
+                    "flex_direction_mobile": "column",
+                    "flex_justify_content": "flex-start",
+                    "flex_align_items": "center",
+                    "flex_gap": {
+                      "column": "16",
+                      "row": "16",
+                      "isLinked": true,
+                      "unit": "px"
+                    },
+                    "flex_wrap": "wrap",
+                    "css_classes": "o1b-actions",
+                    "padding": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "8e9b515",
+                      "elType": "widget",
+                      "widgetType": "button",
+                      "isInner": false,
+                      "settings": {
+                        "text": "Book a Free Estimate",
+                        "link": {
+                          "url": "/contact-us/",
+                          "is_external": "",
+                          "nofollow": ""
+                        },
+                        "button_text_color": "#ffffff",
+                        "background_color": "#b79a61",
+                        "hover_color": "#ffffff",
+                        "button_background_hover_color": "#202321",
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "4",
+                          "right": "4",
+                          "bottom": "4",
+                          "left": "4",
+                          "isLinked": true
+                        },
+                        "text_padding": {
+                          "unit": "px",
+                          "top": "16",
+                          "right": "34",
+                          "bottom": "16",
+                          "left": "34",
+                          "isLinked": false
+                        },
+                        "typography_typography": "custom",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 13.5
+                        },
+                        "typography_font_weight": "600",
+                        "typography_text_transform": "uppercase",
+                        "typography_letter_spacing": {
+                          "unit": "px",
+                          "size": 0.6
+                        },
+                        "_margin": {
+                          "unit": "px",
+                          "top": "0",
+                          "right": "0",
+                          "bottom": "0",
+                          "left": "0",
+                          "isLinked": true
+                        }
+                      },
+                      "elements": []
+                    },
+                    {
+                      "id": "e204341",
+                      "elType": "widget",
+                      "widgetType": "button",
+                      "isInner": false,
+                      "settings": {
+                        "text": "Call 818-297-2475",
+                        "link": {
+                          "url": "tel:+18182972475",
+                          "is_external": "",
+                          "nofollow": ""
+                        },
+                        "button_text_color": "#ffffff",
+                        "background_color": "rgba(0,0,0,0)",
+                        "hover_color": "#111111",
+                        "button_background_hover_color": "#ffffff",
+                        "border_radius": {
+                          "unit": "px",
+                          "top": "4",
+                          "right": "4",
+                          "bottom": "4",
+                          "left": "4",
+                          "isLinked": true
+                        },
+                        "text_padding": {
+                          "unit": "px",
+                          "top": "16",
+                          "right": "34",
+                          "bottom": "16",
+                          "left": "34",
+                          "isLinked": false
+                        },
+                        "typography_typography": "custom",
+                        "typography_font_family": "Montserrat",
+                        "typography_font_size": {
+                          "unit": "px",
+                          "size": 13.5
+                        },
+                        "typography_font_weight": "600",
+                        "typography_text_transform": "uppercase",
+                        "typography_letter_spacing": {
+                          "unit": "px",
+                          "size": 0.6
+                        },
+                        "border_border": "solid",
+                        "border_width": {
+                          "unit": "px",
+                          "top": "2",
+                          "right": "2",
+                          "bottom": "2",
+                          "left": "2",
+                          "isLinked": true
+                        },
+                        "border_color": "rgba(255,255,255,0.75)",
+                        "hover_border_color": "#ffffff",
+                        "_margin": {
+                          "unit": "px",
+                          "top": "0",
+                          "right": "0",
+                          "bottom": "0",
+                          "left": "0",
+                          "isLinked": true
+                        }
+                      },
+                      "elements": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "150053e",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "boxed_width": {
+          "unit": "px",
+          "size": 1240
         },
+        "flex_direction": "column",
+        "flex_gap": {
+          "column": "0",
+          "row": "0",
+          "isLinked": true,
+          "unit": "px"
+        },
+        "padding": {
+          "unit": "px",
+          "top": "96",
+          "right": "24",
+          "bottom": "96",
+          "left": "24",
+          "isLinked": false
+        },
+        "padding_tablet": {
+          "unit": "px",
+          "top": "72",
+          "right": "20",
+          "bottom": "72",
+          "left": "20",
+          "isLinked": false
+        },
+        "padding_mobile": {
+          "unit": "px",
+          "top": "56",
+          "right": "18",
+          "bottom": "56",
+          "left": "18",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#ffffff",
+        "css_classes": "o1b-service-scope"
+      },
+      "elements": [
         {
-          "id": "0e17065",
+          "id": "96ee952",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
           "settings": {
             "title": "What we set",
-            "header_size": "h2",
+            "header_size": "h3",
             "title_color": "#292e2e",
             "align": "left",
             "typography_typography": "custom",
             "typography_font_family": "Montserrat",
             "typography_font_size": {
               "unit": "px",
-              "size": 24
+              "size": 20
             },
             "typography_font_weight": "700",
-            "typography_text_transform": "uppercase",
+            "typography_text_transform": "none",
             "typography_line_height": {
               "unit": "em",
-              "size": 1.18
+              "size": 1.3
             },
             "typography_letter_spacing": {
               "unit": "px",
@@ -598,7 +1676,7 @@
           "elements": []
         },
         {
-          "id": "272433a",
+          "id": "be5a501",
           "elType": "widget",
           "widgetType": "text-editor",
           "isInner": false,
@@ -629,26 +1707,26 @@
           "elements": []
         },
         {
-          "id": "4d6fa2f",
+          "id": "fcb1a08",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
           "settings": {
             "title": "Why the base matters",
-            "header_size": "h2",
+            "header_size": "h3",
             "title_color": "#292e2e",
             "align": "left",
             "typography_typography": "custom",
             "typography_font_family": "Montserrat",
             "typography_font_size": {
               "unit": "px",
-              "size": 24
+              "size": 20
             },
             "typography_font_weight": "700",
-            "typography_text_transform": "uppercase",
+            "typography_text_transform": "none",
             "typography_line_height": {
               "unit": "em",
-              "size": 1.18
+              "size": 1.3
             },
             "typography_letter_spacing": {
               "unit": "px",
@@ -667,7 +1745,7 @@
           "elements": []
         },
         {
-          "id": "28219d0",
+          "id": "bb96bfb",
           "elType": "widget",
           "widgetType": "text-editor",
           "isInner": false,
@@ -696,11 +1774,691 @@
             }
           },
           "elements": []
+        },
+        {
+          "id": "f273026",
+          "elType": "widget",
+          "widgetType": "heading",
+          "isInner": false,
+          "settings": {
+            "title": "How a free estimate works",
+            "header_size": "p",
+            "title_color": "#b79a61",
+            "align": "left",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+              "unit": "px",
+              "size": 12
+            },
+            "typography_font_weight": "600",
+            "typography_text_transform": "uppercase",
+            "typography_line_height": {
+              "unit": "em",
+              "size": 1.4
+            },
+            "typography_letter_spacing": {
+              "unit": "px",
+              "size": 2.4
+            },
+            "_margin": {
+              "unit": "px",
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0",
+              "isLinked": true
+            }
+          },
+          "elements": []
+        },
+        {
+          "id": "73d1428",
+          "elType": "widget",
+          "widgetType": "heading",
+          "isInner": false,
+          "settings": {
+            "title": "How a Free Paver Installation Estimate Works",
+            "header_size": "h2",
+            "title_color": "#292e2e",
+            "align": "left",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+              "unit": "px",
+              "size": 36
+            },
+            "typography_font_weight": "700",
+            "typography_text_transform": "uppercase",
+            "typography_line_height": {
+              "unit": "em",
+              "size": 1.18
+            },
+            "typography_letter_spacing": {
+              "unit": "px",
+              "size": 0.5
+            },
+            "typography_font_size_mobile": {
+              "unit": "px",
+              "size": 26
+            },
+            "_margin": {
+              "unit": "px",
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0",
+              "isLinked": true
+            }
+          },
+          "elements": []
+        },
+        {
+          "id": "a1c7c11",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "flex_gap": {
+              "column": "26",
+              "row": "26",
+              "isLinked": true,
+              "unit": "px"
+            },
+            "padding": {
+              "unit": "px",
+              "top": "26",
+              "right": "0",
+              "bottom": "0",
+              "left": "0",
+              "isLinked": false
+            },
+            "css_classes": "o1b-steps o1b-steps-3"
+          },
+          "elements": [
+            {
+              "id": "5d1737d",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "content_width": "full",
+                "css_classes": "o1b-step",
+                "background_background": "classic",
+                "background_color": "#ffffff",
+                "padding": {
+                  "unit": "px",
+                  "top": "44",
+                  "right": "22",
+                  "bottom": "30",
+                  "left": "22",
+                  "isLinked": false
+                },
+                "flex_direction": "column"
+              },
+              "elements": [
+                {
+                  "id": "a2c4827",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "isInner": false,
+                  "settings": {
+                    "title": "1",
+                    "header_size": "p",
+                    "title_color": "#ffffff",
+                    "align": "center",
+                    "typography_typography": "custom",
+                    "typography_font_family": "Montserrat",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 18
+                    },
+                    "typography_font_weight": "700",
+                    "typography_text_transform": "uppercase",
+                    "typography_line_height": {
+                      "unit": "em",
+                      "size": 1.18
+                    },
+                    "typography_letter_spacing": {
+                      "unit": "px",
+                      "size": 0.5
+                    },
+                    "css_classes": "o1b-step-n",
+                    "_margin": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "8de88b9",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "isInner": false,
+                  "settings": {
+                    "title": "Walk the property",
+                    "header_size": "h3",
+                    "title_color": "#292e2e",
+                    "align": "center",
+                    "typography_typography": "custom",
+                    "typography_font_family": "Montserrat",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 16
+                    },
+                    "typography_font_weight": "700",
+                    "typography_text_transform": "uppercase",
+                    "typography_line_height": {
+                      "unit": "em",
+                      "size": 1.18
+                    },
+                    "typography_letter_spacing": {
+                      "unit": "px",
+                      "size": 0.5
+                    },
+                    "_margin": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "e0fcf29",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "isInner": false,
+                  "settings": {
+                    "editor": "<p>We schedule a walkthrough and talk through how you actually use the yard. The on-site walkthrough is free.</p>",
+                    "text_color": "#383d3e",
+                    "align": "center",
+                    "typography_typography": "custom",
+                    "typography_font_family": "Montserrat",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 15.5
+                    },
+                    "typography_font_weight": "400",
+                    "typography_line_height": {
+                      "unit": "em",
+                      "size": 1.75
+                    },
+                    "_margin": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "82a2ae6",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "content_width": "full",
+                "css_classes": "o1b-step",
+                "background_background": "classic",
+                "background_color": "#ffffff",
+                "padding": {
+                  "unit": "px",
+                  "top": "44",
+                  "right": "22",
+                  "bottom": "30",
+                  "left": "22",
+                  "isLinked": false
+                },
+                "flex_direction": "column"
+              },
+              "elements": [
+                {
+                  "id": "7cfa290",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "isInner": false,
+                  "settings": {
+                    "title": "2",
+                    "header_size": "p",
+                    "title_color": "#ffffff",
+                    "align": "center",
+                    "typography_typography": "custom",
+                    "typography_font_family": "Montserrat",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 18
+                    },
+                    "typography_font_weight": "700",
+                    "typography_text_transform": "uppercase",
+                    "typography_line_height": {
+                      "unit": "em",
+                      "size": 1.18
+                    },
+                    "typography_letter_spacing": {
+                      "unit": "px",
+                      "size": 0.5
+                    },
+                    "css_classes": "o1b-step-n",
+                    "_margin": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "978d616",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "isInner": false,
+                  "settings": {
+                    "title": "Measure on site",
+                    "header_size": "h3",
+                    "title_color": "#292e2e",
+                    "align": "center",
+                    "typography_typography": "custom",
+                    "typography_font_family": "Montserrat",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 16
+                    },
+                    "typography_font_weight": "700",
+                    "typography_text_transform": "uppercase",
+                    "typography_line_height": {
+                      "unit": "em",
+                      "size": 1.18
+                    },
+                    "typography_letter_spacing": {
+                      "unit": "px",
+                      "size": 0.5
+                    },
+                    "_margin": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "3252256",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "isInner": false,
+                  "settings": {
+                    "editor": "<p>We measure the space. You are not charged to have us measure the yard or explain the base and drainage.</p>",
+                    "text_color": "#383d3e",
+                    "align": "center",
+                    "typography_typography": "custom",
+                    "typography_font_family": "Montserrat",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 15.5
+                    },
+                    "typography_font_weight": "400",
+                    "typography_line_height": {
+                      "unit": "em",
+                      "size": 1.75
+                    },
+                    "_margin": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "7762b00",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "content_width": "full",
+                "css_classes": "o1b-step",
+                "background_background": "classic",
+                "background_color": "#ffffff",
+                "padding": {
+                  "unit": "px",
+                  "top": "44",
+                  "right": "22",
+                  "bottom": "30",
+                  "left": "22",
+                  "isLinked": false
+                },
+                "flex_direction": "column"
+              },
+              "elements": [
+                {
+                  "id": "f471245",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "isInner": false,
+                  "settings": {
+                    "title": "3",
+                    "header_size": "p",
+                    "title_color": "#ffffff",
+                    "align": "center",
+                    "typography_typography": "custom",
+                    "typography_font_family": "Montserrat",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 18
+                    },
+                    "typography_font_weight": "700",
+                    "typography_text_transform": "uppercase",
+                    "typography_line_height": {
+                      "unit": "em",
+                      "size": 1.18
+                    },
+                    "typography_letter_spacing": {
+                      "unit": "px",
+                      "size": 0.5
+                    },
+                    "css_classes": "o1b-step-n",
+                    "_margin": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "461f11f",
+                  "elType": "widget",
+                  "widgetType": "heading",
+                  "isInner": false,
+                  "settings": {
+                    "title": "Written scope",
+                    "header_size": "h3",
+                    "title_color": "#292e2e",
+                    "align": "center",
+                    "typography_typography": "custom",
+                    "typography_font_family": "Montserrat",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 16
+                    },
+                    "typography_font_weight": "700",
+                    "typography_text_transform": "uppercase",
+                    "typography_line_height": {
+                      "unit": "em",
+                      "size": 1.18
+                    },
+                    "typography_letter_spacing": {
+                      "unit": "px",
+                      "size": 0.5
+                    },
+                    "_margin": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "f4b4129",
+                  "elType": "widget",
+                  "widgetType": "text-editor",
+                  "isInner": false,
+                  "settings": {
+                    "editor": "<p>We send a written number tied to a specific spec, not a per-foot guess over the phone.</p>",
+                    "text_color": "#383d3e",
+                    "align": "center",
+                    "typography_typography": "custom",
+                    "typography_font_family": "Montserrat",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 15.5
+                    },
+                    "typography_font_weight": "400",
+                    "typography_line_height": {
+                      "unit": "em",
+                      "size": 1.75
+                    },
+                    "_margin": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "16a6327",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "content_width": "full",
+            "css_classes": "o1b-mid-cta",
+            "padding": {
+              "unit": "px",
+              "top": "40",
+              "right": "0",
+              "bottom": "8",
+              "left": "0",
+              "isLinked": false
+            },
+            "flex_direction": "column"
+          },
+          "elements": [
+            {
+              "id": "7be5115",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "content_width": "full",
+                "flex_direction": "row",
+                "flex_direction_mobile": "column",
+                "flex_justify_content": "center",
+                "flex_align_items": "center",
+                "flex_gap": {
+                  "column": "16",
+                  "row": "16",
+                  "isLinked": true,
+                  "unit": "px"
+                },
+                "flex_wrap": "wrap",
+                "css_classes": "o1b-actions",
+                "padding": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "0",
+                  "left": "0",
+                  "isLinked": true
+                }
+              },
+              "elements": [
+                {
+                  "id": "3053f49",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "isInner": false,
+                  "settings": {
+                    "text": "Book a Free Estimate",
+                    "link": {
+                      "url": "/contact-us/",
+                      "is_external": "",
+                      "nofollow": ""
+                    },
+                    "button_text_color": "#ffffff",
+                    "background_color": "#b79a61",
+                    "hover_color": "#ffffff",
+                    "button_background_hover_color": "#202321",
+                    "border_radius": {
+                      "unit": "px",
+                      "top": "4",
+                      "right": "4",
+                      "bottom": "4",
+                      "left": "4",
+                      "isLinked": true
+                    },
+                    "text_padding": {
+                      "unit": "px",
+                      "top": "16",
+                      "right": "34",
+                      "bottom": "16",
+                      "left": "34",
+                      "isLinked": false
+                    },
+                    "typography_typography": "custom",
+                    "typography_font_family": "Montserrat",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 13.5
+                    },
+                    "typography_font_weight": "600",
+                    "typography_text_transform": "uppercase",
+                    "typography_letter_spacing": {
+                      "unit": "px",
+                      "size": 0.6
+                    },
+                    "_margin": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "200d718",
+                  "elType": "widget",
+                  "widgetType": "button",
+                  "isInner": false,
+                  "settings": {
+                    "text": "Call 818-297-2475",
+                    "link": {
+                      "url": "tel:+18182972475",
+                      "is_external": "",
+                      "nofollow": ""
+                    },
+                    "button_text_color": "#ffffff",
+                    "background_color": "#202321",
+                    "hover_color": "#ffffff",
+                    "button_background_hover_color": "#b79a61",
+                    "border_radius": {
+                      "unit": "px",
+                      "top": "4",
+                      "right": "4",
+                      "bottom": "4",
+                      "left": "4",
+                      "isLinked": true
+                    },
+                    "text_padding": {
+                      "unit": "px",
+                      "top": "16",
+                      "right": "34",
+                      "bottom": "16",
+                      "left": "34",
+                      "isLinked": false
+                    },
+                    "typography_typography": "custom",
+                    "typography_font_family": "Montserrat",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 13.5
+                    },
+                    "typography_font_weight": "600",
+                    "typography_text_transform": "uppercase",
+                    "typography_letter_spacing": {
+                      "unit": "px",
+                      "size": 0.6
+                    },
+                    "_margin": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "d6a1d19",
+          "elType": "widget",
+          "widgetType": "text-editor",
+          "isInner": false,
+          "settings": {
+            "editor": "<p>Option 1 Builders is licensed, bonded, and insured under California license #1122918. The Encino showroom is at 16400 Ventura Blvd, Suite 319. We measure on site and send a written scope. See <a href=\"/about-us/\">about this Encino landscaping company</a>, walk <a href=\"/projects/\">finished Encino projects</a>, or <a href=\"/contact-us/\">request a written estimate</a>.</p>",
+            "text_color": "#383d3e",
+            "align": "left",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+              "unit": "px",
+              "size": 16
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+              "unit": "em",
+              "size": 1.75
+            },
+            "css_classes": "o1b-pullout o1b-service-trust",
+            "_margin": {
+              "unit": "px",
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0",
+              "isLinked": true
+            }
+          },
+          "elements": []
         }
       ]
     },
     {
-      "id": "13afd4e",
+      "id": "db57dca",
       "elType": "container",
       "isInner": false,
       "settings": {
@@ -742,16 +2500,16 @@
         },
         "background_background": "classic",
         "background_color": "#f8f8f6",
-        "css_classes": "o1b-watermark o1b-wm-services"
+        "css_classes": "o1b-watermark o1b-wm-reviews"
       },
       "elements": [
         {
-          "id": "ea7f204",
+          "id": "7323ee7",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
           "settings": {
-            "title": "Services",
+            "title": "Reviews",
             "header_size": "p",
             "title_color": "#202321",
             "align": "center",
@@ -786,128 +2544,79 @@
           "elements": []
         },
         {
-          "id": "c77464b",
-          "elType": "widget",
-          "widgetType": "heading",
-          "isInner": false,
-          "settings": {
-            "title": "Related services",
-            "header_size": "p",
-            "title_color": "#b79a61",
-            "align": "center",
-            "typography_typography": "custom",
-            "typography_font_family": "Montserrat",
-            "typography_font_size": {
-              "unit": "px",
-              "size": 12
-            },
-            "typography_font_weight": "600",
-            "typography_text_transform": "uppercase",
-            "typography_line_height": {
-              "unit": "em",
-              "size": 1.4
-            },
-            "typography_letter_spacing": {
-              "unit": "px",
-              "size": 2.4
-            },
-            "_margin": {
-              "unit": "px",
-              "top": "0",
-              "right": "0",
-              "bottom": "0",
-              "left": "0",
-              "isLinked": true
-            }
-          },
-          "elements": []
-        },
-        {
-          "id": "4fc2c15",
-          "elType": "widget",
-          "widgetType": "heading",
-          "isInner": false,
-          "settings": {
-            "title": "Other Work We Quote on Its Own",
-            "header_size": "h2",
-            "title_color": "#292e2e",
-            "align": "center",
-            "typography_typography": "custom",
-            "typography_font_family": "Montserrat",
-            "typography_font_size": {
-              "unit": "px",
-              "size": 36
-            },
-            "typography_font_weight": "700",
-            "typography_text_transform": "uppercase",
-            "typography_line_height": {
-              "unit": "em",
-              "size": 1.18
-            },
-            "typography_letter_spacing": {
-              "unit": "px",
-              "size": 0.5
-            },
-            "_margin": {
-              "unit": "px",
-              "top": "0",
-              "right": "0",
-              "bottom": "0",
-              "left": "0",
-              "isLinked": true
-            }
-          },
-          "elements": []
-        },
-        {
-          "id": "cfa74ff",
+          "id": "83f083d",
           "elType": "container",
           "isInner": true,
           "settings": {
             "content_width": "full",
-            "flex_direction": "row",
-            "flex_direction_tablet": "column",
-            "flex_direction_mobile": "column",
-            "flex_wrap": "nowrap",
-            "flex_wrap_tablet": "wrap",
-            "flex_wrap_mobile": "wrap",
-            "flex_gap": {
-              "column": "30",
-              "row": "30",
-              "isLinked": true,
-              "unit": "px"
-            },
-            "flex_align_items": "stretch",
-            "css_classes": "o1b-cards",
+            "css_classes": "o1b-awards o1b-awards--light",
             "padding": {
               "unit": "px",
-              "top": "0",
+              "top": "8",
               "right": "0",
               "bottom": "0",
               "left": "0",
-              "isLinked": true
-            }
+              "isLinked": false
+            },
+            "flex_direction": "column"
           },
           "elements": [
             {
-              "id": "9f51329",
+              "id": "e8b2c7f",
+              "elType": "widget",
+              "widgetType": "heading",
+              "isInner": false,
+              "settings": {
+                "title": "Awards & recognition",
+                "header_size": "p",
+                "title_color": "#b79a61",
+                "align": "center",
+                "typography_typography": "custom",
+                "typography_font_family": "Montserrat",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 12
+                },
+                "typography_font_weight": "600",
+                "typography_text_transform": "uppercase",
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.18
+                },
+                "typography_letter_spacing": {
+                  "unit": "px",
+                  "size": 2.4
+                },
+                "_margin": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "0",
+                  "left": "0",
+                  "isLinked": true
+                }
+              },
+              "elements": []
+            },
+            {
+              "id": "fe316ee",
               "elType": "container",
               "isInner": true,
               "settings": {
                 "content_width": "full",
-                "flex_direction": "column",
-                "width_tablet": {
-                  "unit": "%",
-                  "size": 48
+                "flex_direction": "row",
+                "flex_direction_tablet": "column",
+                "flex_direction_mobile": "column",
+                "flex_wrap": "nowrap",
+                "flex_wrap_tablet": "wrap",
+                "flex_wrap_mobile": "wrap",
+                "flex_gap": {
+                  "column": "16",
+                  "row": "16",
+                  "isLinked": true,
+                  "unit": "px"
                 },
-                "width_mobile": {
-                  "unit": "%",
-                  "size": 100
-                },
-                "width": {
-                  "unit": "%",
-                  "size": 32
-                },
+                "flex_align_items": "stretch",
                 "padding": {
                   "unit": "px",
                   "top": "0",
@@ -919,26 +2628,24 @@
               },
               "elements": [
                 {
-                  "id": "3d6b25d",
+                  "id": "a5e319c",
                   "elType": "container",
                   "isInner": true,
                   "settings": {
                     "content_width": "full",
-                    "flex_gap": {
-                      "column": "0",
-                      "row": "0",
-                      "isLinked": true,
-                      "unit": "px"
-                    },
-                    "css_classes": "o1b-card",
-                    "background_background": "classic",
-                    "background_color": "#ffffff",
-                    "link": {
-                      "url": "/services/artificial-grass-installation/",
-                      "is_external": "",
-                      "nofollow": ""
-                    },
                     "flex_direction": "column",
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width": {
+                      "unit": "%",
+                      "size": 16
+                    },
                     "padding": {
                       "unit": "px",
                       "top": "0",
@@ -950,19 +2657,12 @@
                   },
                   "elements": [
                     {
-                      "id": "21553c2",
+                      "id": "b41158a",
                       "elType": "container",
                       "isInner": true,
                       "settings": {
                         "content_width": "full",
-                        "flex_gap": {
-                          "column": "0",
-                          "row": "0",
-                          "isLinked": true,
-                          "unit": "px"
-                        },
-                        "css_classes": "o1b-card-img",
-                        "flex_grow": 0,
+                        "css_classes": "o1b-award",
                         "flex_direction": "column",
                         "padding": {
                           "unit": "px",
@@ -975,182 +2675,16 @@
                       },
                       "elements": [
                         {
-                          "id": "4d63865",
+                          "id": "7d160fb",
                           "elType": "widget",
                           "widgetType": "image",
                           "isInner": false,
                           "settings": {
                             "image": {
-                              "url": "{{media_url:project-02}}",
-                              "id": "{{media:project-02}}"
+                              "url": "{{media_url:award-best-remodeler}}",
+                              "id": "{{media:award-best-remodeler}}"
                             },
                             "image_size": "full",
-                            "_margin": {
-                              "unit": "px",
-                              "top": "0",
-                              "right": "0",
-                              "bottom": "0",
-                              "left": "0",
-                              "isLinked": true
-                            }
-                          },
-                          "elements": []
-                        },
-                        {
-                          "id": "116eaa6",
-                          "elType": "widget",
-                          "widgetType": "heading",
-                          "isInner": false,
-                          "settings": {
-                            "title": "Turf",
-                            "header_size": "p",
-                            "title_color": "#ffffff",
-                            "align": "left",
-                            "typography_typography": "custom",
-                            "typography_font_family": "Montserrat",
-                            "typography_font_size": {
-                              "unit": "px",
-                              "size": 10.5
-                            },
-                            "typography_font_weight": "700",
-                            "typography_text_transform": "uppercase",
-                            "typography_line_height": {
-                              "unit": "em",
-                              "size": 1.18
-                            },
-                            "typography_letter_spacing": {
-                              "unit": "px",
-                              "size": 1.8
-                            },
-                            "css_classes": "o1b-tag",
-                            "_margin": {
-                              "unit": "px",
-                              "top": "0",
-                              "right": "0",
-                              "bottom": "0",
-                              "left": "0",
-                              "isLinked": true
-                            }
-                          },
-                          "elements": []
-                        }
-                      ]
-                    },
-                    {
-                      "id": "8fd069c",
-                      "elType": "container",
-                      "isInner": true,
-                      "settings": {
-                        "content_width": "full",
-                        "flex_gap": {
-                          "column": "12",
-                          "row": "12",
-                          "isLinked": true,
-                          "unit": "px"
-                        },
-                        "css_classes": "o1b-card-body",
-                        "flex_grow": 1,
-                        "padding": {
-                          "unit": "px",
-                          "top": "38",
-                          "right": "26",
-                          "bottom": "30",
-                          "left": "26",
-                          "isLinked": false
-                        },
-                        "flex_direction": "column"
-                      },
-                      "elements": [
-                        {
-                          "id": "9138be5",
-                          "elType": "widget",
-                          "widgetType": "heading",
-                          "isInner": false,
-                          "settings": {
-                            "title": "Artificial Grass Installation",
-                            "header_size": "h3",
-                            "title_color": "#292e2e",
-                            "align": "left",
-                            "typography_typography": "custom",
-                            "typography_font_family": "Montserrat",
-                            "typography_font_size": {
-                              "unit": "px",
-                              "size": 18
-                            },
-                            "typography_font_weight": "700",
-                            "typography_text_transform": "uppercase",
-                            "typography_line_height": {
-                              "unit": "em",
-                              "size": 1.18
-                            },
-                            "typography_letter_spacing": {
-                              "unit": "px",
-                              "size": 0.5
-                            },
-                            "css_classes": "o1b-card-h",
-                            "_margin": {
-                              "unit": "px",
-                              "top": "0",
-                              "right": "0",
-                              "bottom": "0",
-                              "left": "0",
-                              "isLinked": true
-                            }
-                          },
-                          "elements": []
-                        },
-                        {
-                          "id": "c6930f7",
-                          "elType": "widget",
-                          "widgetType": "text-editor",
-                          "isInner": false,
-                          "settings": {
-                            "editor": "<p>Pet-friendly and putting-green turf for front yards, back yards, and play areas. We remove the old lawn, compact a draining base, then seam, nail, and infill so the lawn stays flat. Backed by a 15-year warranty.</p>",
-                            "text_color": "#383d3e",
-                            "align": "left",
-                            "typography_typography": "custom",
-                            "typography_font_family": "Montserrat",
-                            "typography_font_size": {
-                              "unit": "px",
-                              "size": 15.5
-                            },
-                            "typography_font_weight": "400",
-                            "typography_line_height": {
-                              "unit": "em",
-                              "size": 1.75
-                            },
-                            "_margin": {
-                              "unit": "px",
-                              "top": "0",
-                              "right": "0",
-                              "bottom": "0",
-                              "left": "0",
-                              "isLinked": true
-                            }
-                          },
-                          "elements": []
-                        },
-                        {
-                          "id": "0c2df96",
-                          "elType": "widget",
-                          "widgetType": "text-editor",
-                          "isInner": false,
-                          "settings": {
-                            "editor": "<p><strong>Common jobs</strong><br>Front lawn replacement, backyard putting greens, dog runs, shaded side yards, and tear-outs of turf laid over the wrong base.</p>",
-                            "text_color": "#292e2e",
-                            "align": "left",
-                            "typography_typography": "custom",
-                            "typography_font_family": "Montserrat",
-                            "typography_font_size": {
-                              "unit": "px",
-                              "size": 14.5
-                            },
-                            "typography_font_weight": "400",
-                            "typography_line_height": {
-                              "unit": "em",
-                              "size": 1.75
-                            },
-                            "css_classes": "o1b-card-meta",
                             "_margin": {
                               "unit": "px",
                               "top": "0",
@@ -1165,59 +2699,26 @@
                       ]
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "id": "2a31eb7",
-              "elType": "container",
-              "isInner": true,
-              "settings": {
-                "content_width": "full",
-                "flex_direction": "column",
-                "width_tablet": {
-                  "unit": "%",
-                  "size": 48
                 },
-                "width_mobile": {
-                  "unit": "%",
-                  "size": 100
-                },
-                "width": {
-                  "unit": "%",
-                  "size": 32
-                },
-                "padding": {
-                  "unit": "px",
-                  "top": "0",
-                  "right": "0",
-                  "bottom": "0",
-                  "left": "0",
-                  "isLinked": true
-                }
-              },
-              "elements": [
                 {
-                  "id": "e41f315",
+                  "id": "ab34937",
                   "elType": "container",
                   "isInner": true,
                   "settings": {
                     "content_width": "full",
-                    "flex_gap": {
-                      "column": "0",
-                      "row": "0",
-                      "isLinked": true,
-                      "unit": "px"
-                    },
-                    "css_classes": "o1b-card",
-                    "background_background": "classic",
-                    "background_color": "#ffffff",
-                    "link": {
-                      "url": "/services/stepping-stones-pathways/",
-                      "is_external": "",
-                      "nofollow": ""
-                    },
                     "flex_direction": "column",
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width": {
+                      "unit": "%",
+                      "size": 16
+                    },
                     "padding": {
                       "unit": "px",
                       "top": "0",
@@ -1229,19 +2730,12 @@
                   },
                   "elements": [
                     {
-                      "id": "eed9d09",
+                      "id": "912b5f0",
                       "elType": "container",
                       "isInner": true,
                       "settings": {
                         "content_width": "full",
-                        "flex_gap": {
-                          "column": "0",
-                          "row": "0",
-                          "isLinked": true,
-                          "unit": "px"
-                        },
-                        "css_classes": "o1b-card-img",
-                        "flex_grow": 0,
+                        "css_classes": "o1b-award",
                         "flex_direction": "column",
                         "padding": {
                           "unit": "px",
@@ -1254,182 +2748,16 @@
                       },
                       "elements": [
                         {
-                          "id": "9734b4f",
+                          "id": "2875118",
                           "elType": "widget",
                           "widgetType": "image",
                           "isInner": false,
                           "settings": {
                             "image": {
-                              "url": "{{media_url:project-10}}",
-                              "id": "{{media:project-10}}"
+                              "url": "{{media_url:award-excellence-2026}}",
+                              "id": "{{media:award-excellence-2026}}"
                             },
                             "image_size": "full",
-                            "_margin": {
-                              "unit": "px",
-                              "top": "0",
-                              "right": "0",
-                              "bottom": "0",
-                              "left": "0",
-                              "isLinked": true
-                            }
-                          },
-                          "elements": []
-                        },
-                        {
-                          "id": "253f0f2",
-                          "elType": "widget",
-                          "widgetType": "heading",
-                          "isInner": false,
-                          "settings": {
-                            "title": "Pathways",
-                            "header_size": "p",
-                            "title_color": "#ffffff",
-                            "align": "left",
-                            "typography_typography": "custom",
-                            "typography_font_family": "Montserrat",
-                            "typography_font_size": {
-                              "unit": "px",
-                              "size": 10.5
-                            },
-                            "typography_font_weight": "700",
-                            "typography_text_transform": "uppercase",
-                            "typography_line_height": {
-                              "unit": "em",
-                              "size": 1.18
-                            },
-                            "typography_letter_spacing": {
-                              "unit": "px",
-                              "size": 1.8
-                            },
-                            "css_classes": "o1b-tag",
-                            "_margin": {
-                              "unit": "px",
-                              "top": "0",
-                              "right": "0",
-                              "bottom": "0",
-                              "left": "0",
-                              "isLinked": true
-                            }
-                          },
-                          "elements": []
-                        }
-                      ]
-                    },
-                    {
-                      "id": "2daa3b3",
-                      "elType": "container",
-                      "isInner": true,
-                      "settings": {
-                        "content_width": "full",
-                        "flex_gap": {
-                          "column": "12",
-                          "row": "12",
-                          "isLinked": true,
-                          "unit": "px"
-                        },
-                        "css_classes": "o1b-card-body",
-                        "flex_grow": 1,
-                        "padding": {
-                          "unit": "px",
-                          "top": "38",
-                          "right": "26",
-                          "bottom": "30",
-                          "left": "26",
-                          "isLinked": false
-                        },
-                        "flex_direction": "column"
-                      },
-                      "elements": [
-                        {
-                          "id": "66ef10b",
-                          "elType": "widget",
-                          "widgetType": "heading",
-                          "isInner": false,
-                          "settings": {
-                            "title": "Stepping Stones & Pathways",
-                            "header_size": "h3",
-                            "title_color": "#292e2e",
-                            "align": "left",
-                            "typography_typography": "custom",
-                            "typography_font_family": "Montserrat",
-                            "typography_font_size": {
-                              "unit": "px",
-                              "size": 18
-                            },
-                            "typography_font_weight": "700",
-                            "typography_text_transform": "uppercase",
-                            "typography_line_height": {
-                              "unit": "em",
-                              "size": 1.18
-                            },
-                            "typography_letter_spacing": {
-                              "unit": "px",
-                              "size": 0.5
-                            },
-                            "css_classes": "o1b-card-h",
-                            "_margin": {
-                              "unit": "px",
-                              "top": "0",
-                              "right": "0",
-                              "bottom": "0",
-                              "left": "0",
-                              "isLinked": true
-                            }
-                          },
-                          "elements": []
-                        },
-                        {
-                          "id": "68600d1",
-                          "elType": "widget",
-                          "widgetType": "text-editor",
-                          "isInner": false,
-                          "settings": {
-                            "editor": "<p>Stone and paver pathways set through turf, gravel, or planting beds, with spacing planned to a natural stride.</p>",
-                            "text_color": "#383d3e",
-                            "align": "left",
-                            "typography_typography": "custom",
-                            "typography_font_family": "Montserrat",
-                            "typography_font_size": {
-                              "unit": "px",
-                              "size": 15.5
-                            },
-                            "typography_font_weight": "400",
-                            "typography_line_height": {
-                              "unit": "em",
-                              "size": 1.75
-                            },
-                            "_margin": {
-                              "unit": "px",
-                              "top": "0",
-                              "right": "0",
-                              "bottom": "0",
-                              "left": "0",
-                              "isLinked": true
-                            }
-                          },
-                          "elements": []
-                        },
-                        {
-                          "id": "4afc2f9",
-                          "elType": "widget",
-                          "widgetType": "text-editor",
-                          "isInner": false,
-                          "settings": {
-                            "editor": "<p><strong>Quoted on its own</strong><br>Stone and paver pathways through turf, gravel, or planting beds, spaced to a natural stride.</p>",
-                            "text_color": "#292e2e",
-                            "align": "left",
-                            "typography_typography": "custom",
-                            "typography_font_family": "Montserrat",
-                            "typography_font_size": {
-                              "unit": "px",
-                              "size": 14.5
-                            },
-                            "typography_font_weight": "400",
-                            "typography_line_height": {
-                              "unit": "em",
-                              "size": 1.75
-                            },
-                            "css_classes": "o1b-card-meta",
                             "_margin": {
                               "unit": "px",
                               "top": "0",
@@ -1444,59 +2772,26 @@
                       ]
                     }
                   ]
-                }
-              ]
-            },
-            {
-              "id": "af55b5d",
-              "elType": "container",
-              "isInner": true,
-              "settings": {
-                "content_width": "full",
-                "flex_direction": "column",
-                "width_tablet": {
-                  "unit": "%",
-                  "size": 48
                 },
-                "width_mobile": {
-                  "unit": "%",
-                  "size": 100
-                },
-                "width": {
-                  "unit": "%",
-                  "size": 32
-                },
-                "padding": {
-                  "unit": "px",
-                  "top": "0",
-                  "right": "0",
-                  "bottom": "0",
-                  "left": "0",
-                  "isLinked": true
-                }
-              },
-              "elements": [
                 {
-                  "id": "61f0d26",
+                  "id": "fd6955a",
                   "elType": "container",
                   "isInner": true,
                   "settings": {
                     "content_width": "full",
-                    "flex_gap": {
-                      "column": "0",
-                      "row": "0",
-                      "isLinked": true,
-                      "unit": "px"
-                    },
-                    "css_classes": "o1b-card",
-                    "background_background": "classic",
-                    "background_color": "#ffffff",
-                    "link": {
-                      "url": "/services/concrete-dg-gravel/",
-                      "is_external": "",
-                      "nofollow": ""
-                    },
                     "flex_direction": "column",
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width": {
+                      "unit": "%",
+                      "size": 16
+                    },
                     "padding": {
                       "unit": "px",
                       "top": "0",
@@ -1508,19 +2803,12 @@
                   },
                   "elements": [
                     {
-                      "id": "46235e6",
+                      "id": "1c6d23c",
                       "elType": "container",
                       "isInner": true,
                       "settings": {
                         "content_width": "full",
-                        "flex_gap": {
-                          "column": "0",
-                          "row": "0",
-                          "isLinked": true,
-                          "unit": "px"
-                        },
-                        "css_classes": "o1b-card-img o1b-card-img-empty",
-                        "flex_grow": 0,
+                        "css_classes": "o1b-award",
                         "flex_direction": "column",
                         "padding": {
                           "unit": "px",
@@ -1533,32 +2821,16 @@
                       },
                       "elements": [
                         {
-                          "id": "19157b4",
+                          "id": "7407a9a",
                           "elType": "widget",
-                          "widgetType": "heading",
+                          "widgetType": "image",
                           "isInner": false,
                           "settings": {
-                            "title": "Finishes",
-                            "header_size": "p",
-                            "title_color": "#ffffff",
-                            "align": "left",
-                            "typography_typography": "custom",
-                            "typography_font_family": "Montserrat",
-                            "typography_font_size": {
-                              "unit": "px",
-                              "size": 10.5
+                            "image": {
+                              "url": "{{media_url:award-remodel}}",
+                              "id": "{{media:award-remodel}}"
                             },
-                            "typography_font_weight": "700",
-                            "typography_text_transform": "uppercase",
-                            "typography_line_height": {
-                              "unit": "em",
-                              "size": 1.18
-                            },
-                            "typography_letter_spacing": {
-                              "unit": "px",
-                              "size": 1.8
-                            },
-                            "css_classes": "o1b-tag",
+                            "image_size": "full",
                             "_margin": {
                               "unit": "px",
                               "top": "0",
@@ -1571,59 +2843,67 @@
                           "elements": []
                         }
                       ]
+                    }
+                  ]
+                },
+                {
+                  "id": "a100508",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "content_width": "full",
+                    "flex_direction": "column",
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 100
                     },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width": {
+                      "unit": "%",
+                      "size": 16
+                    },
+                    "padding": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": [
                     {
-                      "id": "a0b30cb",
+                      "id": "0cfa6c7",
                       "elType": "container",
                       "isInner": true,
                       "settings": {
                         "content_width": "full",
-                        "flex_gap": {
-                          "column": "12",
-                          "row": "12",
-                          "isLinked": true,
-                          "unit": "px"
-                        },
-                        "css_classes": "o1b-card-body",
-                        "flex_grow": 1,
+                        "css_classes": "o1b-award",
+                        "flex_direction": "column",
                         "padding": {
                           "unit": "px",
-                          "top": "38",
-                          "right": "26",
-                          "bottom": "30",
-                          "left": "26",
-                          "isLinked": false
-                        },
-                        "flex_direction": "column"
+                          "top": "0",
+                          "right": "0",
+                          "bottom": "0",
+                          "left": "0",
+                          "isLinked": true
+                        }
                       },
                       "elements": [
                         {
-                          "id": "6ce40ad",
+                          "id": "fff965e",
                           "elType": "widget",
-                          "widgetType": "heading",
+                          "widgetType": "image",
                           "isInner": false,
                           "settings": {
-                            "title": "Concrete, DG, Gravel & Mulch",
-                            "header_size": "h3",
-                            "title_color": "#292e2e",
-                            "align": "left",
-                            "typography_typography": "custom",
-                            "typography_font_family": "Montserrat",
-                            "typography_font_size": {
-                              "unit": "px",
-                              "size": 18
+                            "image": {
+                              "url": "{{media_url:award-angi-2025}}",
+                              "id": "{{media:award-angi-2025}}"
                             },
-                            "typography_font_weight": "700",
-                            "typography_text_transform": "uppercase",
-                            "typography_line_height": {
-                              "unit": "em",
-                              "size": 1.18
-                            },
-                            "typography_letter_spacing": {
-                              "unit": "px",
-                              "size": 0.5
-                            },
-                            "css_classes": "o1b-card-h",
+                            "image_size": "full",
                             "_margin": {
                               "unit": "px",
                               "top": "0",
@@ -1634,27 +2914,69 @@
                             }
                           },
                           "elements": []
-                        },
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "dc8d866",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "content_width": "full",
+                    "flex_direction": "column",
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width": {
+                      "unit": "%",
+                      "size": 16
+                    },
+                    "padding": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "3607de5",
+                      "elType": "container",
+                      "isInner": true,
+                      "settings": {
+                        "content_width": "full",
+                        "css_classes": "o1b-award",
+                        "flex_direction": "column",
+                        "padding": {
+                          "unit": "px",
+                          "top": "0",
+                          "right": "0",
+                          "bottom": "0",
+                          "left": "0",
+                          "isLinked": true
+                        }
+                      },
+                      "elements": [
                         {
-                          "id": "7de7e2e",
+                          "id": "8d9ad8a",
                           "elType": "widget",
-                          "widgetType": "text-editor",
+                          "widgetType": "image",
                           "isInner": false,
                           "settings": {
-                            "editor": "<p>Decomposed granite patios, gravel beds, mulch, and poured concrete for clean, low-maintenance ground cover.</p>",
-                            "text_color": "#383d3e",
-                            "align": "left",
-                            "typography_typography": "custom",
-                            "typography_font_family": "Montserrat",
-                            "typography_font_size": {
-                              "unit": "px",
-                              "size": 15.5
+                            "image": {
+                              "url": "{{media_url:award-houzz-2023}}",
+                              "id": "{{media:award-houzz-2023}}"
                             },
-                            "typography_font_weight": "400",
-                            "typography_line_height": {
-                              "unit": "em",
-                              "size": 1.75
-                            },
+                            "image_size": "full",
                             "_margin": {
                               "unit": "px",
                               "top": "0",
@@ -1665,28 +2987,69 @@
                             }
                           },
                           "elements": []
-                        },
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "49902c7",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "content_width": "full",
+                    "flex_direction": "column",
+                    "width_tablet": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "width": {
+                      "unit": "%",
+                      "size": 16
+                    },
+                    "padding": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "bd7df0c",
+                      "elType": "container",
+                      "isInner": true,
+                      "settings": {
+                        "content_width": "full",
+                        "css_classes": "o1b-award",
+                        "flex_direction": "column",
+                        "padding": {
+                          "unit": "px",
+                          "top": "0",
+                          "right": "0",
+                          "bottom": "0",
+                          "left": "0",
+                          "isLinked": true
+                        }
+                      },
+                      "elements": [
                         {
-                          "id": "31ad8c2",
+                          "id": "c868922",
                           "elType": "widget",
-                          "widgetType": "text-editor",
+                          "widgetType": "image",
                           "isInner": false,
                           "settings": {
-                            "editor": "<p><strong>What we set</strong><br>Decomposed granite patios, gravel beds, mulch, and poured concrete.</p>",
-                            "text_color": "#292e2e",
-                            "align": "left",
-                            "typography_typography": "custom",
-                            "typography_font_family": "Montserrat",
-                            "typography_font_size": {
-                              "unit": "px",
-                              "size": 14.5
+                            "image": {
+                              "url": "{{media_url:award-trusted}}",
+                              "id": "{{media:award-trusted}}"
                             },
-                            "typography_font_weight": "400",
-                            "typography_line_height": {
-                              "unit": "em",
-                              "size": 1.75
-                            },
-                            "css_classes": "o1b-card-meta",
+                            "image_size": "full",
                             "_margin": {
                               "unit": "px",
                               "top": "0",
@@ -1705,11 +3068,49 @@
               ]
             }
           ]
+        },
+        {
+          "id": "3dd6152",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "content_width": "full",
+            "css_classes": "o1b-grw",
+            "padding": {
+              "unit": "px",
+              "top": "8",
+              "right": "0",
+              "bottom": "0",
+              "left": "0",
+              "isLinked": true
+            },
+            "flex_direction": "column"
+          },
+          "elements": [
+            {
+              "id": "7bd8d5f",
+              "elType": "widget",
+              "widgetType": "shortcode",
+              "isInner": false,
+              "settings": {
+                "shortcode": "[grw id=94]",
+                "_margin": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "0",
+                  "left": "0",
+                  "isLinked": true
+                }
+              },
+              "elements": []
+            }
+          ]
         }
       ]
     },
     {
-      "id": "aa83c5e",
+      "id": "8696104",
       "elType": "container",
       "isInner": false,
       "settings": {
@@ -1755,7 +3156,7 @@
       },
       "elements": [
         {
-          "id": "f1c16fe",
+          "id": "d1bc76a",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -1795,7 +3196,7 @@
           "elements": []
         },
         {
-          "id": "e4422a2",
+          "id": "5d2bb52",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -1832,7 +3233,7 @@
           "elements": []
         },
         {
-          "id": "02ccb09",
+          "id": "cb3c65e",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -1869,24 +3270,24 @@
           "elements": []
         },
         {
-          "id": "ab5cfd7",
+          "id": "e583b59",
           "elType": "widget",
           "widgetType": "accordion",
           "isInner": false,
           "settings": {
             "tabs": [
               {
-                "_id": "f82146c",
+                "_id": "bc7d9a6",
                 "tab_title": "Do you install pavers and concrete?",
                 "tab_content": "<p>Yes. We install paver patios, walkways, driveways, pool decks, and retaining walls, along with poured concrete. Pavers are set on a compacted base with bedding sand and edge restraints, which is what keeps them from shifting or sinking later.</p>"
               },
               {
-                "_id": "e6b4f22",
+                "_id": "e2eb81c",
                 "tab_title": "Can I see materials before I decide?",
                 "tab_content": "<p>Yes. Visit the Encino showroom at 16400 Ventura Blvd, Suite 319 to compare turf pile and color, paver styles, and finish materials at full size. Photos on a phone screen rarely match how a material reads across a whole yard.</p>"
               },
               {
-                "_id": "2b5b397",
+                "_id": "e0fa65d",
                 "tab_title": "Can I hire just one service?",
                 "tab_content": "<p>Yes. Artificial grass, pavers, stepping stones, DG, irrigation, and fencing can each be quoted on their own. A full yard combines them under one project manager.</p>"
               }
@@ -1917,7 +3318,1038 @@
       ]
     },
     {
-      "id": "0d7aee0",
+      "id": "a8ca7a6",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "boxed_width": {
+          "unit": "px",
+          "size": 1240
+        },
+        "flex_direction": "column",
+        "flex_gap": {
+          "column": "0",
+          "row": "0",
+          "isLinked": true,
+          "unit": "px"
+        },
+        "padding": {
+          "unit": "px",
+          "top": "96",
+          "right": "24",
+          "bottom": "96",
+          "left": "24",
+          "isLinked": false
+        },
+        "padding_tablet": {
+          "unit": "px",
+          "top": "72",
+          "right": "20",
+          "bottom": "72",
+          "left": "20",
+          "isLinked": false
+        },
+        "padding_mobile": {
+          "unit": "px",
+          "top": "56",
+          "right": "18",
+          "bottom": "56",
+          "left": "18",
+          "isLinked": false
+        },
+        "background_background": "classic",
+        "background_color": "#f8f8f6",
+        "css_classes": "o1b-watermark o1b-wm-services"
+      },
+      "elements": [
+        {
+          "id": "5e1f3d7",
+          "elType": "widget",
+          "widgetType": "heading",
+          "isInner": false,
+          "settings": {
+            "title": "Services",
+            "header_size": "p",
+            "title_color": "#202321",
+            "align": "center",
+            "css_classes": "o1b-ghost",
+            "_position": "absolute",
+            "z_index": 0,
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+              "unit": "px",
+              "size": 152
+            },
+            "typography_font_weight": "800",
+            "typography_text_transform": "uppercase",
+            "typography_line_height": {
+              "unit": "em",
+              "size": 1
+            },
+            "typography_letter_spacing": {
+              "unit": "px",
+              "size": 6
+            },
+            "_margin": {
+              "unit": "px",
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0",
+              "isLinked": true
+            }
+          },
+          "elements": []
+        },
+        {
+          "id": "0679409",
+          "elType": "widget",
+          "widgetType": "heading",
+          "isInner": false,
+          "settings": {
+            "title": "Related services",
+            "header_size": "p",
+            "title_color": "#b79a61",
+            "align": "center",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+              "unit": "px",
+              "size": 12
+            },
+            "typography_font_weight": "600",
+            "typography_text_transform": "uppercase",
+            "typography_line_height": {
+              "unit": "em",
+              "size": 1.4
+            },
+            "typography_letter_spacing": {
+              "unit": "px",
+              "size": 2.4
+            },
+            "_margin": {
+              "unit": "px",
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0",
+              "isLinked": true
+            }
+          },
+          "elements": []
+        },
+        {
+          "id": "4e82765",
+          "elType": "widget",
+          "widgetType": "heading",
+          "isInner": false,
+          "settings": {
+            "title": "Other Work We Quote on Its Own",
+            "header_size": "h2",
+            "title_color": "#292e2e",
+            "align": "center",
+            "typography_typography": "custom",
+            "typography_font_family": "Montserrat",
+            "typography_font_size": {
+              "unit": "px",
+              "size": 36
+            },
+            "typography_font_weight": "700",
+            "typography_text_transform": "uppercase",
+            "typography_line_height": {
+              "unit": "em",
+              "size": 1.18
+            },
+            "typography_letter_spacing": {
+              "unit": "px",
+              "size": 0.5
+            },
+            "_margin": {
+              "unit": "px",
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0",
+              "isLinked": true
+            }
+          },
+          "elements": []
+        },
+        {
+          "id": "871339e",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "content_width": "full",
+            "flex_direction": "row",
+            "flex_direction_tablet": "column",
+            "flex_direction_mobile": "column",
+            "flex_wrap": "nowrap",
+            "flex_wrap_tablet": "wrap",
+            "flex_wrap_mobile": "wrap",
+            "flex_gap": {
+              "column": "30",
+              "row": "30",
+              "isLinked": true,
+              "unit": "px"
+            },
+            "flex_align_items": "stretch",
+            "css_classes": "o1b-cards",
+            "padding": {
+              "unit": "px",
+              "top": "0",
+              "right": "0",
+              "bottom": "0",
+              "left": "0",
+              "isLinked": true
+            }
+          },
+          "elements": [
+            {
+              "id": "5c15c23",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "content_width": "full",
+                "flex_direction": "column",
+                "width_tablet": {
+                  "unit": "%",
+                  "size": 48
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 32
+                },
+                "padding": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "0",
+                  "left": "0",
+                  "isLinked": true
+                }
+              },
+              "elements": [
+                {
+                  "id": "07073f2",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "content_width": "full",
+                    "flex_gap": {
+                      "column": "0",
+                      "row": "0",
+                      "isLinked": true,
+                      "unit": "px"
+                    },
+                    "css_classes": "o1b-card",
+                    "background_background": "classic",
+                    "background_color": "#ffffff",
+                    "link": {
+                      "url": "/services/artificial-grass-installation/",
+                      "is_external": "",
+                      "nofollow": ""
+                    },
+                    "flex_direction": "column",
+                    "padding": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "b4c0250",
+                      "elType": "container",
+                      "isInner": true,
+                      "settings": {
+                        "content_width": "full",
+                        "flex_gap": {
+                          "column": "0",
+                          "row": "0",
+                          "isLinked": true,
+                          "unit": "px"
+                        },
+                        "css_classes": "o1b-card-img",
+                        "flex_grow": 0,
+                        "flex_direction": "column",
+                        "padding": {
+                          "unit": "px",
+                          "top": "0",
+                          "right": "0",
+                          "bottom": "0",
+                          "left": "0",
+                          "isLinked": true
+                        }
+                      },
+                      "elements": [
+                        {
+                          "id": "840f720",
+                          "elType": "widget",
+                          "widgetType": "image",
+                          "isInner": false,
+                          "settings": {
+                            "image": {
+                              "url": "{{media_url:project-02}}",
+                              "id": "{{media:project-02}}"
+                            },
+                            "image_size": "full",
+                            "_margin": {
+                              "unit": "px",
+                              "top": "0",
+                              "right": "0",
+                              "bottom": "0",
+                              "left": "0",
+                              "isLinked": true
+                            }
+                          },
+                          "elements": []
+                        },
+                        {
+                          "id": "424feb9",
+                          "elType": "widget",
+                          "widgetType": "heading",
+                          "isInner": false,
+                          "settings": {
+                            "title": "Turf",
+                            "header_size": "p",
+                            "title_color": "#ffffff",
+                            "align": "left",
+                            "typography_typography": "custom",
+                            "typography_font_family": "Montserrat",
+                            "typography_font_size": {
+                              "unit": "px",
+                              "size": 10.5
+                            },
+                            "typography_font_weight": "700",
+                            "typography_text_transform": "uppercase",
+                            "typography_line_height": {
+                              "unit": "em",
+                              "size": 1.18
+                            },
+                            "typography_letter_spacing": {
+                              "unit": "px",
+                              "size": 1.8
+                            },
+                            "css_classes": "o1b-tag",
+                            "_margin": {
+                              "unit": "px",
+                              "top": "0",
+                              "right": "0",
+                              "bottom": "0",
+                              "left": "0",
+                              "isLinked": true
+                            }
+                          },
+                          "elements": []
+                        }
+                      ]
+                    },
+                    {
+                      "id": "81d44c8",
+                      "elType": "container",
+                      "isInner": true,
+                      "settings": {
+                        "content_width": "full",
+                        "flex_gap": {
+                          "column": "12",
+                          "row": "12",
+                          "isLinked": true,
+                          "unit": "px"
+                        },
+                        "css_classes": "o1b-card-body",
+                        "flex_grow": 1,
+                        "padding": {
+                          "unit": "px",
+                          "top": "38",
+                          "right": "26",
+                          "bottom": "30",
+                          "left": "26",
+                          "isLinked": false
+                        },
+                        "flex_direction": "column"
+                      },
+                      "elements": [
+                        {
+                          "id": "41617ca",
+                          "elType": "widget",
+                          "widgetType": "heading",
+                          "isInner": false,
+                          "settings": {
+                            "title": "Artificial Grass Installation",
+                            "header_size": "h3",
+                            "title_color": "#292e2e",
+                            "align": "left",
+                            "typography_typography": "custom",
+                            "typography_font_family": "Montserrat",
+                            "typography_font_size": {
+                              "unit": "px",
+                              "size": 18
+                            },
+                            "typography_font_weight": "700",
+                            "typography_text_transform": "uppercase",
+                            "typography_line_height": {
+                              "unit": "em",
+                              "size": 1.18
+                            },
+                            "typography_letter_spacing": {
+                              "unit": "px",
+                              "size": 0.5
+                            },
+                            "css_classes": "o1b-card-h",
+                            "_margin": {
+                              "unit": "px",
+                              "top": "0",
+                              "right": "0",
+                              "bottom": "0",
+                              "left": "0",
+                              "isLinked": true
+                            }
+                          },
+                          "elements": []
+                        },
+                        {
+                          "id": "6563728",
+                          "elType": "widget",
+                          "widgetType": "text-editor",
+                          "isInner": false,
+                          "settings": {
+                            "editor": "<p>Pet-friendly and putting-green turf for front yards, back yards, and play areas. We remove the old lawn, compact a draining base, then seam, nail, and infill so the lawn stays flat. Backed by a 15-year warranty.</p>",
+                            "text_color": "#383d3e",
+                            "align": "left",
+                            "typography_typography": "custom",
+                            "typography_font_family": "Montserrat",
+                            "typography_font_size": {
+                              "unit": "px",
+                              "size": 15.5
+                            },
+                            "typography_font_weight": "400",
+                            "typography_line_height": {
+                              "unit": "em",
+                              "size": 1.75
+                            },
+                            "_margin": {
+                              "unit": "px",
+                              "top": "0",
+                              "right": "0",
+                              "bottom": "0",
+                              "left": "0",
+                              "isLinked": true
+                            }
+                          },
+                          "elements": []
+                        },
+                        {
+                          "id": "363956c",
+                          "elType": "widget",
+                          "widgetType": "text-editor",
+                          "isInner": false,
+                          "settings": {
+                            "editor": "<p><strong>Common jobs</strong><br>Front lawn replacement, backyard putting greens, dog runs, shaded side yards, and tear-outs of turf laid over the wrong base.</p>",
+                            "text_color": "#292e2e",
+                            "align": "left",
+                            "typography_typography": "custom",
+                            "typography_font_family": "Montserrat",
+                            "typography_font_size": {
+                              "unit": "px",
+                              "size": 14.5
+                            },
+                            "typography_font_weight": "400",
+                            "typography_line_height": {
+                              "unit": "em",
+                              "size": 1.75
+                            },
+                            "css_classes": "o1b-card-meta",
+                            "_margin": {
+                              "unit": "px",
+                              "top": "0",
+                              "right": "0",
+                              "bottom": "0",
+                              "left": "0",
+                              "isLinked": true
+                            }
+                          },
+                          "elements": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "dcee5eb",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "content_width": "full",
+                "flex_direction": "column",
+                "width_tablet": {
+                  "unit": "%",
+                  "size": 48
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 32
+                },
+                "padding": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "0",
+                  "left": "0",
+                  "isLinked": true
+                }
+              },
+              "elements": [
+                {
+                  "id": "5823190",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "content_width": "full",
+                    "flex_gap": {
+                      "column": "0",
+                      "row": "0",
+                      "isLinked": true,
+                      "unit": "px"
+                    },
+                    "css_classes": "o1b-card",
+                    "background_background": "classic",
+                    "background_color": "#ffffff",
+                    "link": {
+                      "url": "/services/stepping-stones-pathways/",
+                      "is_external": "",
+                      "nofollow": ""
+                    },
+                    "flex_direction": "column",
+                    "padding": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "1712b93",
+                      "elType": "container",
+                      "isInner": true,
+                      "settings": {
+                        "content_width": "full",
+                        "flex_gap": {
+                          "column": "0",
+                          "row": "0",
+                          "isLinked": true,
+                          "unit": "px"
+                        },
+                        "css_classes": "o1b-card-img",
+                        "flex_grow": 0,
+                        "flex_direction": "column",
+                        "padding": {
+                          "unit": "px",
+                          "top": "0",
+                          "right": "0",
+                          "bottom": "0",
+                          "left": "0",
+                          "isLinked": true
+                        }
+                      },
+                      "elements": [
+                        {
+                          "id": "28cf7f9",
+                          "elType": "widget",
+                          "widgetType": "image",
+                          "isInner": false,
+                          "settings": {
+                            "image": {
+                              "url": "{{media_url:project-10}}",
+                              "id": "{{media:project-10}}"
+                            },
+                            "image_size": "full",
+                            "_margin": {
+                              "unit": "px",
+                              "top": "0",
+                              "right": "0",
+                              "bottom": "0",
+                              "left": "0",
+                              "isLinked": true
+                            }
+                          },
+                          "elements": []
+                        },
+                        {
+                          "id": "0b9f6e5",
+                          "elType": "widget",
+                          "widgetType": "heading",
+                          "isInner": false,
+                          "settings": {
+                            "title": "Pathways",
+                            "header_size": "p",
+                            "title_color": "#ffffff",
+                            "align": "left",
+                            "typography_typography": "custom",
+                            "typography_font_family": "Montserrat",
+                            "typography_font_size": {
+                              "unit": "px",
+                              "size": 10.5
+                            },
+                            "typography_font_weight": "700",
+                            "typography_text_transform": "uppercase",
+                            "typography_line_height": {
+                              "unit": "em",
+                              "size": 1.18
+                            },
+                            "typography_letter_spacing": {
+                              "unit": "px",
+                              "size": 1.8
+                            },
+                            "css_classes": "o1b-tag",
+                            "_margin": {
+                              "unit": "px",
+                              "top": "0",
+                              "right": "0",
+                              "bottom": "0",
+                              "left": "0",
+                              "isLinked": true
+                            }
+                          },
+                          "elements": []
+                        }
+                      ]
+                    },
+                    {
+                      "id": "1678f35",
+                      "elType": "container",
+                      "isInner": true,
+                      "settings": {
+                        "content_width": "full",
+                        "flex_gap": {
+                          "column": "12",
+                          "row": "12",
+                          "isLinked": true,
+                          "unit": "px"
+                        },
+                        "css_classes": "o1b-card-body",
+                        "flex_grow": 1,
+                        "padding": {
+                          "unit": "px",
+                          "top": "38",
+                          "right": "26",
+                          "bottom": "30",
+                          "left": "26",
+                          "isLinked": false
+                        },
+                        "flex_direction": "column"
+                      },
+                      "elements": [
+                        {
+                          "id": "79d7cfb",
+                          "elType": "widget",
+                          "widgetType": "heading",
+                          "isInner": false,
+                          "settings": {
+                            "title": "Stepping Stones & Pathways",
+                            "header_size": "h3",
+                            "title_color": "#292e2e",
+                            "align": "left",
+                            "typography_typography": "custom",
+                            "typography_font_family": "Montserrat",
+                            "typography_font_size": {
+                              "unit": "px",
+                              "size": 18
+                            },
+                            "typography_font_weight": "700",
+                            "typography_text_transform": "uppercase",
+                            "typography_line_height": {
+                              "unit": "em",
+                              "size": 1.18
+                            },
+                            "typography_letter_spacing": {
+                              "unit": "px",
+                              "size": 0.5
+                            },
+                            "css_classes": "o1b-card-h",
+                            "_margin": {
+                              "unit": "px",
+                              "top": "0",
+                              "right": "0",
+                              "bottom": "0",
+                              "left": "0",
+                              "isLinked": true
+                            }
+                          },
+                          "elements": []
+                        },
+                        {
+                          "id": "7010a04",
+                          "elType": "widget",
+                          "widgetType": "text-editor",
+                          "isInner": false,
+                          "settings": {
+                            "editor": "<p>Stone and paver pathways set through turf, gravel, or planting beds, with spacing planned to a natural stride.</p>",
+                            "text_color": "#383d3e",
+                            "align": "left",
+                            "typography_typography": "custom",
+                            "typography_font_family": "Montserrat",
+                            "typography_font_size": {
+                              "unit": "px",
+                              "size": 15.5
+                            },
+                            "typography_font_weight": "400",
+                            "typography_line_height": {
+                              "unit": "em",
+                              "size": 1.75
+                            },
+                            "_margin": {
+                              "unit": "px",
+                              "top": "0",
+                              "right": "0",
+                              "bottom": "0",
+                              "left": "0",
+                              "isLinked": true
+                            }
+                          },
+                          "elements": []
+                        },
+                        {
+                          "id": "e22f50e",
+                          "elType": "widget",
+                          "widgetType": "text-editor",
+                          "isInner": false,
+                          "settings": {
+                            "editor": "<p><strong>Quoted on its own</strong><br>Stone and paver pathways through turf, gravel, or planting beds, spaced to a natural stride.</p>",
+                            "text_color": "#292e2e",
+                            "align": "left",
+                            "typography_typography": "custom",
+                            "typography_font_family": "Montserrat",
+                            "typography_font_size": {
+                              "unit": "px",
+                              "size": 14.5
+                            },
+                            "typography_font_weight": "400",
+                            "typography_line_height": {
+                              "unit": "em",
+                              "size": 1.75
+                            },
+                            "css_classes": "o1b-card-meta",
+                            "_margin": {
+                              "unit": "px",
+                              "top": "0",
+                              "right": "0",
+                              "bottom": "0",
+                              "left": "0",
+                              "isLinked": true
+                            }
+                          },
+                          "elements": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "0bf094c",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "content_width": "full",
+                "flex_direction": "column",
+                "width_tablet": {
+                  "unit": "%",
+                  "size": 48
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 32
+                },
+                "padding": {
+                  "unit": "px",
+                  "top": "0",
+                  "right": "0",
+                  "bottom": "0",
+                  "left": "0",
+                  "isLinked": true
+                }
+              },
+              "elements": [
+                {
+                  "id": "05f0b88",
+                  "elType": "container",
+                  "isInner": true,
+                  "settings": {
+                    "content_width": "full",
+                    "flex_gap": {
+                      "column": "0",
+                      "row": "0",
+                      "isLinked": true,
+                      "unit": "px"
+                    },
+                    "css_classes": "o1b-card",
+                    "background_background": "classic",
+                    "background_color": "#ffffff",
+                    "link": {
+                      "url": "/services/concrete-dg-gravel/",
+                      "is_external": "",
+                      "nofollow": ""
+                    },
+                    "flex_direction": "column",
+                    "padding": {
+                      "unit": "px",
+                      "top": "0",
+                      "right": "0",
+                      "bottom": "0",
+                      "left": "0",
+                      "isLinked": true
+                    }
+                  },
+                  "elements": [
+                    {
+                      "id": "c7fb194",
+                      "elType": "container",
+                      "isInner": true,
+                      "settings": {
+                        "content_width": "full",
+                        "flex_gap": {
+                          "column": "0",
+                          "row": "0",
+                          "isLinked": true,
+                          "unit": "px"
+                        },
+                        "css_classes": "o1b-card-img",
+                        "flex_grow": 0,
+                        "flex_direction": "column",
+                        "padding": {
+                          "unit": "px",
+                          "top": "0",
+                          "right": "0",
+                          "bottom": "0",
+                          "left": "0",
+                          "isLinked": true
+                        }
+                      },
+                      "elements": [
+                        {
+                          "id": "f5a0f04",
+                          "elType": "widget",
+                          "widgetType": "image",
+                          "isInner": false,
+                          "settings": {
+                            "image": {
+                              "url": "{{media_url:project-11}}",
+                              "id": "{{media:project-11}}"
+                            },
+                            "image_size": "full",
+                            "_margin": {
+                              "unit": "px",
+                              "top": "0",
+                              "right": "0",
+                              "bottom": "0",
+                              "left": "0",
+                              "isLinked": true
+                            }
+                          },
+                          "elements": []
+                        },
+                        {
+                          "id": "7c45cd5",
+                          "elType": "widget",
+                          "widgetType": "heading",
+                          "isInner": false,
+                          "settings": {
+                            "title": "Finishes",
+                            "header_size": "p",
+                            "title_color": "#ffffff",
+                            "align": "left",
+                            "typography_typography": "custom",
+                            "typography_font_family": "Montserrat",
+                            "typography_font_size": {
+                              "unit": "px",
+                              "size": 10.5
+                            },
+                            "typography_font_weight": "700",
+                            "typography_text_transform": "uppercase",
+                            "typography_line_height": {
+                              "unit": "em",
+                              "size": 1.18
+                            },
+                            "typography_letter_spacing": {
+                              "unit": "px",
+                              "size": 1.8
+                            },
+                            "css_classes": "o1b-tag",
+                            "_margin": {
+                              "unit": "px",
+                              "top": "0",
+                              "right": "0",
+                              "bottom": "0",
+                              "left": "0",
+                              "isLinked": true
+                            }
+                          },
+                          "elements": []
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ef2d117",
+                      "elType": "container",
+                      "isInner": true,
+                      "settings": {
+                        "content_width": "full",
+                        "flex_gap": {
+                          "column": "12",
+                          "row": "12",
+                          "isLinked": true,
+                          "unit": "px"
+                        },
+                        "css_classes": "o1b-card-body",
+                        "flex_grow": 1,
+                        "padding": {
+                          "unit": "px",
+                          "top": "38",
+                          "right": "26",
+                          "bottom": "30",
+                          "left": "26",
+                          "isLinked": false
+                        },
+                        "flex_direction": "column"
+                      },
+                      "elements": [
+                        {
+                          "id": "82010a5",
+                          "elType": "widget",
+                          "widgetType": "heading",
+                          "isInner": false,
+                          "settings": {
+                            "title": "Concrete, DG, Gravel & Mulch",
+                            "header_size": "h3",
+                            "title_color": "#292e2e",
+                            "align": "left",
+                            "typography_typography": "custom",
+                            "typography_font_family": "Montserrat",
+                            "typography_font_size": {
+                              "unit": "px",
+                              "size": 18
+                            },
+                            "typography_font_weight": "700",
+                            "typography_text_transform": "uppercase",
+                            "typography_line_height": {
+                              "unit": "em",
+                              "size": 1.18
+                            },
+                            "typography_letter_spacing": {
+                              "unit": "px",
+                              "size": 0.5
+                            },
+                            "css_classes": "o1b-card-h",
+                            "_margin": {
+                              "unit": "px",
+                              "top": "0",
+                              "right": "0",
+                              "bottom": "0",
+                              "left": "0",
+                              "isLinked": true
+                            }
+                          },
+                          "elements": []
+                        },
+                        {
+                          "id": "c60cab3",
+                          "elType": "widget",
+                          "widgetType": "text-editor",
+                          "isInner": false,
+                          "settings": {
+                            "editor": "<p>Decomposed granite patios, gravel beds, mulch, and poured concrete for clean, low-maintenance ground cover.</p>",
+                            "text_color": "#383d3e",
+                            "align": "left",
+                            "typography_typography": "custom",
+                            "typography_font_family": "Montserrat",
+                            "typography_font_size": {
+                              "unit": "px",
+                              "size": 15.5
+                            },
+                            "typography_font_weight": "400",
+                            "typography_line_height": {
+                              "unit": "em",
+                              "size": 1.75
+                            },
+                            "_margin": {
+                              "unit": "px",
+                              "top": "0",
+                              "right": "0",
+                              "bottom": "0",
+                              "left": "0",
+                              "isLinked": true
+                            }
+                          },
+                          "elements": []
+                        },
+                        {
+                          "id": "56a7c98",
+                          "elType": "widget",
+                          "widgetType": "text-editor",
+                          "isInner": false,
+                          "settings": {
+                            "editor": "<p><strong>What we set</strong><br>Decomposed granite patios, gravel beds, mulch, and poured concrete.</p>",
+                            "text_color": "#292e2e",
+                            "align": "left",
+                            "typography_typography": "custom",
+                            "typography_font_family": "Montserrat",
+                            "typography_font_size": {
+                              "unit": "px",
+                              "size": 14.5
+                            },
+                            "typography_font_weight": "400",
+                            "typography_line_height": {
+                              "unit": "em",
+                              "size": 1.75
+                            },
+                            "css_classes": "o1b-card-meta",
+                            "_margin": {
+                              "unit": "px",
+                              "top": "0",
+                              "right": "0",
+                              "bottom": "0",
+                              "left": "0",
+                              "isLinked": true
+                            }
+                          },
+                          "elements": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "22be8bf",
       "elType": "container",
       "isInner": false,
       "settings": {
@@ -1963,7 +4395,7 @@
       },
       "elements": [
         {
-          "id": "7c7be4d",
+          "id": "9fb0b60",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -2003,7 +4435,7 @@
           "elements": []
         },
         {
-          "id": "98a8a99",
+          "id": "aaa38fd",
           "elType": "widget",
           "widgetType": "heading",
           "isInner": false,
@@ -2044,12 +4476,12 @@
           "elements": []
         },
         {
-          "id": "8bfec00",
+          "id": "ff8f489",
           "elType": "widget",
           "widgetType": "text-editor",
           "isInner": false,
           "settings": {
-            "editor": "<p>Tell us whether you need a patio, walkway, driveway, or pool deck. We will walk the property and send a written scope. Call 818-297-2475 or request a free estimate.</p>",
+            "editor": "<p>Tell us whether you need a patio, walkway, driveway, or pool deck. We will walk the property and send a written scope for paver installation in Encino. Call 818-297-2475 or request a free estimate.</p>",
             "text_color": "#383d3e",
             "align": "center",
             "typography_typography": "custom",
@@ -2076,7 +4508,7 @@
           "elements": []
         },
         {
-          "id": "ee87a78",
+          "id": "a38bf8c",
           "elType": "container",
           "isInner": true,
           "settings": {
@@ -2104,7 +4536,7 @@
           },
           "elements": [
             {
-              "id": "83ff594",
+              "id": "7d6a5dc",
               "elType": "widget",
               "widgetType": "button",
               "isInner": false,
@@ -2159,7 +4591,7 @@
               "elements": []
             },
             {
-              "id": "c1e0693",
+              "id": "ee086b4",
               "elType": "widget",
               "widgetType": "button",
               "isInner": false,

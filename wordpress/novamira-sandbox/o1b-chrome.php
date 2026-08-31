@@ -15,10 +15,10 @@ add_action('wp_enqueue_scripts', function () {
     [],
     null
   );
-  wp_register_style('o1b-chrome', false, ['o1b-fonts'], '1.9.4');
+  wp_register_style('o1b-chrome', false, ['o1b-fonts'], '1.9.11');
   wp_enqueue_style('o1b-chrome');
   wp_add_inline_style('o1b-chrome', o1b_chrome_css());
-  wp_register_script('o1b-chrome', false, ['jquery'], '1.9.4', true);
+  wp_register_script('o1b-chrome', false, ['jquery'], '1.9.11', true);
   wp_enqueue_script('o1b-chrome');
   wp_add_inline_script('o1b-chrome', o1b_chrome_js());
 }, 30);
@@ -31,47 +31,103 @@ add_action('wp_head', function () {
 }, 0);
 
 add_action('wp_head', function () {
-  $titles = [
-    'home' => 'Artificial Grass Installation Encino | Licensed & Insured | 15-Year Warranty',
-    'about-us' => 'Landscaping Company Encino | Licensed Since 2002',
-    'services' => 'Landscaping Services Encino | Turf, Pavers & Yards',
-    'projects' => 'Landscaping Projects Encino | Real Yards We Built',
-    'contact-us' => 'Free Estimate Encino | Licensed Option 1 Builders',
-    'blog' => 'Encino Landscaping Blog | Option 1 Builders Tips',
-  ];
-  $descs = [
-    'home' => 'Artificial grass installation in Encino and the San Fernando Valley. Licensed, insured crews, 15-year warranty. Free on-site estimate. Call 818-297-2475.',
-    'about-us' => 'Option 1 Builders is a landscaping company in Encino. In-house crews since 2002, CA license #1122918, and a 15-year turf warranty. Call 818-297-2475.',
-    'services' => 'Landscaping services in Encino: artificial grass, pavers, and full yards quoted as separate lines. Licensed crews. Call 818-297-2475.',
-    'projects' => 'Landscaping projects in Encino and the San Fernando Valley. Artificial grass, pavers, and full yards by Option 1 Builders. Call 818-297-2475.',
-    'contact-us' => 'Request a free estimate in Encino. Licensed Option 1 Builders walks the yard and sends a written scope. Call 818-297-2475.',
-    'blog' => 'Encino landscaping blog from Option 1 Builders: turf bases, bid comparisons, and what Valley heat does to a cheap quote.',
-  ];
+  $seo = o1b_page_seo();
   $key = o1b_current_page_key();
-  if (!$key || empty($descs[$key])) {
+  if (!$key || empty($seo[$key])) {
     return;
   }
-  echo '<meta name="description" content="' . esc_attr($descs[$key]) . '">' . "\n";
-  echo '<link rel="canonical" href="' . esc_url(home_url($key === 'home' ? '/' : '/' . $key . '/')) . '">' . "\n";
+  echo '<meta name="description" content="' . esc_attr($seo[$key]['desc']) . '">' . "\n";
+  echo '<link rel="canonical" href="' . esc_url(home_url($seo[$key]['path'])) . '">' . "\n";
 }, 2);
 
 add_filter('pre_get_document_title', function ($title) {
-  $titles = [
-    'home' => 'Artificial Grass Installation Encino | Licensed & Insured | 15-Year Warranty',
-    'about-us' => 'Landscaping Company Encino | Licensed Since 2002',
-    'services' => 'Landscaping Services Encino | Turf, Pavers & Yards',
-    'projects' => 'Landscaping Projects Encino | Real Yards We Built',
-    'contact-us' => 'Free Estimate Encino | Licensed Option 1 Builders',
-    'blog' => 'Encino Landscaping Blog | Option 1 Builders Tips',
-  ];
+  $seo = o1b_page_seo();
   $key = o1b_current_page_key();
-  return ($key && !empty($titles[$key])) ? $titles[$key] : $title;
+  return ($key && !empty($seo[$key]['title'])) ? $seo[$key]['title'] : $title;
 }, 20);
+
+add_filter('body_class', function ($classes) {
+  $key = o1b_current_page_key();
+  if (in_array($key, ['artificial-grass-installation', 'paver-installation', 'stepping-stones-pathways'], true)) {
+    $classes[] = 'o1b-svc-frame';
+  }
+  return $classes;
+});
 
 add_action('wp_footer', function () {
   $estimate = is_page('contact-us') ? '#estimate' : home_url('/contact-us/');
   echo '<div class="sticky-cta"><a href="tel:+18182972475">Call Now</a><a class="sticky-cta__alt" href="' . esc_url($estimate) . '">Free Estimate</a></div>';
 }, 20);
+
+function o1b_page_seo() {
+  return [
+    'home' => [
+      'title' => 'Artificial Grass Installation Encino | Licensed & Insured | 15-Year Warranty',
+      'desc' => 'Artificial grass installation in Encino and the San Fernando Valley. Licensed, insured crews, 15-year warranty. Free on-site estimate. Call 818-297-2475.',
+      'path' => '/',
+    ],
+    'about-us' => [
+      'title' => 'Landscaping Company Encino | Licensed Since 2002',
+      'desc' => 'Option 1 Builders is a landscaping company in Encino. In-house crews since 2002, CA license #1122918, and a 15-year turf warranty. Call 818-297-2475.',
+      'path' => '/about-us/',
+    ],
+    'services' => [
+      'title' => 'Landscaping Services Encino | Turf, Pavers & Yards',
+      'desc' => 'Landscaping services in Encino: artificial grass, pavers, and full yards quoted as separate lines. Licensed crews. Call 818-297-2475.',
+      'path' => '/services/',
+    ],
+    'artificial-grass-installation' => [
+      'title' => 'Artificial Grass Installation Encino | Option 1 Builders',
+      'desc' => 'Artificial grass installation in Encino: pet-friendly turf, compacted draining base, and a 15-year warranty. Licensed Encino crews. Call 818-297-2475.',
+      'path' => '/services/artificial-grass-installation/',
+    ],
+    'paver-installation' => [
+      'title' => 'Paver Installation Encino California | Option 1 Builders',
+      'desc' => 'Paver installation in Encino: patios, walkways, driveways, and pool decks on a compacted base with bedding sand and edge restraints. Call 818-297-2475.',
+      'path' => '/services/paver-installation/',
+    ],
+    'landscape-design-installation' => [
+      'title' => 'Landscape Design & Installation Encino | Option 1 Builders',
+      'desc' => 'Landscape design and installation in Encino: turf, hardscape, planting, irrigation, and drainage under one plan and one crew. Licensed. Call 818-297-2475.',
+      'path' => '/services/landscape-design-installation/',
+    ],
+    'stepping-stones-pathways' => [
+      'title' => 'Stepping Stones & Pathways Encino CA | Option 1 Builders',
+      'desc' => 'Stepping stones and pathways in Encino, set through turf, gravel, or planting beds and spaced to a natural stride. Licensed crews. Call 818-297-2475.',
+      'path' => '/services/stepping-stones-pathways/',
+    ],
+    'concrete-dg-gravel' => [
+      'title' => 'Concrete, DG & Gravel Encino California | Option 1 Builders',
+      'desc' => 'Concrete, DG and gravel in Encino: decomposed granite, gravel, mulch, and poured concrete for low-water Valley yards. Licensed crews. Call 818-297-2475.',
+      'path' => '/services/concrete-dg-gravel/',
+    ],
+    'irrigation-drainage' => [
+      'title' => 'Irrigation & Drainage Encino California | Option 1 Builders',
+      'desc' => 'Irrigation and drainage in Encino: sprinkler and drip systems, plus yard drains that move water off sloped Valley lots. Licensed crews. Call 818-297-2475.',
+      'path' => '/services/irrigation-drainage/',
+    ],
+    'vinyl-fencing' => [
+      'title' => 'Vinyl Fencing Installation Encino CA | Option 1 Builders',
+      'desc' => 'Vinyl fencing in Encino for low-maintenance privacy and property lines. Quoted on its own or in a full yard. Licensed Option 1 Builders. Call 818-297-2475.',
+      'path' => '/services/vinyl-fencing/',
+    ],
+    'projects' => [
+      'title' => 'Landscaping Projects Encino | Real Yards We Built',
+      'desc' => 'Landscaping projects in Encino and the San Fernando Valley. Artificial grass, pavers, and full yards by Option 1 Builders. Call 818-297-2475.',
+      'path' => '/projects/',
+    ],
+    'contact-us' => [
+      'title' => 'Free Estimate Encino | Licensed Option 1 Builders',
+      'desc' => 'Request a free estimate in Encino. Licensed Option 1 Builders walks the yard and sends a written scope. Call 818-297-2475.',
+      'path' => '/contact-us/',
+    ],
+    'blog' => [
+      'title' => 'Encino Landscaping Blog | Option 1 Builders Tips',
+      'desc' => 'Encino landscaping blog from Option 1 Builders: turf bases, bid comparisons, and what Valley heat does to a cheap quote.',
+      'path' => '/blog/',
+    ],
+  ];
+}
 
 function o1b_current_page_key() {
   if (is_front_page()) {
@@ -153,6 +209,8 @@ function o1b_chrome_js() {
     ".o1b-mgr-photo",
     ".o1b-mgr-col",
     ".o1b-awards",
+    ".o1b-cta-band",
+    ".o1b-highlights",
     ".formcard",
     ".o1b-showroom",
     ".o1b-nap",
@@ -348,15 +406,31 @@ body.elementor-page #content{margin-top:0!important;padding-top:0!important}
   display:block;
 }
 .elementor-location-header .elementor-nav-menu--main .sub-menu .elementor-item,
+.elementor-location-header .elementor-nav-menu--main .sub-menu a,
 .ha-template-content-header .ha-nav-menu .sub-menu a{
   display:block!important;padding:10px 20px!important;white-space:nowrap;font-size:12px!important;
   letter-spacing:.6px!important;border-bottom:none!important;
+  color:#fff!important;background:transparent!important;text-transform:none!important;
 }
+.elementor-location-header .elementor-nav-menu--main .sub-menu .elementor-item:hover,
+.elementor-location-header .elementor-nav-menu--main .sub-menu .elementor-item.elementor-item-active,
+.elementor-location-header .elementor-nav-menu--main .sub-menu .current-menu-item > .elementor-item,
+.elementor-location-header .elementor-nav-menu--main .sub-menu a:hover,
+.ha-template-content-header .ha-nav-menu .sub-menu a:hover{
+  color:#fff!important;background:rgba(183,154,97,.14)!important;border-bottom:none!important;
+}
+.o1b-cards-7.e-con,
 .o1b-cards-7 > .e-con-inner{flex-wrap:wrap!important;align-items:stretch!important}
+.o1b-cards-7.e-con > .e-con,
 .o1b-cards-7 > .e-con-inner > .e-con{
-  width:calc((100% - 60px) / 3)!important;max-width:calc((100% - 60px) / 3)!important;
+  --width:calc((100% - 60px) / 3)!important;
+  width:calc((100% - 60px) / 3)!important;
+  max-width:calc((100% - 60px) / 3)!important;
+  flex:0 0 calc((100% - 60px) / 3)!important;
+  --flex-grow:0!important;
 }
-.o1b-cards-7 > .e-con-inner > .e-con:nth-child(7){margin-left:auto;margin-right:auto}
+.o1b-cards-7.e-con > .e-con:nth-child(7),
+.o1b-cards-7 > .e-con-inner > .e-con:nth-child(7){margin-left:0;margin-right:auto}
 .elementor .e-con.e-flex.o1b-card-img-empty{
   background:linear-gradient(180deg,#f3f2ed 0%,#e6e4dd 100%);
 }
@@ -418,14 +492,28 @@ body.elementor-page #content{margin-top:0!important;padding-top:0!important}
 }
 .o1b-hero-sub{margin-bottom:34px!important}
 .o1b-hero-sub p{margin:0!important;color:#f0efe9!important;font-size:clamp(1rem,1.6vw,1.19rem)!important;text-shadow:0 2px 6px rgba(0,0,0,.5)}
-.o1b-hero-points{margin:40px 0 0!important;max-width:none!important}
-.o1b-hero-points p{
+.o1b-hero-points,
+.o1b-hero .elementor-widget-text-editor:has(p > span + span),
+.o1b-page-hero .elementor-widget-text-editor:has(p > span + span){
+  margin:40px 0 0!important;max-width:none!important
+}
+.o1b-hero-points p,
+.o1b-hero .elementor-widget-text-editor p:has(> span + span),
+.o1b-page-hero .elementor-widget-text-editor p:has(> span + span){
   display:flex;flex-wrap:wrap;justify-content:center;margin:0!important;
   color:#e3e0d8!important;font-size:13.5px!important;letter-spacing:.4px;
 }
-.o1b-hero-points span{padding:0 26px;border-left:1px solid rgba(255,255,255,.28)}
-.o1b-hero-points span:first-child{border-left:0}
-.o1b-hero-points strong{color:#fff;font-weight:700}
+.o1b-hero-points span,
+.o1b-hero .elementor-widget-text-editor p:has(> span + span) span,
+.o1b-page-hero .elementor-widget-text-editor p:has(> span + span) span{
+  padding:0 26px;border-left:1px solid rgba(255,255,255,.28)
+}
+.o1b-hero-points span:first-child,
+.o1b-hero .elementor-widget-text-editor p:has(> span + span) span:first-child,
+.o1b-page-hero .elementor-widget-text-editor p:has(> span + span) span:first-child{border-left:0}
+.o1b-hero-points strong,
+.o1b-hero .elementor-widget-text-editor p:has(> span + span) strong,
+.o1b-page-hero .elementor-widget-text-editor p:has(> span + span) strong{color:#fff;font-weight:700}
 .o1b-hero .elementor-widget-image{margin:0 auto 22px!important;width:132px!important}
 body.elementor-page .elementor > .e-con.e-parent > .e-con-inner{
   max-width:1192px!important;width:100%;
@@ -552,6 +640,9 @@ body.elementor-page .elementor > .e-con.e-parent > .e-con-inner{
   box-shadow:0 3px 10px rgba(0,0,0,.08);overflow:visible;height:100%;
   transition:box-shadow .35s ease,transform .35s ease;
 }
+a.o1b-card,a.e-con.o1b-card,.elementor a.e-con.e-flex.o1b-card{
+  color:inherit;text-decoration:none;cursor:pointer;
+}
 .elementor .e-con.e-flex.o1b-card:hover{
   transform:translateY(-10px);box-shadow:0 30px 54px rgba(32,35,33,.22);
 }
@@ -596,8 +687,12 @@ body.elementor-page .elementor > .e-con.e-parent > .e-con-inner{
 }
 .o1b-mini{
   background:#fff!important;border:1px solid var(--line)!important;
-  border-left:3px solid var(--gold)!important;border-radius:4px;height:100%;
+  border-left:3px solid var(--gold)!important;border-radius:4px;
+  height:100%;overflow:visible;
 }
+.o1b-mini .elementor-heading-title{margin:0 0 10px!important;color:#292e2e!important}
+.o1b-mini .elementor-widget-text-editor,
+.o1b-mini .elementor-widget-text-editor p{margin:0!important;font-size:15.5px;color:#383d3e!important}
 .o1b-review{background:#fff;border:1px solid var(--line);border-radius:4px;position:relative;box-shadow:0 12px 28px rgba(32,35,33,.07);height:100%;transition:transform .35s ease,box-shadow .35s ease}
 .o1b-review:hover{transform:translateY(-8px);box-shadow:0 26px 46px rgba(32,35,33,.15)}
 .o1b-wm-reviews a{color:var(--gold)!important}
@@ -735,11 +830,73 @@ body.elementor-page .elementor > .e-con.e-parent > .e-con-inner{
   border:2px solid var(--gold);border-radius:50%;
 }
 .o1b-awards{margin-top:66px;border-top:1px solid rgba(255,255,255,.14)}
+.o1b-awards--light{border-top-color:var(--line);margin-top:8px}
 .o1b-award{
   display:flex;align-items:center;justify-content:center;min-height:120px;padding:16px 12px;
   background:#fff;border-radius:4px;
 }
 .o1b-award img{display:block;width:auto;height:84px;object-fit:contain}
+.elementor .e-con.e-flex.o1b-highlights,
+.elementor .e-con.e-flex.o1b-highlights > .e-con-inner{
+  display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;align-items:stretch;
+  margin-top:28px!important;
+}
+.o1b-highlights.e-con > .e-con,
+.o1b-highlights > .e-con-inner > .e-con{
+  --width:100%!important;width:100%!important;max-width:none!important;min-width:0!important;
+  flex:none!important;
+}
+.o1b-cta-band{background:#181818!important}
+.o1b-cta-band-in{align-items:center}
+.o1b-cta-band-actions .o1b-actions{justify-content:flex-end!important;flex-wrap:nowrap}
+.o1b-service-media{margin-top:28px}
+.o1b-watermark-left.o1b-wm-services > .e-con-inner > .elementor-widget-text-editor{
+  max-width:880px!important;width:100%!important;
+  margin-left:auto!important;margin-right:auto!important;
+}
+.o1b-watermark-left.o1b-wm-services > .e-con-inner > .elementor-widget-heading:not(.elementor-absolute) p.elementor-heading-title{
+  margin:0 0 12px!important;
+}
+.o1b-watermark-left.o1b-wm-services > .e-con-inner > .elementor-widget-heading:not(.elementor-absolute) h2.elementor-heading-title{
+  margin:0 0 28px!important;
+}
+.o1b-watermark-left.o1b-wm-services > .e-con-inner > .elementor-widget-image{
+  max-width:880px!important;width:100%!important;
+  margin:28px auto 48px!important;
+}
+.o1b-service-media--frame,
+.o1b-svc-frame .o1b-wm-services > .e-con-inner > .elementor-widget-image,
+body.page-artificial-grass-installation .o1b-wm-services > .e-con-inner > .elementor-widget-image,
+body.page-paver-installation .o1b-wm-services > .e-con-inner > .elementor-widget-image,
+body.page-stepping-stones-pathways .o1b-wm-services > .e-con-inner > .elementor-widget-image{
+  aspect-ratio:4/3!important;overflow:hidden!important;border-radius:4px;
+  width:100%!important;max-width:880px!important;
+  margin:28px auto 48px!important;
+}
+.o1b-service-media--frame .elementor-widget-container,
+.o1b-service-media--frame figure,
+.o1b-svc-frame .o1b-wm-services > .e-con-inner > .elementor-widget-image .elementor-widget-container,
+.o1b-svc-frame .o1b-wm-services > .e-con-inner > .elementor-widget-image figure,
+body.page-artificial-grass-installation .o1b-wm-services > .e-con-inner > .elementor-widget-image .elementor-widget-container,
+body.page-paver-installation .o1b-wm-services > .e-con-inner > .elementor-widget-image .elementor-widget-container,
+body.page-stepping-stones-pathways .o1b-wm-services > .e-con-inner > .elementor-widget-image .elementor-widget-container,
+body.page-artificial-grass-installation .o1b-wm-services > .e-con-inner > .elementor-widget-image figure,
+body.page-paver-installation .o1b-wm-services > .e-con-inner > .elementor-widget-image figure,
+body.page-stepping-stones-pathways .o1b-wm-services > .e-con-inner > .elementor-widget-image figure{
+  height:100%!important;width:100%!important;overflow:hidden!important;
+}
+.o1b-service-media--frame img,
+.o1b-svc-frame .o1b-wm-services > .e-con-inner > .elementor-widget-image img,
+body.page-artificial-grass-installation .o1b-wm-services > .e-con-inner > .elementor-widget-image img,
+body.page-paver-installation .o1b-wm-services > .e-con-inner > .elementor-widget-image img,
+body.page-stepping-stones-pathways .o1b-wm-services > .e-con-inner > .elementor-widget-image img{
+  width:100%!important;height:100%!important;max-height:none!important;
+  object-fit:cover!important;object-position:center!important;
+}
+.o1b-mid-cta .o1b-actions{justify-content:center!important}
+.o1b-service-trust{margin-top:28px}
+.o1b-service-scope a{color:var(--gold)}
+.o1b-wm-reviews .o1b-grw{margin-top:40px}
 .o1b-nap{padding-left:16px;border-left:2px solid var(--gold);margin:0 0 18px}
 .formcard{background:#fff;color:var(--body);position:relative;box-shadow:0 34px 68px rgba(0,0,0,.42);border-top:3px solid var(--gold)}
 .formcard:before{
@@ -865,8 +1022,16 @@ body:not(.rtl) .o1b-intro-media .elementor-absolute.elementor-widget-image{
 .elementor-accordion-item{border-color:var(--line)!important;border-radius:4px;overflow:hidden;margin:0 0 12px}
 .o1b-watermark > .e-con-inner > .elementor-widget-text-editor{max-width:760px;margin-left:auto;margin-right:auto}
 @media (max-width:1080px){
+  .elementor .e-con.e-flex.o1b-highlights,
+  .elementor .e-con.e-flex.o1b-highlights > .e-con-inner{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+  .o1b-cards-7.e-con > .e-con,
   .o1b-cards-7 > .e-con-inner > .e-con{
-    width:calc((100% - 30px) / 2)!important;max-width:calc((100% - 30px) / 2)!important;
+    --width:calc((100% - 30px) / 2)!important;
+    width:calc((100% - 30px) / 2)!important;
+    max-width:calc((100% - 30px) / 2)!important;
+    flex:0 0 calc((100% - 30px) / 2)!important;
   }
   .elementor-location-header .elementor-nav-menu--main .elementor-nav-menu,
   .ha-template-content-header .ha-nav-menu ul.menu{gap:18px}
@@ -886,7 +1051,70 @@ body:not(.rtl) .o1b-intro-media .elementor-absolute.elementor-widget-image{
     padding-left:18px!important;padding-right:18px!important;
   }
   .o1b-hero,.o1b-hero > .e-con-inner{padding-bottom:128px!important}
-  .o1b-header-nav{order:3;flex:0 0 auto!important;width:auto!important;max-width:50px;margin-left:0!important}
+  .o1b-header-nav{order:3;flex:0 0 auto!important;width:auto!important;max-width:50px;margin-left:0!important;overflow:visible!important;position:static!important}
+  .o1b-header-nav .elementor-widget-nav-menu,
+  .o1b-header-nav .elementor-widget-container,
+  .o1b-header-nav .elementor-nav-menu-wrapper,
+  .elementor-location-header .elementor-widget-nav-menu{
+    position:static!important;overflow:visible!important;max-width:none!important;
+  }
+  .o1b-header-bar,.o1b-header-bar > .e-con-inner,.elementor-location-header .elementor-widget-nav-menu{
+    overflow:visible!important;
+  }
+  .elementor-location-header .o1b-header-bar,
+  .elementor-location-header .o1b-header-bar > .e-con-inner{position:relative!important}
+  .elementor-location-header .elementor-nav-menu--dropdown,
+  .elementor-location-header .elementor-nav-menu--dropdown.elementor-nav-menu__container{
+    position:absolute!important;left:0!important;right:0!important;top:100%!important;
+    width:auto!important;max-width:none!important;min-width:0!important;
+    margin:0!important;padding:8px 24px 20px!important;
+    background:#202321!important;z-index:90!important;
+    border-top:1px solid rgba(255,255,255,.12)!important;
+    box-shadow:0 18px 40px rgba(0,0,0,.4)!important;
+    max-height:min(80vh,760px)!important;overflow-x:hidden!important;overflow-y:auto!important;
+  }
+  .elementor-location-header .elementor-nav-menu--dropdown .elementor-nav-menu,
+  .elementor-location-header .elementor-nav-menu--dropdown ul{
+    display:flex!important;flex-direction:column!important;align-items:stretch!important;
+    gap:0!important;width:100%!important;margin:0!important;padding:0!important;
+  }
+  .elementor-location-header .elementor-nav-menu--dropdown .menu-item{
+    width:100%!important;border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .elementor-location-header .elementor-nav-menu--dropdown .elementor-item,
+  .elementor-location-header .elementor-nav-menu--dropdown a{
+    display:block!important;width:100%!important;padding:14px 0!important;
+    color:#fff!important;background:transparent!important;
+    font-size:13px!important;letter-spacing:.8px!important;
+    text-transform:uppercase!important;border-bottom:none!important;
+    white-space:normal!important;
+  }
+  .elementor-location-header .elementor-nav-menu--dropdown .elementor-item:hover,
+  .elementor-location-header .elementor-nav-menu--dropdown .elementor-item.elementor-item-active,
+  .elementor-location-header .elementor-nav-menu--dropdown a:hover{
+    color:var(--gold)!important;background:transparent!important;border-bottom:none!important;
+  }
+  .elementor-location-header .elementor-nav-menu--dropdown .sub-menu{
+    position:static!important;transform:none!important;display:none;
+    width:100%!important;min-width:0!important;max-width:none!important;
+    margin:0!important;padding:0 0 10px 12px!important;
+    background:transparent!important;box-shadow:none!important;border:none!important;
+  }
+  .elementor-location-header .elementor-nav-menu--dropdown .menu-item-has-children.elementor-active > .sub-menu,
+  .elementor-location-header .elementor-nav-menu--dropdown .menu-item-has-children.highlighted > .sub-menu,
+  .elementor-location-header .elementor-nav-menu--dropdown .menu-item-has-children[aria-expanded="true"] > .sub-menu,
+  .elementor-location-header .elementor-nav-menu--dropdown .current-menu-ancestor > .sub-menu{
+    display:block!important;
+  }
+  .elementor-location-header .elementor-nav-menu--dropdown .sub-menu .elementor-item,
+  .elementor-location-header .elementor-nav-menu--dropdown .sub-menu a{
+    padding:10px 0!important;font-size:12px!important;letter-spacing:.6px!important;
+    text-transform:none!important;white-space:normal!important;color:#fff!important;
+  }
+  .elementor-location-header .elementor-nav-menu--dropdown .sub-menu .elementor-item:hover,
+  .elementor-location-header .elementor-nav-menu--dropdown .sub-menu a:hover{
+    color:#fff!important;background:rgba(183,154,97,.14)!important;
+  }
   .o1b-header-cta{order:2;margin-left:auto!important}
   .o1b-header-cta .elementor-widget-button{display:none!important}
   .o1b-phone{max-width:none!important;margin-left:0!important}
@@ -898,10 +1126,19 @@ body:not(.rtl) .o1b-intro-media .elementor-absolute.elementor-widget-image{
   }
   .elementor-location-header .elementor-menu-toggle i,
   .ha-nav-humberger-wrapper i{color:#fff!important}
-  .sticky-cta{display:grid;grid-template-columns:1fr 1fr}
+  .sticky-cta{display:grid;grid-template-columns:1fr 1fr;padding-bottom:env(safe-area-inset-bottom,0px)}
+  body{padding-bottom:calc(58px + env(safe-area-inset-bottom,0px))}
   .o1b-hero h1.elementor-heading-title{font-size:1.75rem!important;white-space:normal}
   .o1b-actions{flex-direction:column!important}
   .o1b-actions .elementor-button{width:100%;max-width:340px}
+  .o1b-cta-band-in,.o1b-cta-band-in > .e-con-inner{flex-direction:column!important}
+  .o1b-cta-band-actions .o1b-actions{justify-content:flex-start!important;flex-wrap:wrap}
+  .o1b-hero-points p,
+  .o1b-hero .elementor-widget-text-editor p:has(> span + span),
+  .o1b-page-hero .elementor-widget-text-editor p:has(> span + span){flex-direction:column;gap:9px}
+  .o1b-hero-points span,
+  .o1b-hero .elementor-widget-text-editor p:has(> span + span) span,
+  .o1b-page-hero .elementor-widget-text-editor p:has(> span + span) span{padding:0;border-left:0}
   .o1b-gold-rule,
   .o1b-intro-media > .elementor-widget-image:not(.elementor-absolute)::before{display:none}
   .o1b-intro-media{
@@ -944,8 +1181,14 @@ body:not(.rtl) .o1b-intro-media .elementor-absolute.elementor-widget-image{
   .o1b-mgr-photo{padding:0 0 18px 18px}
 }
 @media (max-width:780px){
+  .elementor .e-con.e-flex.o1b-highlights,
+  .elementor .e-con.e-flex.o1b-highlights > .e-con-inner{
+    grid-template-columns:1fr!important;
+  }
+  .o1b-cards-7.e-con > .e-con,
   .o1b-cards-7 > .e-con-inner > .e-con{
-    width:100%!important;max-width:100%!important;margin-left:0;margin-right:0;
+    --width:100%!important;width:100%!important;max-width:100%!important;
+    flex:0 0 100%!important;margin-left:0;margin-right:0;
   }
   .o1b-topbar,.o1b-topbar > .e-con-inner{
     --padding-top:7px!important;--padding-bottom:7px!important;
@@ -954,6 +1197,12 @@ body:not(.rtl) .o1b-intro-media .elementor-absolute.elementor-widget-image{
   .o1b-topbar .elementor-widget-text-editor p{font-size:11.5px!important}
 }
 @media (max-width:520px){
+  .elementor .e-con.e-flex.o1b-highlights,
+  .elementor .e-con.e-flex.o1b-highlights > .e-con-inner{
+    grid-template-columns:1fr!important;
+  }
+  .o1b-award{min-height:104px;padding:14px 10px}
+  .o1b-award img{height:72px}
   .o1b-phone-label,
   .o1b-phone .elementor-widget-heading:first-child{display:none!important}
   .o1b-phone .elementor-heading-title{font-size:14.5px!important}
