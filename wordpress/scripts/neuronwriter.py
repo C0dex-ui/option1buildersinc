@@ -47,40 +47,40 @@ PAGES = {
         "path": "/blog/",
         "html": "blog/index.html",
     },
-    "artificial-grass-installation": {
+    "landscaper": {
+        "keyword": "Encino landscaper",
+        "path": "/services/landscaper/",
+        "html": "services/landscaper/index.html",
+    },
+    "remodeller": {
+        "keyword": "outdoor remodel Encino",
+        "path": "/services/remodeller/",
+        "html": "services/remodeller/index.html",
+    },
+    "turf-and-soil-supplier": {
         "keyword": "artificial grass installation Encino",
-        "path": "/services/artificial-grass-installation/",
-        "html": "services/artificial-grass-installation/index.html",
+        "path": "/services/turf-and-soil-supplier/",
+        "html": "services/turf-and-soil-supplier/index.html",
     },
-    "paver-installation": {
-        "keyword": "paver installation Encino",
-        "path": "/services/paver-installation/",
-        "html": "services/paver-installation/index.html",
+    "paving-contractor": {
+        "keyword": "paving contractor Encino",
+        "path": "/services/paving-contractor/",
+        "html": "services/paving-contractor/index.html",
     },
-    "landscape-design-installation": {
-        "keyword": "landscape design installation Encino",
-        "path": "/services/landscape-design-installation/",
-        "html": "services/landscape-design-installation/index.html",
+    "landscape-designer": {
+        "keyword": "landscape designer Encino",
+        "path": "/services/landscape-designer/",
+        "html": "services/landscape-designer/index.html",
     },
-    "stepping-stones-pathways": {
-        "keyword": "stepping stones pathways Encino",
-        "path": "/services/stepping-stones-pathways/",
-        "html": "services/stepping-stones-pathways/index.html",
+    "landscape-architect": {
+        "keyword": "Encino landscape design",
+        "path": "/services/landscape-architect/",
+        "html": "services/landscape-architect/index.html",
     },
-    "concrete-dg-gravel": {
-        "keyword": "decomposed granite Encino",
-        "path": "/services/concrete-dg-gravel/",
-        "html": "services/concrete-dg-gravel/index.html",
-    },
-    "irrigation-drainage": {
-        "keyword": "irrigation drainage Encino",
-        "path": "/services/irrigation-drainage/",
-        "html": "services/irrigation-drainage/index.html",
-    },
-    "vinyl-fencing": {
-        "keyword": "vinyl fencing Encino",
-        "path": "/services/vinyl-fencing/",
-        "html": "services/vinyl-fencing/index.html",
+    "construction-company": {
+        "keyword": "Encino hardscape",
+        "path": "/services/construction-company/",
+        "html": "services/construction-company/index.html",
     },
 }
 

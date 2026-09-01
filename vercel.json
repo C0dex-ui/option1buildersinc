@@ -1,0 +1,39 @@
+{
+  "redirects": [
+    {
+      "source": "/services/artificial-grass-installation/",
+      "destination": "/services/turf-and-soil-supplier/",
+      "permanent": true
+    },
+    {
+      "source": "/services/paver-installation/",
+      "destination": "/services/paving-contractor/",
+      "permanent": true
+    },
+    {
+      "source": "/services/landscape-design-installation/",
+      "destination": "/services/landscape-designer/",
+      "permanent": true
+    },
+    {
+      "source": "/services/irrigation-drainage/",
+      "destination": "/services/landscaper/",
+      "permanent": true
+    },
+    {
+      "source": "/services/concrete-dg-gravel/",
+      "destination": "/services/construction-company/",
+      "permanent": true
+    },
+    {
+      "source": "/services/vinyl-fencing/",
+      "destination": "/services/construction-company/",
+      "permanent": true
+    },
+    {
+      "source": "/services/stepping-stones-pathways/",
+      "destination": "/services/construction-company/",
+      "permanent": true
+    }
+  ]
+}

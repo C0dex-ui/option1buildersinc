@@ -8,6 +8,84 @@ if (!defined('ABSPATH')) {
 
 add_filter('run_wptexturize', '__return_false');
 
+add_filter('wp_headers', function ($headers) {
+  $headers['X-Frame-Options'] = 'SAMEORIGIN';
+  $headers['X-Content-Type-Options'] = 'nosniff';
+  $headers['Referrer-Policy'] = 'strict-origin-when-cross-origin';
+  $headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains';
+  if (empty($headers['Content-Security-Policy'])) {
+    $headers['Content-Security-Policy'] = 'upgrade-insecure-requests';
+  }
+  return $headers;
+});
+
+add_action('send_headers', function () {
+  if (headers_sent()) {
+    return;
+  }
+  header('X-Frame-Options: SAMEORIGIN', false);
+  header('X-Content-Type-Options: nosniff', false);
+  header('Referrer-Policy: strict-origin-when-cross-origin', false);
+  header('Strict-Transport-Security: max-age=31536000; includeSubDomains', false);
+  header('Content-Security-Policy: upgrade-insecure-requests', false);
+}, 1);
+
+function o1b_media_cache_ver() {
+  return 'o1b6';
+}
+
+function o1b_bust_upload_urls($html) {
+  if (!is_string($html) || $html === '' || strpos($html, '/wp-content/uploads/o1b-src/') === false) {
+    return $html;
+  }
+  $ver = o1b_media_cache_ver();
+  return preg_replace_callback(
+    '#(?:https?:)?(?://[^/\s\"\']+)?(/wp-content/uploads/o1b-src/[^\s\"\')]+)#i',
+    function ($m) use ($ver) {
+      $url = $m[0];
+      if (preg_match('/[?&]v=' . preg_quote($ver, '/') . '(?:&|$)/', $url)) {
+        return $url;
+      }
+      if (preg_match('/\.(zip|json|mp4)(?:[?#]|$)/i', $url)) {
+        return $url;
+      }
+      return $url . (strpos($url, '?') === false ? '?' : '&') . 'v=' . $ver;
+    },
+    $html
+  );
+}
+
+add_action('template_redirect', function () {
+  if (is_admin() || wp_doing_ajax() || is_preview() || isset($_GET['elementor-preview'])) {
+    return;
+  }
+  ob_start('o1b_bust_upload_urls');
+}, 0);
+
+add_filter('max_srcset_image_width', function () {
+  return 800;
+});
+
+add_filter('wp_calculate_image_srcset', function ($sources) {
+  if (!is_array($sources)) {
+    return $sources;
+  }
+  $uploads = wp_get_upload_dir();
+  $baseurl = $uploads['baseurl'];
+  $basedir = $uploads['basedir'];
+  foreach ($sources as $w => $src) {
+    $url = isset($src['url']) ? strtok($src['url'], '?') : '';
+    if ($url === '' || strpos($url, $baseurl) !== 0) {
+      continue;
+    }
+    $path = $basedir . substr($url, strlen($baseurl));
+    if (file_exists($path) && filesize($path) >= 100 * 1024) {
+      unset($sources[$w]);
+    }
+  }
+  return $sources;
+});
+
 add_action('wp_enqueue_scripts', function () {
   wp_enqueue_style(
     'o1b-fonts',
@@ -15,10 +93,10 @@ add_action('wp_enqueue_scripts', function () {
     [],
     null
   );
-  wp_register_style('o1b-chrome', false, ['o1b-fonts'], '1.9.11');
+  wp_register_style('o1b-chrome', false, ['o1b-fonts'], '1.9.14');
   wp_enqueue_style('o1b-chrome');
   wp_add_inline_style('o1b-chrome', o1b_chrome_css());
-  wp_register_script('o1b-chrome', false, ['jquery'], '1.9.11', true);
+  wp_register_script('o1b-chrome', false, ['jquery'], '1.9.14', true);
   wp_enqueue_script('o1b-chrome');
   wp_add_inline_script('o1b-chrome', o1b_chrome_js());
 }, 30);
@@ -30,15 +108,9 @@ add_action('wp_head', function () {
   echo "<script>(function(){var r=document.documentElement;if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;r.className+=' js-anim';setTimeout(function(){if(!r.hasAttribute('data-anim-ready')){r.className=r.className.replace(/\\bjs-anim\\b/g,'');}},3000);})();</script>\n";
 }, 0);
 
-add_action('wp_head', function () {
-  $seo = o1b_page_seo();
-  $key = o1b_current_page_key();
-  if (!$key || empty($seo[$key])) {
-    return;
-  }
-  echo '<meta name="description" content="' . esc_attr($seo[$key]['desc']) . '">' . "\n";
-  echo '<link rel="canonical" href="' . esc_url(home_url($seo[$key]['path'])) . '">' . "\n";
-}, 2);
+add_action('init', function () {
+  remove_action('wp_head', 'hello_elementor_add_description_meta_tag');
+});
 
 add_filter('pre_get_document_title', function ($title) {
   $seo = o1b_page_seo();
@@ -48,11 +120,324 @@ add_filter('pre_get_document_title', function ($title) {
 
 add_filter('body_class', function ($classes) {
   $key = o1b_current_page_key();
-  if (in_array($key, ['artificial-grass-installation', 'paver-installation', 'stepping-stones-pathways'], true)) {
+  if (in_array($key, ['turf-and-soil-supplier', 'paving-contractor', 'remodeller'], true)) {
     $classes[] = 'o1b-svc-frame';
   }
   return $classes;
 });
+
+add_action('template_redirect', function () {
+  $path = trim((string) parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
+  $gbp_301 = [
+    'services/artificial-grass-installation' => '/services/turf-and-soil-supplier/',
+    'services/paver-installation' => '/services/paving-contractor/',
+    'services/landscape-design-installation' => '/services/landscape-designer/',
+    'services/irrigation-drainage' => '/services/landscaper/',
+    'services/concrete-dg-gravel' => '/services/construction-company/',
+    'services/vinyl-fencing' => '/services/construction-company/',
+    'services/stepping-stones-pathways' => '/services/construction-company/',
+  ];
+  if (isset($gbp_301[$path])) {
+    wp_safe_redirect(home_url($gbp_301[$path]), 301);
+    exit;
+  }
+  if (is_category() || is_date()) {
+    wp_safe_redirect(home_url('/blog/'), 301);
+    exit;
+  }
+  if (is_404()) {
+    $path = trim((string) parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH), '/');
+    if (in_array($path, ['test-1', 'test-2', 'hello-world'], true)) {
+      wp_safe_redirect(home_url('/'), 301);
+      exit;
+    }
+  }
+}, 1);
+
+add_filter('day_link', function () { return home_url('/blog/'); });
+add_filter('month_link', function () { return home_url('/blog/'); });
+add_filter('year_link', function () { return home_url('/blog/'); });
+
+add_filter('term_link', function ($url, $term, $taxonomy) {
+  if ($taxonomy === 'category' && isset($term->slug) && $term->slug === 'blog') {
+    return home_url('/blog/');
+  }
+  return $url;
+}, 10, 3);
+
+function o1b_decode_elementor_data($raw) {
+  if (is_array($raw)) {
+    return $raw;
+  }
+  if (!is_string($raw) || $raw === '') {
+    return [];
+  }
+  foreach ([$raw, wp_unslash($raw), stripslashes($raw)] as $try) {
+    $data = json_decode($try, true);
+    if (is_array($data)) {
+      return $data;
+    }
+  }
+  return [];
+}
+
+function o1b_collect_accordion_faqs($nodes, &$faqs) {
+  if (!is_array($nodes)) {
+    return;
+  }
+  foreach ($nodes as $node) {
+    if (!is_array($node)) {
+      continue;
+    }
+    if (($node['widgetType'] ?? '') === 'accordion') {
+      foreach ((array) ($node['settings']['tabs'] ?? []) as $tab) {
+        $q = trim(wp_strip_all_tags((string) ($tab['tab_title'] ?? '')));
+        $a = trim(wp_strip_all_tags((string) ($tab['tab_content'] ?? '')));
+        if ($q !== '' && $a !== '') {
+          $faqs[] = [$q, $a];
+        }
+      }
+    }
+    if (!empty($node['elements'])) {
+      o1b_collect_accordion_faqs($node['elements'], $faqs);
+    }
+  }
+}
+
+function o1b_page_accordion_faqs() {
+  $id = (int) get_queried_object_id();
+  if (!$id) {
+    return [];
+  }
+  $faqs = [];
+  o1b_collect_accordion_faqs(o1b_decode_elementor_data(get_post_meta($id, '_elementor_data', true)), $faqs);
+  return $faqs;
+}
+
+function o1b_label_post_thumbs($html) {
+  if (strpos($html, 'elementor-post__thumbnail__link') === false) {
+    return $html;
+  }
+  return preg_replace_callback('/<article\b[^>]*>.*?<\/article>/is', function ($m) {
+    $article = $m[0];
+    $title = '';
+    if (preg_match('/elementor-post__title[^>]*>\s*<a[^>]*>(.*?)<\/a>/is', $article, $t)) {
+      $title = trim(wp_strip_all_tags($t[1]));
+    }
+    if ($title === '') {
+      return $article;
+    }
+    $label = esc_attr($title);
+    $sr = '<span class="screen-reader-text">' . esc_html($title) . '</span>';
+    $article = preg_replace_callback(
+      '/<a(\s[^>]*class="[^"]*elementor-post__thumbnail__link[^"]*"[^>]*)>/i',
+      function ($a) use ($label, $sr) {
+        $attrs = $a[1];
+        if (!preg_match('/\baria-label=/i', $attrs)) {
+          $attrs .= ' aria-label="' . $label . '"';
+        }
+        return '<a' . $attrs . '>' . $sr;
+      },
+      $article,
+      1
+    );
+    return $article;
+  }, $html);
+}
+
+function o1b_mark_home_faq_heading($html) {
+  $old = 'Questions Encino Homeowners Actually Ask';
+  $new = 'FAQ: Questions Encino Homeowners Actually Ask';
+  if (is_front_page() && strpos($html, $old) !== false && strpos($html, $new) === false) {
+    return str_replace($old, $new, $html);
+  }
+  return $html;
+}
+
+function o1b_noopener_links($html) {
+  if (strpos($html, '_blank') === false) {
+    return $html;
+  }
+  return preg_replace_callback('/<a\b[^>]*>/i', function ($m) {
+    $tag = $m[0];
+    if (!preg_match('/target=(["\'])_blank\1/i', $tag)) {
+      return $tag;
+    }
+    if (preg_match('/\brel=(["\'])([^"\']*)\1/i', $tag, $rel)) {
+      if (stripos($rel[2], 'noopener') !== false) {
+        return $tag;
+      }
+      $next = trim($rel[2] . ' noopener');
+      return preg_replace('/\brel=(["\'])([^"\']*)\1/i', 'rel=$1' . $next . '$1', $tag, 1);
+    }
+    return preg_replace('/<a\b/i', '<a rel="noopener"', $tag, 1);
+  }, $html);
+}
+
+add_action('elementor/frontend/container/before_render', function ($element) {
+  $settings = $element->get_settings_for_display();
+  $classes = isset($settings['css_classes']) ? (string) $settings['css_classes'] : '';
+  if (strpos($classes, 'o1b-wm-faq') !== false) {
+    $element->add_render_attribute('_wrapper', 'id', 'faq');
+  }
+});
+
+function o1b_gbp_categories() {
+  return [
+    'Landscaper',
+    'Remodeller',
+    'Turf and Soil Supplier',
+    'Paving contractor',
+    'Landscape designer',
+    'Landscape architect',
+    'Construction Company',
+  ];
+}
+
+function o1b_graph_org_id($graph) {
+  foreach ($graph as $node) {
+    if (!is_array($node)) {
+      continue;
+    }
+    $types = (array) ($node['@type'] ?? []);
+    if (in_array('Organization', $types, true) && !empty($node['@id'])) {
+      return (string) $node['@id'];
+    }
+  }
+  return home_url('/') . '#organization';
+}
+
+function o1b_graph_has_localbusiness($graph) {
+  foreach ($graph as $node) {
+    if (!is_array($node)) {
+      continue;
+    }
+    $id = (string) ($node['@id'] ?? '');
+    if ($id !== '' && strpos($id, '#localbusiness') !== false) {
+      return true;
+    }
+    $types = (array) ($node['@type'] ?? []);
+    if (in_array('LandscapingBusiness', $types, true) || in_array('LocalBusiness', $types, true)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function o1b_localbusiness_node($org_id) {
+  $home = home_url('/');
+  $cats = o1b_gbp_categories();
+  $offers = [];
+  foreach ([
+    ['Landscaper', home_url('/services/landscaper/')],
+    ['Remodeller', home_url('/services/remodeller/')],
+    ['Turf and Soil Supplier', home_url('/services/turf-and-soil-supplier/')],
+    ['Paving contractor', home_url('/services/paving-contractor/')],
+    ['Landscape designer', home_url('/services/landscape-designer/')],
+    ['Landscape architect', home_url('/services/landscape-architect/')],
+    ['Construction Company', home_url('/services/construction-company/')],
+  ] as $row) {
+    $offers[] = [
+      '@type' => 'Offer',
+      'itemOffered' => [
+        '@type' => 'Service',
+        'name' => $row[0],
+        'url' => $row[1],
+      ],
+    ];
+  }
+  return [
+    '@type' => ['LandscapingBusiness', 'HomeAndConstructionBusiness'],
+    '@id' => $home . '#localbusiness',
+    'name' => 'Option 1 Builders',
+    'parentOrganization' => ['@id' => $org_id],
+    'url' => $home,
+    'telephone' => '+1-818-297-2475',
+    'email' => 'info.option1builders@gmail.com',
+    'priceRange' => '$$',
+    'description' => 'Encino landscaper installing residential yards - artificial grass, pavers, landscape design, and outdoor construction. Licensed California contractor #1122918.',
+    'hasCredential' => [
+      '@type' => 'EducationalOccupationalCredential',
+      'credentialCategory' => 'Contractor License',
+      'recognizedBy' => [
+        '@type' => 'Organization',
+        'name' => 'California Contractors State License Board',
+      ],
+      'identifier' => '1122918',
+    ],
+    'address' => [
+      '@type' => 'PostalAddress',
+      'streetAddress' => '16400 Ventura Blvd, Suite 319',
+      'addressLocality' => 'Encino',
+      'addressRegion' => 'CA',
+      'postalCode' => '91436',
+      'addressCountry' => 'US',
+    ],
+    'openingHoursSpecification' => [
+      [
+        '@type' => 'OpeningHoursSpecification',
+        'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        'opens' => '08:00',
+        'closes' => '18:00',
+      ],
+    ],
+    'hasMap' => 'https://www.google.com/maps/place/?q=place_id:ChIJWyHrDeGZwoARK-QXB6Zp1TI',
+    'additionalType' => $cats,
+    'knowsAbout' => $cats,
+    'hasOfferCatalog' => [
+      '@type' => 'OfferCatalog',
+      'name' => 'Install services',
+      'itemListElement' => $offers,
+    ],
+  ];
+}
+
+add_filter('wpseo_schema_graph', function ($graph) {
+  if (!is_array($graph)) {
+    return $graph;
+  }
+  if (!o1b_graph_has_localbusiness($graph)) {
+    $graph[] = o1b_localbusiness_node(o1b_graph_org_id($graph));
+  }
+  $faqs = o1b_page_accordion_faqs();
+  if (count($faqs) < 2) {
+    return $graph;
+  }
+  foreach ($graph as $node) {
+    $types = (array) ($node['@type'] ?? []);
+    if (in_array('FAQPage', $types, true)) {
+      return $graph;
+    }
+  }
+  $entities = [];
+  foreach ($faqs as $pair) {
+    $entities[] = [
+      '@type' => 'Question',
+      'name' => $pair[0],
+      'acceptedAnswer' => [
+        '@type' => 'Answer',
+        'text' => $pair[1],
+      ],
+    ];
+  }
+  $url = is_front_page() ? home_url('/') : get_permalink();
+  $graph[] = [
+    '@type' => 'FAQPage',
+    '@id' => trailingslashit((string) $url) . '#faq',
+    'mainEntity' => $entities,
+  ];
+  return $graph;
+});
+
+add_filter('elementor/widget/render_content', function ($html, $widget) {
+  if (!is_string($html)) {
+    return $html;
+  }
+  $html = o1b_bust_upload_urls($html);
+  $html = o1b_label_post_thumbs($html);
+  $html = o1b_mark_home_faq_heading($html);
+  return o1b_noopener_links($html);
+}, 10, 2);
 
 add_action('wp_footer', function () {
   $estimate = is_page('contact-us') ? '#estimate' : home_url('/contact-us/');
@@ -62,68 +447,68 @@ add_action('wp_footer', function () {
 function o1b_page_seo() {
   return [
     'home' => [
-      'title' => 'Artificial Grass Installation Encino | Licensed & Insured | 15-Year Warranty',
-      'desc' => 'Artificial grass installation in Encino and the San Fernando Valley. Licensed, insured crews, 15-year warranty. Free on-site estimate. Call 818-297-2475.',
+      'title' => 'Artificial Grass Installation Encino | 15-Year Warranty',
+      'desc' => 'Artificial grass installation in Encino, California. Pet-friendly synthetic turf, putting greens, licensed crews, 15-year warranty. Call 818-297-2475.',
       'path' => '/',
     ],
     'about-us' => [
-      'title' => 'Landscaping Company Encino | Licensed Since 2002',
-      'desc' => 'Option 1 Builders is a landscaping company in Encino. In-house crews since 2002, CA license #1122918, and a 15-year turf warranty. Call 818-297-2475.',
+      'title' => 'Encino Landscaping Company CA | Licensed Contractor',
+      'desc' => 'Encino landscaping company since 2002. Licensed CA contractor #1122918, landscape design for homeowners. Google reviews name Eli. Call 818-297-2475.',
       'path' => '/about-us/',
     ],
     'services' => [
       'title' => 'Landscaping Services Encino | Turf, Pavers & Yards',
-      'desc' => 'Landscaping services in Encino: artificial grass, pavers, and full yards quoted as separate lines. Licensed crews. Call 818-297-2475.',
+      'desc' => 'Landscaping services in Encino: artificial grass, pavers, and full yards as separate lines. Licensed crews, 15-year turf warranty. Call 818-297-2475.',
       'path' => '/services/',
     ],
-    'artificial-grass-installation' => [
-      'title' => 'Artificial Grass Installation Encino | Option 1 Builders',
-      'desc' => 'Artificial grass installation in Encino: pet-friendly turf, compacted draining base, and a 15-year warranty. Licensed Encino crews. Call 818-297-2475.',
-      'path' => '/services/artificial-grass-installation/',
+    'landscaper' => [
+      'title' => 'Encino Landscaper | Licensed CA Contractor #1122918',
+      'desc' => 'Encino landscaper for residential yards: design, install, irrigation, and drainage. Licensed CA contractor #1122918. Call 818-297-2475 today.',
+      'path' => '/services/landscaper/',
     ],
-    'paver-installation' => [
-      'title' => 'Paver Installation Encino California | Option 1 Builders',
-      'desc' => 'Paver installation in Encino: patios, walkways, driveways, and pool decks on a compacted base with bedding sand and edge restraints. Call 818-297-2475.',
-      'path' => '/services/paver-installation/',
+    'remodeller' => [
+      'title' => 'Outdoor Remodeller Encino CA | Option 1 Builders',
+      'desc' => 'Outdoor remodeller in Encino for full-yard rebuilds: turf, pavers, planting, and drainage. Not interior house remodeling. Call 818-297-2475.',
+      'path' => '/services/remodeller/',
     ],
-    'landscape-design-installation' => [
-      'title' => 'Landscape Design & Installation Encino | Option 1 Builders',
-      'desc' => 'Landscape design and installation in Encino: turf, hardscape, planting, irrigation, and drainage under one plan and one crew. Licensed. Call 818-297-2475.',
-      'path' => '/services/landscape-design-installation/',
+    'turf-and-soil-supplier' => [
+      'title' => 'Turf and Soil Supplier Encino | Install + Base',
+      'desc' => 'Turf and soil work in Encino is artificial grass installation and the compacted base under it, not a retail shop. 15-year warranty. Call 818-297-2475.',
+      'path' => '/services/turf-and-soil-supplier/',
     ],
-    'stepping-stones-pathways' => [
-      'title' => 'Stepping Stones & Pathways Encino CA | Option 1 Builders',
-      'desc' => 'Stepping stones and pathways in Encino, set through turf, gravel, or planting beds and spaced to a natural stride. Licensed crews. Call 818-297-2475.',
-      'path' => '/services/stepping-stones-pathways/',
+    'paving-contractor' => [
+      'title' => 'Paving Contractor Encino CA | Pavers Hardscape',
+      'desc' => 'Paving contractor in Encino for paver patios, walkways, driveways, and pool decks on a compacted base with edge restraints. Call 818-297-2475.',
+      'path' => '/services/paving-contractor/',
     ],
-    'concrete-dg-gravel' => [
-      'title' => 'Concrete, DG & Gravel Encino California | Option 1 Builders',
-      'desc' => 'Concrete, DG and gravel in Encino: decomposed granite, gravel, mulch, and poured concrete for low-water Valley yards. Licensed crews. Call 818-297-2475.',
-      'path' => '/services/concrete-dg-gravel/',
+    'landscape-designer' => [
+      'title' => 'Landscape Designer Encino CA | One Plan One Crew',
+      'desc' => 'Landscape designer in Encino: one plan and one crew for turf, hardscape, planting, irrigation, and drainage. Licensed crews. Call 818-297-2475.',
+      'path' => '/services/landscape-designer/',
     ],
-    'irrigation-drainage' => [
-      'title' => 'Irrigation & Drainage Encino California | Option 1 Builders',
-      'desc' => 'Irrigation and drainage in Encino: sprinkler and drip systems, plus yard drains that move water off sloped Valley lots. Licensed crews. Call 818-297-2475.',
-      'path' => '/services/irrigation-drainage/',
+    'landscape-architect' => [
+      'title' => 'Landscape Architect Encino | GBP Label, Not License',
+      'desc' => 'Google lists Landscape architect as a category. We design and install as an Encino landscaper under CSLB #1122918, not as a licensed architect.',
+      'path' => '/services/landscape-architect/',
     ],
-    'vinyl-fencing' => [
-      'title' => 'Vinyl Fencing Installation Encino CA | Option 1 Builders',
-      'desc' => 'Vinyl fencing in Encino for low-maintenance privacy and property lines. Quoted on its own or in a full yard. Licensed Option 1 Builders. Call 818-297-2475.',
-      'path' => '/services/vinyl-fencing/',
+    'construction-company' => [
+      'title' => 'Construction Company Encino | Hardscape and Fencing',
+      'desc' => 'Construction Company work in Encino: concrete, DG, gravel, stepping stones, and vinyl fencing. Licensed hardscape crews. Call 818-297-2475.',
+      'path' => '/services/construction-company/',
     ],
     'projects' => [
-      'title' => 'Landscaping Projects Encino | Real Yards We Built',
-      'desc' => 'Landscaping projects in Encino and the San Fernando Valley. Artificial grass, pavers, and full yards by Option 1 Builders. Call 818-297-2475.',
+      'title' => 'Artificial Grass Projects Encino | Turf Installation',
+      'desc' => 'Artificial grass projects in Encino: turf installation, putting greens, and pet turf yards. See the work, then book a walkthrough. Call 818-297-2475.',
       'path' => '/projects/',
     ],
     'contact-us' => [
-      'title' => 'Free Estimate Encino | Licensed Option 1 Builders',
-      'desc' => 'Request a free estimate in Encino. Licensed Option 1 Builders walks the yard and sends a written scope. Call 818-297-2475.',
+      'title' => 'Artificial Grass Cost Encino | Free Estimate and Turf Quote',
+      'desc' => 'Artificial grass cost in Encino starts with a free estimate. We walk your yard, explain cost, and write a turf installation scope. Call 818-297-2475.',
       'path' => '/contact-us/',
     ],
     'blog' => [
       'title' => 'Encino Landscaping Blog | Option 1 Builders Tips',
-      'desc' => 'Encino landscaping blog from Option 1 Builders: turf bases, bid comparisons, and what Valley heat does to a cheap quote.',
+      'desc' => 'Encino landscaping blog from Option 1 Builders: how we spec turf bases, compare Encino bids, and keep pavers level in Valley heat. Call 818-297-2475.',
       'path' => '/blog/',
     ],
   ];
@@ -269,6 +654,7 @@ JS;
 function o1b_chrome_css() {
   $stage = function_exists('o1b_media_url') ? o1b_media_url('project-01') : '';
   $css = <<<'CSS'
+.screen-reader-text{clip:rect(1px,1px,1px,1px);height:1px;overflow:hidden;position:absolute!important;width:1px;word-wrap:normal!important}
 :root{
   --gold:#b79a61;
   --ink:#202321;

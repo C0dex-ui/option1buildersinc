@@ -25,9 +25,10 @@ Project for this site: `option1buildersinc.com` (`NEURONWRITER_PROJECT_ID`). Dom
 
 1. Read this skill and run `score-page <page>` (or reuse the cached query + `evaluate`).
 2. Use `/get-query` terms and word-count **as a brief**, not as facts to invent.
-3. Revise **static HTML in the repo only** (`index.html`, `services/*/index.html`, etc.).
-4. Re-run `evaluate --page <page> --source html`.
-5. Stop when the score is improved **without** new specs, prices, warranties, process steps, or FAQs that are not already on the Option 1 site.
+3. Revise **static HTML in the repo only**. Approved scope now includes the **Services hub** and the **seven GBP category pages** (`services/index.html`, `services/landscaper/`, `remodeller/`, `turf-and-soil-supplier/`, `paving-contractor/`, `landscape-designer/`, `landscape-architect/`, `construction-company/`), plus Home, Projects, About, and Contact. Do not invent a landscape-architect license, a turf store, or interior remodeling.
+4. Mirror the same copy in `wordpress/scripts/build_elementor.py` so Elementor JSON stays in sync. Do not push live.
+5. Re-run `evaluate --page <page> --source html`.
+6. Stop when the score is improved **without** new specs, prices, warranties, process steps, or FAQs that are not already on the Option 1 site.
 
 ## Hard rules (do not break for a higher score)
 
@@ -58,11 +59,14 @@ Prefer `/evaluate-content` over `/import-content`.
 | Page | Keyword |
 |---|---|
 | home | artificial grass installation Encino |
+| projects | artificial grass projects Encino |
+| about-us | Encino landscaping company |
+| contact-us | artificial grass estimate Encino |
 | services | landscaping services Encino |
-| artificial-grass-installation | artificial grass installation Encino |
-| paver-installation | paver installation Encino |
-| landscape-design-installation | landscape design installation Encino |
-| stepping-stones-pathways | stepping stones pathways Encino |
-| concrete-dg-gravel | decomposed granite Encino |
-| irrigation-drainage | irrigation drainage Encino |
-| vinyl-fencing | vinyl fencing Encino |
+| landscaper | Encino landscaper |
+| remodeller | outdoor remodel Encino |
+| turf-and-soil-supplier | artificial grass installation Encino (reuse Home query) |
+| paving-contractor | paving contractor Encino |
+| landscape-designer | landscape designer Encino |
+| landscape-architect | Encino landscape design |
+| construction-company | Encino hardscape |

@@ -28,315 +28,7 @@ SHARED_HIGHLIGHTS = [
     ),
 ]
 
-SERVICES = [
-    {
-        "slug": "artificial-grass-installation",
-        "anchor": "turf",
-        "nav": "Artificial Grass Installation",
-        "h1": "Artificial Grass Installation in Encino",
-        "card_h3": "Artificial Grass Installation",
-        "tag": "Turf",
-        "title": "Artificial Grass Installation Encino | Option 1 Builders",
-        "description": "Artificial grass installation in Encino: pet-friendly turf, compacted draining base, and a 15-year warranty. Licensed Encino crews. Call 818-297-2475.",
-        "h2_includes": "What This Artificial Grass Job Includes",
-        "h2_estimate": "How a Free Artificial Grass Estimate Works",
-        "hero_chip": ("15-year", "turf warranty"),
-        "highlights": [
-            (
-                "15-year turf warranty",
-                "Every artificial grass installation we complete is backed by a 15-year warranty, written into the scope at the estimate.",
-            ),
-            (
-                "Pet-permeable base",
-                "Pet installations use a permeable base and drainage layer so urine passes through, plus infill chosen for pet use.",
-            ),
-        ],
-        "blog_note": (
-            "../../blog/index.html#turf-base",
-            "what a cheap turf bid usually leaves out",
-        ),
-        "image": "project-02.jpg",
-        "image_alt": "Artificial grass installation on an Encino front lawn",
-        "media_frame": True,
-        "hero_sub": "Pet-friendly and putting-green turf for front yards, back yards, and play areas, quoted as its own line before demo starts.",
-        "lead": "Option 1 Builders installs artificial grass in Encino and across the San Fernando Valley. We remove the old lawn, compact a draining base, then seam, nail, and infill so the lawn stays flat. Every artificial grass installation we complete is backed by a 15-year warranty.",
-        "blocks": [
-            (
-                "Lawn removal, base, and infill",
-                "Pet-friendly and putting-green turf for front yards, back yards, side yards, and play areas. We remove the old lawn, install a compacted base for drainage, then seam, nail, and infill so the turf stays flat and cool underfoot.",
-            ),
-            (
-                "Common jobs",
-                "Front lawn replacement, backyard putting greens, dog runs, shaded side yards, and tear-outs of turf laid over the wrong base the first time.",
-            ),
-            (
-                "The base is the bid",
-                "The number on a turf bid is not the pile height. It is the base. If the estimate does not name demolition, compaction, drainage, and edge restraint as separate lines, you are comparing a lawn to a rug. We measure on site and give you a written number tied to a specific material and base spec instead of a per-foot guess over the phone.",
-            ),
-        ],
-        "card_p": "Pet-friendly and putting-green turf for front yards, back yards, and play areas. We remove the old lawn, compact a draining base, then seam, nail, and infill so the lawn stays flat. Backed by a 15-year warranty.",
-        "card_meta": ("Common jobs", "Front lawn replacement, backyard putting greens, dog runs, shaded side yards, and tear-outs of turf laid over the wrong base."),
-        "faqs": [
-            ("How long does artificial grass installation take?", "A front yard turf replacement is often a few days. A larger back yard or a lawn paired with pavers usually runs about one to two weeks. A full front-and-back transformation with irrigation, drainage, and hardscape can take several weeks. Your written proposal includes the expected timeline."),
-            ("Is your artificial turf safe for dogs?", "Yes. Pet installations use a permeable base and drainage layer so urine passes through instead of pooling, plus infill chosen for pet use. Tell us at the walkthrough that you have dogs so the base is built for it from the start."),
-            ("Can you replace old artificial turf?", "Yes. We remove and dispose of the existing turf, inspect the base underneath, correct any drainage or compaction problems we find, then install the new turf. Reusing a failed base is the most common reason a second turf job goes wrong."),
-            ("What does the 15-year warranty cover?", "Every artificial grass installation we complete is backed by a 15-year warranty. We walk the coverage with you at the estimate so you know what is included before you sign, and we put it in the written scope."),
-            ("Can I see materials before I decide?", "Yes. Visit the Encino showroom at 16400 Ventura Blvd, Suite 319 to compare turf pile and color, paver styles, and finish materials at full size."),
-        ],
-        "related": ["paver-installation", "landscape-design-installation", "irrigation-drainage"],
-        "closing_h2": "Ready to Price Artificial Grass Installation?",
-        "closing_p": "Tell us about the yard. We will walk the property, write the base and drainage into the scope, and send a written number for artificial grass installation in Encino. Call 818-297-2475 or request a free estimate.",
-    },
-    {
-        "slug": "paver-installation",
-        "anchor": "pavers",
-        "nav": "Paver Installation",
-        "h1": "Paver Installation in Encino",
-        "card_h3": "Paver Installation & Hardscape",
-        "tag": "Hardscape",
-        "title": "Paver Installation Encino California | Option 1 Builders",
-        "description": "Paver installation in Encino: patios, walkways, driveways, and pool decks on a compacted base with bedding sand and edge restraints. Call 818-297-2475.",
-        "h2_includes": "What This Paver Installation Includes",
-        "h2_estimate": "How a Free Paver Installation Estimate Works",
-        "highlights": [
-            (
-                "Compacted base and restraints",
-                "Pavers are set on a compacted base with bedding sand and edge restraints, which is what keeps them from shifting.",
-            ),
-        ],
-        "image": "project-09.jpg",
-        "image_alt": "Paver driveway installation at a Los Angeles area home",
-        "media_frame": True,
-        "hero_sub": "Paver patios, walkways, driveways, and pool decks. Correct base depth, bedding sand, and edge restraints are what keep pavers from shifting.",
-        "lead": "Option 1 Builders installs pavers and hardscape in Encino. Pavers are set on a compacted base with bedding sand and edge restraints, which is what keeps them from shifting or sinking later. That is where the labor goes.",
-        "blocks": [
-            (
-                "What we set",
-                "Interlocking pavers, natural stone, and poured concrete across patios, walkways, driveways, pool decks, retaining walls, and seat walls.",
-            ),
-            (
-                "Why the base matters",
-                "Correct base depth, bedding sand, and edge restraints are what keep pavers from shifting, so that is where we spend the labor other bids skip.",
-            ),
-        ],
-        "card_p": "Paver patios, walkways, driveways, and pool decks. Correct base depth, bedding sand, and edge restraints are what keep pavers from shifting, so that is where the labor goes.",
-        "card_meta": ("What we set", "Interlocking pavers, natural stone, and poured concrete across patios, walkways, driveways, pool decks, and seat walls."),
-        "faqs": [
-            ("Do you install pavers and concrete?", "Yes. We install paver patios, walkways, driveways, pool decks, and retaining walls, along with poured concrete. Pavers are set on a compacted base with bedding sand and edge restraints, which is what keeps them from shifting or sinking later."),
-            ("Can I see materials before I decide?", "Yes. Visit the Encino showroom at 16400 Ventura Blvd, Suite 319 to compare turf pile and color, paver styles, and finish materials at full size. Photos on a phone screen rarely match how a material reads across a whole yard."),
-            ("Can I hire just one service?", "Yes. Artificial grass, pavers, stepping stones, DG, irrigation, and fencing can each be quoted on their own. A full yard combines them under one project manager."),
-        ],
-        "related": ["artificial-grass-installation", "stepping-stones-pathways", "concrete-dg-gravel"],
-        "closing_h2": "Ready to Price Paver Installation?",
-        "closing_p": "Tell us whether you need a patio, walkway, driveway, or pool deck. We will walk the property and send a written scope for paver installation in Encino. Call 818-297-2475 or request a free estimate.",
-    },
-    {
-        "slug": "landscape-design-installation",
-        "anchor": "design",
-        "nav": "Landscape Design & Installation",
-        "h1": "Landscape Design & Installation in Encino",
-        "card_h3": "Landscape Design & Installation",
-        "tag": "Full yard",
-        "title": "Landscape Design & Installation Encino | Option 1 Builders",
-        "description": "Landscape design and installation in Encino: turf, hardscape, planting, irrigation, and drainage under one plan and one crew. Licensed. Call 818-297-2475.",
-        "h2_includes": "What This Landscape Design Job Includes",
-        "h2_estimate": "How a Free Landscape Design Estimate Works",
-        "highlights": [
-            (
-                "One plan, one crew",
-                "Front and back yard work combines turf, hardscape, planting, irrigation, and drainage into one plan and one crew.",
-            ),
-            (
-                "Hire one line or the yard",
-                "Artificial grass, pavers, stepping stones, DG, irrigation, and fencing can each be quoted on their own.",
-            ),
-        ],
-        "image": "project-05.jpg",
-        "image_alt": "Full yard landscaping in Encino with turf and a paver walkway",
-        "hero_sub": "Front and back yard transformations that combine turf, hardscape, planting, irrigation, and drainage into one plan and one crew.",
-        "lead": "Option 1 Builders designs and installs full yards in Encino so the finished yard reads as a single design instead of three separate jobs. One project manager runs the work from the walkthrough to cleanup.",
-        "blocks": [
-            (
-                "One plan covers",
-                "Grading, drainage, irrigation, planting, hardscape, and lighting — scheduled so no trade undoes another's work.",
-            ),
-            (
-                "Hire one line or the whole yard",
-                "Artificial grass, pavers, stepping stones, DG, irrigation, and fencing can each be quoted on their own. A full yard combines them under one project manager.",
-            ),
-            (
-                "Timeline",
-                "A full front-and-back transformation with irrigation, drainage, and hardscape can take several weeks. Your written proposal includes the expected timeline.",
-            ),
-        ],
-        "card_p": "Front and back yard transformations that combine turf, hardscape, planting, irrigation, and drainage into one plan and one crew, so the finished yard reads as a single design.",
-        "card_meta": ("One plan covers", "Grading, drainage, irrigation, planting, hardscape, and lighting - scheduled so no trade undoes another's work."),
-        "faqs": [
-            ("Can I hire just one service?", "Yes. Artificial grass, pavers, stepping stones, DG, irrigation, and fencing can each be quoted on their own. A full yard combines them under one project manager."),
-            ("Do you use subcontractors?", "No. Turf, pavers, and concrete are installed by our own crews. That is how we control compaction, seams, and the final walkthrough instead of hoping a rotating crew shows up."),
-        ],
-        "related": ["artificial-grass-installation", "paver-installation", "irrigation-drainage"],
-        "closing_h2": "Ready to Price a Full Yard?",
-        "closing_p": "Tell us you want a full yard plan. We will walk the property and send a written scope for landscape design and installation in Encino. Call 818-297-2475 or request a free estimate.",
-    },
-    {
-        "slug": "stepping-stones-pathways",
-        "anchor": "stones",
-        "nav": "Stepping Stones & Pathways",
-        "h1": "Stepping Stones & Pathways in Encino",
-        "card_h3": "Stepping Stones & Pathways",
-        "tag": "Pathways",
-        "title": "Stepping Stones & Pathways Encino CA | Option 1 Builders",
-        "description": "Stepping stones and pathways in Encino, set through turf, gravel, or planting beds and spaced to a natural stride. Licensed crews. Call 818-297-2475.",
-        "h2_includes": "What These Stepping Stones Jobs Include",
-        "h2_estimate": "How a Free Stepping Stones Estimate Works",
-        "highlights": [
-            (
-                "Spaced to a natural stride",
-                "Stone and paver pathways run through turf, gravel, or planting beds, with spacing planned to a natural stride.",
-            ),
-        ],
-        "image": "project-10.jpg",
-        "image_alt": "Turf with stepping stones and a seat wall, a pathway job in Encino",
-        "media_frame": True,
-        "hero_sub": "Stone and paver pathways set through turf, gravel, or planting beds, with spacing planned to a natural stride.",
-        "lead": "Option 1 Builders sets stepping stones and pathways in Encino. Stone and paver pathways run through turf, gravel, or planting beds, with spacing planned to a natural stride. This work can be quoted on its own or as part of a full yard.",
-        "blocks": [
-            (
-                "Quoted on its own",
-                "Stone and paver pathways through turf, gravel, or planting beds, spaced to a natural stride. This work can be quoted on its own or as part of a full yard.",
-            ),
-        ],
-        "card_p": "Stone and paver pathways set through turf, gravel, or planting beds, with spacing planned to a natural stride.",
-        "card_meta": ("Quoted on its own", "Stone and paver pathways through turf, gravel, or planting beds, spaced to a natural stride."),
-        "faqs": [
-            ("Can I hire just one service?", "Yes. Artificial grass, pavers, stepping stones, DG, irrigation, and fencing can each be quoted on their own. A full yard combines them under one project manager."),
-            ("What is decomposed granite (DG)?", "DG is a crushed granite fine used for pathways, patios, and low-water areas. It compacts into a firm natural-looking surface, drains well, and pairs with pavers, stepping stones, and drought-tolerant planting."),
-        ],
-        "related": ["paver-installation", "concrete-dg-gravel", "artificial-grass-installation"],
-        "closing_h2": "Ready to Price a Pathway?",
-        "closing_p": "Tell us where the path should run. We will walk the property and send a written scope for stepping stones and pathways in Encino. Call 818-297-2475 or request a free estimate.",
-    },
-    {
-        "slug": "concrete-dg-gravel",
-        "anchor": "finishes",
-        "nav": "Concrete, DG & Gravel",
-        "h1": "Concrete, DG & Gravel in Encino",
-        "card_h3": "Concrete, DG, Gravel & Mulch",
-        "tag": "Finishes",
-        "title": "Concrete, DG & Gravel Encino California | Option 1 Builders",
-        "description": "Concrete, DG and gravel in Encino: decomposed granite, gravel, mulch, and poured concrete for low-water Valley yards. Licensed crews. Call 818-297-2475.",
-        "h2_includes": "What This Concrete, DG & Gravel Job Includes",
-        "h2_estimate": "How a Free Concrete, DG & Gravel Estimate Works",
-        "highlights": [
-            (
-                "Low-water Valley yards",
-                "Decomposed granite is a common choice for Valley yards replacing lawn. It drains well and stays low-maintenance.",
-            ),
-            (
-                "Pairs with pavers and stones",
-                "DG pairs with pavers, stepping stones, and drought-tolerant planting for pathways, patios, and low-water areas.",
-            ),
-        ],
-        "image": "project-11.jpg",
-        "image_alt": "Decomposed granite patio, gravel beds, and a concrete walkway",
-        "hero_sub": "Decomposed granite patios, gravel beds, mulch, and poured concrete for clean, low-maintenance ground cover.",
-        "lead": "Option 1 Builders installs concrete, decomposed granite, gravel, and mulch in Encino. These finishes are for clean, low-maintenance ground cover and can be quoted on their own.",
-        "blocks": [
-            (
-                "What decomposed granite is",
-                "DG is a crushed granite fine used for pathways, patios, and low-water areas. It compacts into a firm natural-looking surface, drains well, and pairs with pavers, stepping stones, and drought-tolerant planting. It is a common choice for Valley yards replacing lawn.",
-            ),
-        ],
-        "card_p": "Decomposed granite patios, gravel beds, mulch, and poured concrete for clean, low-maintenance ground cover.",
-        "card_meta": ("What we set", "Decomposed granite patios, gravel beds, mulch, and poured concrete."),
-        "faqs": [
-            ("What is decomposed granite (DG)?", "DG is a crushed granite fine used for pathways, patios, and low-water areas. It compacts into a firm natural-looking surface, drains well, and pairs with pavers, stepping stones, and drought-tolerant planting. It is a common choice for Valley yards replacing lawn."),
-            ("Can I hire just one service?", "Yes. Artificial grass, pavers, stepping stones, DG, irrigation, and fencing can each be quoted on their own. A full yard combines them under one project manager."),
-        ],
-        "related": ["stepping-stones-pathways", "paver-installation", "irrigation-drainage"],
-        "closing_h2": "Ready to Price DG, Gravel, or Concrete?",
-        "closing_p": "Tell us which finish you need. We will walk the property and send a written scope for concrete, DG, and gravel in Encino. Call 818-297-2475 or request a free estimate.",
-    },
-    {
-        "slug": "irrigation-drainage",
-        "anchor": "irrigation",
-        "nav": "Irrigation & Drainage",
-        "h1": "Irrigation & Drainage in Encino",
-        "card_h3": "Irrigation & Drainage",
-        "tag": "Water",
-        "title": "Irrigation & Drainage Encino California | Option 1 Builders",
-        "description": "Irrigation and drainage in Encino: sprinkler and drip systems, plus yard drains that move water off sloped Valley lots. Licensed crews. Call 818-297-2475.",
-        "h2_includes": "What This Irrigation & Drainage Job Includes",
-        "h2_estimate": "How a Free Irrigation & Drainage Estimate Works",
-        "highlights": [
-            (
-                "Water off sloped Valley lots",
-                "On sloped Valley lots, drainage that moves water away from the house is usually the part that protects everything else.",
-            ),
-            (
-                "Rain Bird, Hunter, and NDS",
-                "Irrigation parts we buy include Rain Bird and Hunter, with NDS drainage products, so you can still get parts later.",
-            ),
-        ],
-        "image": "project-12.jpg",
-        "image_alt": "Yard drain, drip line, and sprinkler head at the edge of a paver patio",
-        "hero_sub": "Sprinkler and drip systems, and yard drains that move water away from the house and off the property.",
-        "lead": "Option 1 Builders installs and modifies sprinkler and drip systems in Encino and builds drainage that moves water away from the house and off the property. On sloped Valley lots this is usually the part that protects everything else you are paying for.",
-        "blocks": [
-            (
-                "What we install",
-                "Sprinkler and drip systems, and yard drains that move water off the property. Irrigation parts we buy include Rain Bird and Hunter, with NDS drainage products, so you can still get parts years from now.",
-            ),
-        ],
-        "card_p": "Sprinkler and drip systems, and yard drains that move water off the property.",
-        "card_meta": ("What we install", "Sprinkler and drip systems, and yard drains that move water off the property."),
-        "faqs": [
-            ("Do you handle irrigation and drainage?", "Yes. We install and modify sprinkler and drip systems and build drainage that moves water away from the house and off the property. On sloped Valley lots this is usually the part that protects everything else you are paying for."),
-            ("Can I hire just one service?", "Yes. Artificial grass, pavers, stepping stones, DG, irrigation, and fencing can each be quoted on their own. A full yard combines them under one project manager."),
-        ],
-        "related": ["landscape-design-installation", "artificial-grass-installation", "vinyl-fencing"],
-        "closing_h2": "Ready to Price Irrigation or Drainage?",
-        "closing_p": "Tell us about the water on the lot. We will walk the property and send a written scope for irrigation and drainage in Encino. Call 818-297-2475 or request a free estimate.",
-    },
-    {
-        "slug": "vinyl-fencing",
-        "anchor": "fencing",
-        "nav": "Vinyl Fencing",
-        "h1": "Vinyl Fencing in Encino",
-        "card_h3": "Vinyl Fencing",
-        "tag": "Fencing",
-        "title": "Vinyl Fencing Installation Encino CA | Option 1 Builders",
-        "description": "Vinyl fencing in Encino for low-maintenance privacy and property lines. Quoted on its own or in a full yard. Licensed Option 1 Builders. Call 818-297-2475.",
-        "h2_includes": "What This Vinyl Fencing Job Includes",
-        "h2_estimate": "How a Free Vinyl Fencing Estimate Works",
-        "highlights": [
-            (
-                "Low-maintenance privacy",
-                "Vinyl fencing is a low-maintenance option for privacy and property lines. It can be quoted on its own or in a full yard.",
-            ),
-        ],
-        "image": "project-13.jpg",
-        "image_alt": "Vinyl privacy fence along a residential yard",
-        "hero_sub": "Vinyl fencing for privacy and property lines. It can be quoted on its own or included in a full yard project.",
-        "lead": "Option 1 Builders installs vinyl fencing in Encino. Vinyl fencing is one of our services and is a low-maintenance option for privacy and property lines. It can be quoted on its own or included in a full yard project.",
-        "blocks": [
-            (
-                "Quoted on its own",
-                "Vinyl fencing can be quoted on its own or included in a full yard project under one project manager.",
-            ),
-        ],
-        "card_p": "Vinyl fencing for privacy and property lines. It can be quoted on its own or included in a full yard project.",
-        "card_meta": ("Quoted on its own", "Low-maintenance vinyl fencing for privacy and property lines."),
-        "faqs": [
-            ("Do you install vinyl fencing?", "Yes. Vinyl fencing is one of our services and is a low-maintenance option for privacy and property lines. It can be quoted on its own or included in a full yard project."),
-            ("Can I hire just one service?", "Yes. Artificial grass, pavers, stepping stones, DG, irrigation, and fencing can each be quoted on their own. A full yard combines them under one project manager."),
-        ],
-        "related": ["irrigation-drainage", "landscape-design-installation", "artificial-grass-installation"],
-        "closing_h2": "Ready to Price Vinyl Fencing?",
-        "closing_p": "Tell us you need vinyl fencing for privacy or a property line. We will walk the property and send a written scope for vinyl fencing in Encino. Call 818-297-2475 or request a free estimate.",
-    },
-]
+from gbp_services import SERVICES
 
 BY_SLUG = {s["slug"]: s for s in SERVICES}
 
@@ -431,12 +123,12 @@ def conversion_hero_points(svc: dict) -> str:
       </p>"""
 
 
-def conversion_cta_band() -> str:
-    return """  <section class="service-cta-band">
+def conversion_cta_band(title: str = "Request a Free Estimate") -> str:
+    return f"""  <section class="service-cta-band">
     <div class="wrap service-cta-band__in">
       <div data-reveal>
         <p class="eyebrow">Get a written number</p>
-        <h2>Request a Free Estimate</h2>
+        <h2>{esc(title)}</h2>
         <p>Tell us about the yard. We follow up to schedule a walkthrough, measure on site, and send a written scope.</p>
       </div>
       <div class="hero__actions" data-reveal>
@@ -503,13 +195,16 @@ def conversion_proof(img_prefix: str) -> str:
 
 
 def page_words(svc: dict) -> int:
-    parts = [svc["lead"], svc["hero_sub"], svc["closing_p"], svc["h2_includes"]]
+    parts = [svc["lead"], svc["hero_sub"], svc["closing_p"], svc["h2_includes"], *svc.get("lead_more", []), *svc.get("article_extra", [])]
     for heading, body in assembled_highlights(svc):
         parts += [heading, body]
     for heading, body in svc["blocks"]:
         parts += [heading, body]
     for question, answer in svc["faqs"]:
         parts += [question, answer]
+    for sec in svc.get("extra_sections") or []:
+        parts.append(sec["h2"])
+        parts += sec["paras"]
     return len(re.findall(r"\b[\w']+\b", " ".join(parts)))
 
 
@@ -563,13 +258,13 @@ def page_html(svc: dict) -> str:
     )
     url = f"https://option1buildersinc.com/services/{svc['slug']}/"
     hero_points = conversion_hero_points(svc)
-    cta_band = conversion_cta_band()
+    cta_band = conversion_cta_band(svc.get("cta_h2", "Request a Free Estimate"))
     estimate_steps = conversion_steps(svc)
     proof = conversion_proof(prefix)
     related_section = f"""  <section class="section section--tint" id="related">
     <div class="wrap">
       <p class="eyebrow center" data-reveal>Related services</p>
-      <h2 class="center" data-reveal>Other Work We Quote on Its Own</h2>
+      <h2 class="center" data-reveal>{esc(svc.get("h2_related", "Other Encino Work Quoted Beside This Job"))}</h2>
       <div class="cards cards--3">
 {related}
       </div>
@@ -580,14 +275,23 @@ def page_html(svc: dict) -> str:
     <div class="wrap wrap--narrow">
       <span class="watermark" aria-hidden="true">FAQ</span>
       <p class="eyebrow center" data-reveal>Frequently asked questions</p>
-      <h2 class="center" data-reveal>Questions About {esc(svc["nav"])}</h2>
+      <h2 class="center" data-reveal>{esc(svc.get("faq_h2", f"Questions About {svc['nav']}"))}</h2>
       <div class="faq" data-reveal>
 {faqs}
       </div>
     </div>
   </section>
 """
-    after_overview = proof + faq_section + related_section
+    extra_html = ""
+    for sec in svc.get("extra_sections") or []:
+        paras = "".join(f'      <p data-reveal>{esc(p)}</p>\n' for p in sec["paras"])
+        extra_html += f"""  <section class="section">
+    <div class="wrap wrap--narrow">
+      <h2 data-reveal>{esc(sec["h2"])}</h2>
+{paras}    </div>
+  </section>
+"""
+    after_overview = extra_html + proof + faq_section + related_section
     mid_cta = ""
     return f"""<!DOCTYPE html>
 <html lang="en-US">
@@ -682,6 +386,8 @@ def page_html(svc: dict) -> str:
       <span class="watermark watermark--left" aria-hidden="true">Service</span>
       <p class="eyebrow" data-reveal>What we install</p>
       <p data-reveal>{esc(svc["lead"])}</p>
+{"".join(f'      <p data-reveal>{esc(p)}</p>' + chr(10) for p in svc.get("lead_more", []))}
+{"".join(f'      <p data-reveal>{esc(p)}</p>' + chr(10) for p in svc.get("article_extra", []))}
 {media}
     </div>
     <div class="wrap service-panel">
@@ -787,7 +493,10 @@ def page_html(svc: dict) -> str:
       "@id": "https://option1buildersinc.com/#localbusiness",
       "name": "Option 1 Builders",
       "url": "https://option1buildersinc.com/",
-      "telephone": "+1-818-297-2475"
+      "telephone": "+1-818-297-2475",
+      "description": "Encino landscaper installing residential yards - artificial grass, pavers, landscape design, and outdoor construction. Licensed California contractor #1122918.",
+      "additionalType": ["Landscaper", "Remodeller", "Turf and Soil Supplier", "Paving contractor", "Landscape designer", "Landscape architect", "Construction Company"],
+      "knowsAbout": ["Landscaper", "Remodeller", "Turf and Soil Supplier", "Paving contractor", "Landscape designer", "Landscape architect", "Construction Company"]
     }},
     {{
       "@type": "Service",
@@ -844,10 +553,10 @@ def main() -> None:
     for svc in SERVICES:
         title_len = len(svc["title"])
         meta_len = len(svc["description"])
-        if not 55 <= title_len <= 60:
-            raise SystemExit(f"{svc['slug']}: title is {title_len} chars (need 55-60): {svc['title']}")
-        if not 145 <= meta_len <= 160:
-            raise SystemExit(f"{svc['slug']}: meta is {meta_len} chars (need 145-160): {svc['description']}")
+        if not 40 <= title_len <= 65:
+            raise SystemExit(f"{svc['slug']}: title is {title_len} chars (need 40-65): {svc['title']}")
+        if not 130 <= meta_len <= 165:
+            raise SystemExit(f"{svc['slug']}: meta is {meta_len} chars (need 130-165): {svc['description']}")
         words = page_words(svc)
         dest = ROOT / "services" / svc["slug"]
         dest.mkdir(parents=True, exist_ok=True)

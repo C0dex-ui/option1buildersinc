@@ -123,9 +123,51 @@ def btn(label, url, kind="gold"):
     return widget("button", s)
 
 
+IMAGE_ALTS = {
+    "logo": "Option 1 Builders Encino logo",
+    "hero": "Finished Encino yard with artificial grass and hardscape",
+    "project-manager": "Option 1 Builders project manager",
+    "project-01": "Paver and turf patio with pool deck and outdoor bar",
+    "project-02": "Front yard turf replacement in Encino",
+    "project-03": "Paver path through river rock",
+    "project-04": "Backyard putting green",
+    "project-05": "Full yard landscape with turf and hardscape",
+    "project-06": "Encino showroom turf and paver samples",
+    "project-09": "Paver driveway and gravel border",
+    "project-10": "Turf with stepping stones and seat wall",
+    "project-11": "Decomposed granite and concrete yard finish",
+    "project-12": "Irrigation and drainage work in an Encino yard",
+    "project-13": "Vinyl fencing along an Encino property line",
+    "badge-google": "Google reviews badge",
+    "badge-houzz": "Houzz badge",
+    "badge-bbb": "Better Business Bureau accredited badge",
+    "badge-angi": "Angi badge",
+    "badge-top-pro": "Top Pro badge",
+    "badge-yelp": "Yelp badge",
+    "award-angi-2025": "Angi 2025 award",
+    "award-best-remodeler": "Best remodeler award",
+    "award-excellence-2026": "Excellence 2026 award",
+    "award-houzz-2023": "Best of Houzz 2023 award",
+    "award-remodel": "Remodel award",
+    "award-trusted": "Trusted excellence award",
+    "partner-orco": "Orco Block and Hardscape logo",
+    "partner-belgard": "Belgard pavers logo",
+    "partner-angelus": "Angelus Block logo",
+    "partner-turf": "Turf Distributors logo",
+    "partner-ewing": "Ewing Irrigation logo",
+    "partner-siteone": "SiteOne Landscape Supply logo",
+    "partner-nds": "NDS drainage logo",
+    "partner-rainbird": "Rain Bird irrigation logo",
+    "partner-hunter": "Hunter irrigation logo",
+}
+
+
 def img(key, extra=None):
+    image = {"url": f"{{{{media_url:{key}}}}}", "id": f"{{{{media:{key}}}}}", "source": "library"}
+    if key in IMAGE_ALTS:
+        image["alt"] = IMAGE_ALTS[key]
     s = {
-        "image": {"url": f"{{{{media_url:{key}}}}}", "id": f"{{{{media:{key}}}}}"},
+        "image": image,
         "image_size": "full",
     }
     if extra:
@@ -682,9 +724,9 @@ def build_footer():
             "social-icons",
             {
                 "social_icon_list": [
-                    {"_id": uid(), "social_icon": {"value": "fab fa-facebook-f", "library": "fa-brands"}, "link": {"url": "https://www.facebook.com/profile.php?id=61582882491939", "is_external": "on"}},
-                    {"_id": uid(), "social_icon": {"value": "fab fa-instagram", "library": "fa-brands"}, "link": {"url": "https://www.instagram.com/option_1builders", "is_external": "on"}},
-                    {"_id": uid(), "social_icon": {"value": "fab fa-google", "library": "fa-brands"}, "link": {"url": "https://www.google.com/maps/place/?q=place_id:ChIJWyHrDeGZwoARK-QXB6Zp1TI", "is_external": "on"}},
+                    {"_id": uid(), "social_icon": {"value": "fab fa-facebook-f", "library": "fa-brands"}, "link": {"url": "https://www.facebook.com/profile.php?id=61582882491939", "is_external": "on", "custom_attributes": "rel|noopener"}},
+                    {"_id": uid(), "social_icon": {"value": "fab fa-instagram", "library": "fa-brands"}, "link": {"url": "https://www.instagram.com/option_1builders", "is_external": "on", "custom_attributes": "rel|noopener"}},
+                    {"_id": uid(), "social_icon": {"value": "fab fa-google", "library": "fa-brands"}, "link": {"url": "https://www.google.com/maps/place/?q=place_id:ChIJWyHrDeGZwoARK-QXB6Zp1TI", "is_external": "on", "custom_attributes": "rel|noopener"}},
                 ],
                 "icon_color": GOLD,
             },
@@ -1094,7 +1136,7 @@ def service_hero_chips(svc):
     )
 
 
-def service_cta_band():
+def service_cta_band(title="Request a Free Estimate"):
     return band(
         [
             row(
@@ -1103,7 +1145,7 @@ def service_cta_band():
                         [
                             eyebrow("Get a written number"),
                             heading(
-                                "Request a Free Estimate",
+                                title,
                                 "h2",
                                 WHITE,
                                 36,
@@ -1210,7 +1252,7 @@ def build_home():
         [
             img("logo", {"align": "center", "width": slider(132), "_margin": dim(0, 0, 22, 0)}),
             heading(
-                "Artificial Grass Installation<br>in Encino & the San Fernando Valley",
+                "Artificial Grass Installation<br>in Encino, California",
                 "h1",
                 WHITE,
                 54,
@@ -1224,7 +1266,7 @@ def build_home():
                 },
             ),
             text(
-                "<p>Licensed, insured Encino crews install pet-friendly turf with a compacted base, proper drainage, and a 15-year warranty - plus pavers and full yards when the job needs more than grass.</p>",
+                "<p>Licensed Encino installers put down pet-friendly artificial turf and synthetic turf across the San Fernando Valley &mdash; compacted base, proper drainage, and a 15-year warranty, plus pavers and full yards when the job needs more than grass. Option 1 Builders is the Encino landscaper behind that turf work.</p>",
                 "#f0efe9",
                 19,
                 True,
@@ -1279,10 +1321,15 @@ def build_home():
                     col(
                         [
                             eyebrow("Encino turf specialists"),
-                            heading("Artificial Grass Installation Built Around Your Yard, Not a Template", "h2", HEADING, 36, extra={"typography_font_size_mobile": slider(26)}),
+                            heading("Turf Installation in Encino Built Around Your Outdoor Space", "h2", HEADING, 36, extra={"typography_font_size_mobile": slider(26)}),
                             text(
-                                "<p>Option 1 Builders does artificial grass installation in Encino and across the San Fernando Valley. Licensed, bonded, and insured crews have finished more than 1,000 yards since 2002, and every lawn we put down is backed by a 15-year warranty. We also install paver patios and complete front and back yards - quoted as separate lines so you can see exactly what you are paying for.</p>",
+                                "<p>Option 1 Builders does artificial grass installation in Encino and across the San Fernando Valley. Licensed, bonded, and insured installers have finished more than 1,000 yards since 2002, and every lawn we put down is backed by a 15-year warranty. We also install paver patios and complete front and back yards - quoted as separate lines so you can see exactly what you are paying for.</p>",
                                 HEADING,
+                                17,
+                            ),
+                            text(
+                                "<p>Homeowners call us when a natural grass lawn is failing in Valley heat. We remove that lawn - the one you have to mow and water - then do turf installation with synthetic turf or synthetic grass. The turf surface stays green without reseeding. Pet turf uses a permeable base and infill chosen for dogs. Putting green installation and custom putting greens are quoted on their own. Turf products come from suppliers we already buy from, including Turf Distributors. A front yard or a full landscape gets the same process from start to finish.</p>",
+                                BODY,
                                 17,
                             ),
                             container(
@@ -1299,7 +1346,7 @@ def build_home():
                                 True,
                             ),
                             text(
-                                "<p>Jobs here run from a single turf lawn to a full front-and-back rebuild with pavers, drainage and planting. We build for homeowners rather than commercial sites, so the yard gets planned around how your family actually uses it - where the dog runs, where the sun lands at four o'clock, where you want to put a table.</p>",
+                                "<p>Jobs here run from a single turf lawn to a full front-and-back rebuild with pavers, drainage and planting. Natural grass struggles in Valley heat. Artificial grass and synthetic turf can be installed as residential turf for homeowners rather than commercial sites, so the yard gets planned around how your family actually uses it - where the dog runs, where the sun lands at four o'clock, where you want to put a table. Serving Encino, we match the right turf to how you use the outdoor space.</p>",
                                 BODY,
                                 17,
                             ),
@@ -1321,17 +1368,12 @@ def build_home():
     services = band(
         [
             eyebrow("What we install", True),
-            heading("Artificial Grass Installation and the Work That Goes With It", "h2", HEADING, 36, True, extra={"typography_font_size_mobile": slider(26)}),
+            heading("Artificial Grass Installation Services in Encino", "h2", HEADING, 36, True, extra={"typography_font_size_mobile": slider(26)}),
             sec_intro("Each service below is quoted on its own, with its own material list and base prep. You can hire one of them or combine them into a single plan."),
             row(
                 [
-                    card("project-02", "Turf", "Artificial Grass Installation", "Pet-friendly and putting-green turf for front yards, back yards, side yards, and play areas. We remove the old lawn, install a compacted base for drainage, then seam, nail, and infill so the turf stays flat and cool underfoot.", ("Common jobs", "Front lawn replacement, backyard putting greens, dog runs, shaded side yards, and tear-outs of turf laid over the wrong base the first time."), "/services/artificial-grass-installation/"),
-                    card("project-09", "Hardscape", "Paver Installation & Hardscape", "Paver patios, walkways, driveways, and pool decks. Correct base depth, bedding sand, and edge restraints are what keep pavers from shifting, so that is where we spend the labor other bids skip.", ("What we set", "Interlocking pavers, natural stone, and poured concrete across patios, walkways, driveways, pool decks, retaining walls, and seat walls."), "/services/paver-installation/"),
-                    card("project-05", "Full yard", "Landscape Design & Installation", "Full front and back yard transformations that combine turf, hardscape, planting, irrigation, and drainage into one plan and one crew - so the finished yard reads as a single design instead of three separate jobs.", ("One plan covers", "Grading, drainage, irrigation, planting, hardscape, and lighting - scheduled so no trade undoes another's work."), "/services/landscape-design-installation/"),
-                    card("project-10", "Pathways", "Stepping Stones & Pathways", "Stone and paver pathways set through turf, gravel, or planting beds, with spacing planned to a natural stride.", ("Quoted on its own", "Stone and paver pathways through turf, gravel, or planting beds, spaced to a natural stride."), "/services/stepping-stones-pathways/"),
-                    card("project-11", "Finishes", "Concrete, DG, Gravel & Mulch", "Decomposed granite patios, gravel beds, mulch, and poured concrete for clean, low-maintenance ground cover.", ("What we set", "Decomposed granite patios, gravel beds, mulch, and poured concrete."), "/services/concrete-dg-gravel/"),
-                    card("project-12", "Water", "Irrigation & Drainage", "Sprinkler and drip systems, and yard drains that move water off the property.", ("What we install", "Sprinkler and drip systems, and yard drains that move water off the property."), "/services/irrigation-drainage/"),
-                    card("project-13", "Fencing", "Vinyl Fencing", "Vinyl fencing for privacy and property lines. It can be quoted on its own or included in a full yard project.", ("Quoted on its own", "Low-maintenance vinyl fencing for privacy and property lines."), "/services/vinyl-fencing/"),
+                    card(s["image"].replace(".jpg", ""), s["tag"], s["card_h3"], s["card_p"], s["card_meta"], f"/services/{s['slug']}/")
+                    for s in SERVICES
                 ],
                 30,
                 {"css_classes": "o1b-cards o1b-cards-7", "flex_wrap": "wrap", "flex_direction_tablet": "row"},
@@ -1344,8 +1386,8 @@ def build_home():
     partners = band(
         [
             eyebrow("Quality materials, trusted sources", True),
-            heading("The Brands We Build Your Yard With", "h2", HEADING, 36, True),
-            sec_intro("A turf lawn or paver patio only lasts as long as what sits under it. We buy from established suppliers, so the pavers, base rock, turf, and irrigation parts in your yard are ones we can stand behind - and ones you can still get parts and service for years from now."),
+            heading("Turf Products Encino Homeowners Compare in Person", "h2", HEADING, 36, True),
+            sec_intro("A turf lawn or paver patio only lasts as long as what sits under it. We buy turf products and irrigation parts from established suppliers, so the water that hits the yard has a path off the lot, and you can still get parts years from now."),
             partner_card("Hardscape & Pavers", "Pavers, block and outdoor surfaces", ["partner-orco", "partner-belgard", "partner-angelus"]),
             partner_card("Turf & Landscape Supply", "Artificial turf, base material and site supply", ["partner-turf", "partner-ewing", "partner-siteone"]),
             partner_card("Irrigation & Drainage", "Sprinklers, drip lines, drains and controllers", ["partner-nds", "partner-rainbird", "partner-hunter"]),
@@ -1357,8 +1399,8 @@ def build_home():
     projects = band(
         [
             eyebrow("See our work", True, GOLD),
-            heading("Recent Artificial Grass and Hardscape Projects", "h2", WHITE, 36, True),
-            sec_intro("Real yards our crews finished - artificial grass, pavers, stepping stones, and full transformations.", "#d5d3cc"),
+            heading("Artificial Grass in Encino: Recent Yards", "h2", WHITE, 36, True),
+            sec_intro("Real Encino properties our installers finished - artificial grass, synthetic turf installation, stepping stones, and full transformations. Residential turf only.", "#d5d3cc"),
             project_gallery(
                 [
                     ("project-01", "Paver and turf patio with pool deck and outdoor bar", True),
@@ -1378,7 +1420,7 @@ def build_home():
     showcase = band(
         [
             eyebrow("Watch the work", True),
-            heading("See a Finished Yard Up Close", "h2", HEADING, 36, True),
+            heading("Turf Installation Encino: A Finished Outdoor Space", "h2", HEADING, 36, True),
             sec_intro("A walkthrough of a completed install. You can see the turf seams, the paver edges, and how the levels meet - the details that decide whether a yard still looks right in year five."),
             showcase_stage(),
             actions(("Book a Free Walkthrough", "#estimate", "gold")),
@@ -1390,18 +1432,18 @@ def build_home():
     why = band(
         [
             eyebrow("Why Option 1 Builders", True),
-            heading("What You Get That Other Bids Leave Out", "h2", HEADING, 36, True),
+            heading("What Encino Homeowners Get in Every Installation", "h2", HEADING, 36, True),
             row(
                 [
                     mini("One project manager", "The person who walks your property is the person who answers your calls during the build. No handoffs to a scheduler you have never met."),
                     mini("Written scope before demo", "Materials, base depth, drainage, and price in writing before anything is torn out, so the number at the end matches the number at the start."),
-                    mini("In-house crews", "Our own installers do the turf, the pavers, and the concrete. Nothing is handed to a rotating cast of subcontractors."),
+                    mini("In-house crews", "Our own installers do the turf, the pavers, and the concrete. Nothing is handed to a rotating cast of subcontractors. Pet turf installation and installing artificial grass use the same crew."),
                 ],
                 24,
             ),
             row(
                 [
-                    mini("Base prep you cannot see", "Compaction, edge restraints, and drainage decide whether pavers stay level and turf stays flat in year five. That is where the labor goes."),
+                    mini("Base prep you cannot see", "Compaction, edge restraints, and drainage decide whether pavers stay level and the turf surface stays flat in year five. That is where the labor goes. A front yard replacement is also curb appeal - the lawn neighbors see from the street."),
                     mini("24+ years in the Valley", "Working here since 2002 means we know local soil, slopes, permits, and how Valley heat treats materials over a long summer."),
                     mini("15-year turf warranty", "Every artificial grass installation we put down is backed by a 15-year warranty. Best of Houzz, BBB accredited, and a 5.0 from 31 Google reviews."),
                 ],
@@ -1457,7 +1499,7 @@ def build_home():
                                 ],
                                 True,
                             ),
-                            text("<p>Get straight answers on budget and timeline before you commit to anything. Your project manager walks the property with you, explains the options that actually fit your yard, and tells you what is realistic at your number.</p>", "#d5d3cc", 17),
+                            text("<p>Get straight answers on the cost of artificial grass, installation cost, and timeline before you commit. Your project manager walks the property with you, explains turf systems that actually fit your yard, and tells you what is realistic at your number. A turf estimate is written after that walk, not guessed on the phone.</p>", "#d5d3cc", 17),
                             container(
                                 {"content_width": "full", "css_classes": "o1b-mgr-list"},
                                 [
@@ -1481,15 +1523,15 @@ def build_home():
         "o1b-watermark o1b-dark o1b-watermark-left o1b-wm-team",
     )
     steps = [
-        ("1", "Free consultation", "We walk the property, measure, and talk through how you actually use the yard, what it needs to survive, and what budget range is realistic."),
+        ("1", "Free consultation", "The free consultation is the walkthrough. We measure, talk through how you use the outdoor space, how water should leave the lot, and what budget range is realistic."),
         ("2", "Written proposal", "You get the scope in writing: materials, base depth, drainage plan, timeline, and price. Questions get answered before anything is signed."),
         ("3", "Design & material selection", "Pick turf pile and color, paver style and pattern, and finish materials - in person at our Encino showroom if you want to see them at full size."),
-        ("4", "Build & walkthrough", "Our crews demo, grade, install, and clean up. We finish with a walkthrough so anything that needs adjusting is handled before we leave."),
+        ("4", "Build & walkthrough", "Our crews demo, grade, and do the professional installation, then clean up. We finish with a walkthrough so anything that needs adjusting is handled before we leave. The same grass installation services apply throughout Encino and for turf installation in Los Angeles Valley lots."),
     ]
     process = band(
         [
             eyebrow("From vision to completion", True),
-            heading("How Your Project Runs", "h2", HEADING, 36, True),
+            heading("Installation From Start to Finish for Encino Homeowners", "h2", HEADING, 36, True),
             container(
                 {
                     "content_width": "full",
@@ -1519,8 +1561,8 @@ def build_home():
     areas = band(
         [
             eyebrow("Areas we serve", True),
-            heading("Artificial Grass Installation Across Encino and the San Fernando Valley", "h2", HEADING, 36, True),
-            sec_intro("Option 1 Builders is based on Ventura Blvd in Encino and installs artificial grass throughout the Valley and greater Los Angeles. From a single lawn replacement to a full yard with pavers and drainage, our crews deliver the same spec in every community we serve."),
+            heading("Turf Installation in Encino and Across the San Fernando Valley", "h2", HEADING, 36, True),
+            sec_intro("Option 1 Builders is based on Ventura Blvd in Encino California and installs artificial turf throughout the Valley and greater Los Angeles. From a front yard lawn replacement to a full yard with pavers and drainage, our crews deliver the same spec in every community we serve. We do residential turf, not commercial properties."),
             container(
                 {"content_width": "full", "css_classes": "o1b-areas"},
                 [area_col(title, cities) for title, cities in areas_data],
@@ -1539,8 +1581,8 @@ def build_home():
                     col(
                         [
                             eyebrow("Visit our showroom"),
-                            heading("Request a Free Estimate", "h2", WHITE, 36),
-                            text("<p>Tell us about the yard and we will follow up to schedule a walkthrough. You can also stop by the Encino showroom to see turf samples, paver styles, and finish materials at full size.</p>", "#d5d3cc", 16),
+                            heading("Request a Free Artificial Grass Estimate", "h2", WHITE, 36),
+                            text("<p>Tell us about the lawn or outdoor space. We follow up with a walkthrough for artificial grass installation in Encino, plus pavers when the job needs more than grass. You can also stop by the Encino showroom to see turf samples, paver styles, and finish materials at full size.</p>", "#d5d3cc", 16),
                             nap_item("Address", "16400 Ventura Blvd, Suite 319, Encino, CA 91436"),
                             nap_item("Phone", '<a href="tel:+18182972475">818-297-2475</a>'),
                             nap_item("Email", '<a href="mailto:info.option1builders@gmail.com">info.option1builders@gmail.com</a>'),
@@ -1571,7 +1613,7 @@ def build_home():
     faqs = band(
         [
             eyebrow("Frequently asked questions", True),
-            heading("Questions Encino Homeowners Actually Ask", "h2", HEADING, 36, True),
+            heading("FAQ: Questions Encino Homeowners Actually Ask", "h2", HEADING, 36, True),
             faq(HOME_FAQ),
         ],
         WHITE,
@@ -1581,8 +1623,8 @@ def build_home():
     )
     close = band(
         [
-            heading("Ready to Start Your Yard?", "h2", HEADING, 40, True),
-            text("<p>If you are comparing bids for artificial grass installation in Encino, ask every contractor the same three questions: how deep is the base, how does water leave the yard, and who is on site each day. Option 1 Builders answers all three in writing before demolition starts - our own crews do the work, and the lawn is backed by a 15-year warranty. Call 818-297-2475 or request a free estimate and we will walk your property this week.</p>", BODY, 17, True, extra={"css_classes": "o1b-sec-intro"}),
+            heading("Ready for Grass Installation in Encino?", "h2", HEADING, 40, True),
+            text("<p>If you are comparing the cost of artificial grass and other bids, ask every contractor the same three questions: how deep is the base, how does water leave the yard, and who is on site each day. Option 1 Builders answers all three in writing before demolition starts - our own installers do the work, and the lawn is backed by a 15-year warranty. Book a free consultation, call 818-297-2475, or request a free estimate and we will walk your property this week.</p>", BODY, 17, True, extra={"css_classes": "o1b-sec-intro"}),
             actions(("Book a Free Estimate", "#estimate", "gold"), ("Call 818-297-2475", "tel:+18182972475", "dark")),
         ],
         TINT,
@@ -1600,8 +1642,8 @@ def build_about():
         "About Us",
         [
             page_hero(
-                "A Landscaping Company in Encino, CA",
-                "Eli and the Option 1 Builders crew have built yards from Ventura Blvd across the San Fernando Valley since 2002 - licensed, bonded, insured, and still on the job through the final walkthrough.",
+                "Encino Landscaping Company in Encino, CA",
+                "A licensed landscape contractor in Encino, CA. Eli and the crew have built residential yards from Ventura Blvd across the San Fernando Valley since 2002 - bonded, insured, and still on the job through the final walkthrough.",
                 "About Us",
             ),
             band(
@@ -1611,10 +1653,10 @@ def build_about():
                             col(
                                 [
                                     eyebrow("Who we are"),
-                                    heading("The Encino Landscaping Company Homeowners Refer", "h2", HEADING, 36),
-                                    text("<p>Option 1 Builders is a landscaping company in Encino, California, based at 16400 Ventura Blvd, Suite 319. Eli, the owner, still walks properties himself. Our in-house crews install artificial grass, pavers, and full yards across the San Fernando Valley - more than 1,000 of them since 2002.</p>", HEADING, 17),
-                                    text("<p>Most of the homeowners who call us already collected two or three estimates. The numbers do not match because the scopes do not match. We write demolition, base, material, edging, and drainage as separate lines so you can see what a cheaper bid left out.</p>", BODY, 17),
-                                    text("<p>We build for families, not commercial sites. The yard gets planned around where the dog runs, where the sun lands at four o'clock, and where you want a table. That is the difference between a template and a yard you will still like in year five.</p>", BODY, 17),
+                                    heading("Encino Landscaping and Landscape Design Homeowners Refer", "h2", HEADING, 36),
+                                    text("<p>Option 1 Builders is an Encino landscaper - Google's primary category - that also does paving, landscape design, and outdoor construction. Our office is at 16400 Ventura Blvd, Suite 319. Eli, the owner, still walks each property himself. Homeowners hire this contractor for landscape design and landscape installation - artificial turf, pavers, driveways, and full residential yards. More than 1,000 of them since 2002.</p>", HEADING, 17),
+                                    text("<p>Most Encino homeowners who call already collected two or three quotes. The numbers do not match because the scopes do not match. We write demolition, base, material, edging, and drainage as separate lines on the estimate so you can see what a cheaper bid left out. That written quote is the number we work to.</p>", BODY, 17),
+                                    text("<p>We build for families, not commercial landscaping. The outdoor yard and garden get planned around where the dog runs, where the sun lands at four o'clock, and where you want a table. A landscaper who treats your lot like a template cannot do that. We do not sell weekly landscape maintenance. We install the work so a homeowner can use the yard without hiring a crew to mow.</p>", BODY, 17),
                                     actions(("Start With a Free Consultation", "/contact-us/", "dark"), None, False),
                                 ],
                                 52,
@@ -1632,11 +1674,11 @@ def build_about():
             band(
                 [
                     eyebrow("How this company works", True),
-                    heading("What You Get From This Landscaping Company", "h2", HEADING, 36, True),
+                    heading("What a Contractor in Encino Puts in the Written Quote", "h2", HEADING, 36, True),
                     row(
                         [
-                            mini("One project manager", "The person who walks your Encino or Valley property is the person who answers during the build. No handoff to a scheduler you have never met."),
-                            mini("Written scope before demo", "Materials, base depth, drainage, and price in writing before anything is torn out, so the number at the end matches the number at the start."),
+                            mini("One project manager", "The person who walks your Encino or Valley property is the person who answers during the landscape installation. No handoff to a scheduler you have never met."),
+                            mini("Written quote before demo", "Materials, base depth, drainage, and price in writing before anything is torn out, so the quote at the end matches the quote at the start."),
                             mini("In-house crews", "Our own installers do the turf, the pavers, and the concrete. Nothing is handed to a rotating cast of subcontractors."),
                         ],
                         24,
@@ -1644,7 +1686,7 @@ def build_about():
                     row(
                         [
                             mini("15-year turf warranty", "Every artificial grass installation we put down is backed by a 15-year warranty. We walk the coverage at the estimate and put it in the written scope."),
-                            mini("24+ years in the Valley", "Working here since 2002 means we know local soil, slopes, permits, and how Valley heat treats materials over a long summer."),
+                            mini("24+ years as a CA contractor", "Working as a contractor in Encino since 2002 means we know local soil, slopes, permits, and how Valley heat treats a lawn or paver driveway over a long summer."),
                             mini("Showroom on Ventura Blvd", "Compare turf pile and paver styles at full size at 16400 Ventura Blvd, Suite 319 before you lock a material from a phone photo."),
                         ],
                         24,
@@ -1656,8 +1698,36 @@ def build_about():
             ),
             band(
                 [
+                    eyebrow("What we install", True),
+                    heading("Landscaping Services in Encino From This Landscape Company", "h2", HEADING, 36, True),
+                    sec_intro("Landscapers in Encino at Option 1 Builders quote each of these landscaping services on its own. Companies in Encino that only sell weekly maintenance will not write this list. We install. We do not run landscape maintenance services."),
+                    row(
+                        [
+                            mini("Landscape design and installation", "Residential landscape installation for a front yard or backyard. See the landscape designer page."),
+                            mini("Artificial turf and pavers", "Artificial turf, paver patios, and driveway work. See turf and soil supplier and paving contractor."),
+                            mini("Irrigation systems and more", "Irrigation systems, drainage, DG, stepping stones, and vinyl fencing. Services in Encino are listed on the services page."),
+                        ],
+                        24,
+                    ),
+                ],
+                TINT,
+                96,
+                "o1b-watermark o1b-wm-services",
+            ),
+            band(
+                [
+                    eyebrow("CA contractor", True),
+                    heading("CA License, CSLB, and Insurance for Encino Landscaping", "h2", HEADING, 36, True),
+                    sec_intro("This contractor in Encino holds California license # 1122918. You can verify that license with the CSLB. We hand you a copy of the license, insurance, and liability paperwork at the estimate. Professional care of your property starts there, not after demo."),
+                ],
+                WHITE,
+                96,
+                "o1b-watermark o1b-wm-why",
+            ),
+            band(
+                [
                     eyebrow("What our clients say", True),
-                    heading("Why Encino Homeowners Send Their Friends", "h2", HEADING, 36, True),
+                    heading("Google Reviews From Encino Homeowners", "h2", HEADING, 36, True),
                     review_feed(),
                 ],
                 TINT,
@@ -1667,12 +1737,12 @@ def build_about():
             band(
                 [
                     eyebrow("Frequently asked questions", True),
-                    heading("Questions About This Company", "h2", HEADING, 36, True),
+                    heading("Questions About Landscapers in Encino and This License", "h2", HEADING, 36, True),
                     faq(
                         [
                             ("Who owns Option 1 Builders?", "Eli is the owner. He still comes through on pricing and quality, which is why so many of our Google reviews name him. You work with one project manager from the walkthrough to cleanup, not a call center."),
-                            ("Are you licensed and insured?", "Yes. Option 1 Builders is licensed, bonded, and insured under California license # 1122918. You can verify that number with the CSLB. We hand you a copy of the license and insurance at the walkthrough."),
-                            ("Where is the company based?", "Our office and showroom are at 16400 Ventura Blvd, Suite 319, Encino, CA 91436. Hours are Monday through Sunday, 8:00 AM to 6:00 PM. Most of our jobs sit in the San Fernando Valley."),
+                            ("Are you licensed and insured?", "Yes. Option 1 Builders is a licensed, bonded, and insured contractor under California license # 1122918. You can verify that license with the CSLB. We hand you a copy of the license and insurance at the walkthrough before any landscape work starts."),
+                            ("Where is the company based?", "Our office and showroom are at 16400 Ventura Blvd, Suite 319, Encino, CA 91436. Hours are Monday through Sunday, 8:00 AM to 6:00 PM. Landscaping services in Encino and most of our jobs sit in the San Fernando Valley. We are landscapers in Encino, not a commercial-property crew."),
                             ("Do you use subcontractors?", "No. Turf, pavers, and concrete are installed by our own crews. That is how we control compaction, seams, and the final walkthrough instead of hoping a rotating crew shows up."),
                         ]
                     ),
@@ -1681,7 +1751,7 @@ def build_about():
                 96,
                 "o1b-watermark o1b-wm-faq",
             ),
-            closing("Ready to Meet This Landscaping Company?", "If you want a landscaping company in Encino that writes the base depth down before demo starts, call 818-297-2475 or request a free estimate. We will walk your property this week."),
+            closing("Ready to Hire This Encino Landscaping Company?", "If you want a landscape company in Encino, CA that writes the base depth down before demo starts, call 818-297-2475 or request a free estimate. We will walk your property this week and send a written quote."),
         ],
     )
 
@@ -1691,15 +1761,15 @@ def build_services():
         "Services",
         [
             page_hero(
-                "Landscaping Services in Encino",
-                "Artificial grass, paver patios, and full yard work quoted as separate lines - so you can see the base, the drainage, and the material before demo starts.",
+                "Encino Landscaping Services in CA: Landscaper Landscape Design and Lawn",
+                "Encino landscaping, landscape design, and landscape installation quoted as separate lines - so you can see the base, the drainage, and the material before demo starts.",
                 "Services",
             ),
             band(
                 [
                     eyebrow("What we install", True),
-                    heading("Landscaping Services We Quote on Their Own", "h2", HEADING, 36, True),
-                    sec_intro("Option 1 Builders offers landscaping services in Encino and across the San Fernando Valley. Each service below has its own material list and base spec. You can hire one of them or combine them into a single plan."),
+                    heading("Landscaping Services and Landscape Design We Quote on Their Own", "h2", HEADING, 36, True),
+                    sec_intro("Option 1 Builders offers these official Google Business categories in Encino, CA and across the San Fernando Valley. Landscaper is primary. You can hire one category or combine them into a single plan for the outdoor space or garden.</p><p>The cards below use the same names Google lists: Landscaper, Remodeller, Turf and Soil Supplier, Paving contractor, Landscape designer, Landscape architect, and Construction Company. Turf and soil work is installation and the compacted base, not a supply store. Remodeller work is outdoor yards, not interior house remodeling. Landscape architect is a Google category only - we design and install as a landscaper under contractor license #1122918, not as a licensed landscape architect."),
                     service_cards(SERVICES, "/services/", seven=True),
                     actions(("Get a Quote for These Services", "/contact-us/", "gold")),
                 ],
@@ -1707,6 +1777,28 @@ def build_services():
                 96,
                 "o1b-watermark o1b-wm-services",
                 {"css_id": "list"},
+            ),
+            band(
+                [
+                    eyebrow("Official Google categories", True),
+                    heading("How Encino Landscaping Services Map to These Cards", "h2", HEADING, 36, True),
+                    sec_intro("Landscaping services in Encino on this site use the same seven names Google lists for Option 1 Builders. Landscaper is the primary category: residential landscape design, landscape installation, irrigation, and drainage under contractor license #1122918.</p><p>Remodeller work is an outdoor yard rebuild. These cards transform a tired lawn into a finished yard. We do not sell weekly lawn care, lawn service, or landscape maintenance. Landscapers in Encino at this address do the install."),
+                ],
+                TINT,
+                72,
+                "o1b-wm-services",
+                {"css_id": "categories"},
+            ),
+            band(
+                [
+                    eyebrow("How a free estimate works", True),
+                    heading("How Homeowners Hire Landscaping Services in Encino", "h2", HEADING, 36, True),
+                    sec_intro("The free consultation is the walkthrough. We measure, talk through how you use the outdoor space or garden, how water should leave the lot, and what budget range is realistic. On a hillside or sloped Valley lot, irrigation systems and drainage usually protect everything else you are paying for."),
+                ],
+                WHITE,
+                72,
+                "o1b-wm-process",
+                {"css_id": "hire"},
             ),
             band(
                 [
@@ -1724,9 +1816,12 @@ def build_services():
             band(
                 [
                     eyebrow("Frequently asked questions", True),
-                    heading("Questions About Our Landscaping Services", "h2", HEADING, 36, True),
+                    heading("Questions About Landscaping Services in Encino, CA", "h2", HEADING, 36, True),
                     faq(
                         [
+                            ("What landscaping services in Encino do you offer?", "The official Google categories: Landscaper, Remodeller, Turf and Soil Supplier, Paving contractor, Landscape designer, Landscape architect, and Construction Company. Services in Encino include landscape design, landscape installation, irrigation, pavers, and hardscape."),
+                            ("Do you offer a free consultation?", "Yes. The free consultation is the walkthrough. We measure the outdoor space, talk through irrigation and the garden or front yard, and send a written scope. Call 818-297-2475."),
+                            ("Do you sell lawn care or landscape maintenance?", "No. Encino landscaping on this site is design and install. We do not sell weekly lawn care, lawn service, or landscape maintenance."),
                             ("Can I hire just one service?", "Yes. Artificial grass, pavers, stepping stones, DG, irrigation, and fencing can each be quoted on their own. A full yard combines them under one project manager."),
                             ("How long does artificial grass installation take?", "A front yard is often a few days. A larger back yard or a lawn paired with pavers usually runs one to two weeks. The written proposal includes the timeline."),
                             ("Do you replace old turf?", "Yes. We remove the existing turf, inspect the base, correct drainage or compaction problems, then install the new lawn. Reusing a failed base is the most common reason a second job goes wrong."),
@@ -1748,15 +1843,15 @@ def build_projects():
         "Projects",
         [
             page_hero(
-                "Landscaping Projects in Encino",
-                "Yards our crews finished - artificial grass, paver patios, putting greens, and full front-and-back rebuilds across the San Fernando Valley.",
+                "Artificial Grass Installation Projects in Encino",
+                "Encino yards our installers finished - artificial grass installation, artificial turf installation, putting greens, and full front-and-back rebuilds across the San Fernando Valley.",
                 "Projects",
             ),
             band(
                 [
                     eyebrow("See our work", True, GOLD),
-                    heading("Recent Landscaping Projects From Our Crews", "h2", WHITE, 36, True),
-                    sec_intro("These landscaping projects in Encino and nearby Valley cities are the same spec we write into every proposal: compacted base, restrained edges, and drainage that moves water off the lot.", "#d5d3cc"),
+                    heading("Turf Installation in Encino Yards Encino Homeowners Can Walk", "h2", WHITE, 36, True),
+                    sec_intro("These artificial grass projects in Encino and nearby Valley cities are the same turf installation spec we write into every proposal: compacted base, restrained edges, and drainage so water drains away from the house. Encino homeowners hire us for a lawn replacement or a full landscape. Serving Encino, we install residential turf, not commercial turf.", "#d5d3cc"),
                     project_gallery(
                         [
                             ("project-01", "Paver and turf patio with pool deck and outdoor bar", True),
@@ -1775,16 +1870,71 @@ def build_projects():
             ),
             band(
                 [
+                    eyebrow("What you are looking at", True),
+                    heading("Turf and Hardscape Work in These Encino Yards", "h2", HEADING, 36, True),
+                    sec_intro("Option 1 Builders is the company in Encino that installs residential turf, not a rotating crew. Each turf project below uses the same installation process from start to finish: we remove the natural grass lawn you have to mow, then install synthetic grass or synthetic turf with base preparation, infill, and drainage."),
+                    row(
+                        [
+                            mini("Turf installation and lawn replacement", "Front yard turf replacement and backyard lawns use artificial grass and synthetic turf from suppliers we already buy from, including Turf Distributors. The turf system sits on a compacted, draining base so the lawn stays green through Valley heat without reseeding."),
+                            mini("Pet turf and backyard putting greens", "Pet turf uses a permeable base and infill chosen for dogs so kids and pets can use the yard. Putting green installation and custom putting greens are quoted on their own when a homeowner wants a backyard putting green next to the lawn."),
+                            mini("Hardscape next to the turf", "Many Encino properties pair the turf grass with a paver patio, stepping stones, or a driveway. Irrigation and drainage get written into the same scope when water needs a path off the lot."),
+                        ],
+                        24,
+                    ),
+                ],
+                WHITE,
+                96,
+                "o1b-watermark o1b-wm-why",
+            ),
+            band(
+                [
+                    eyebrow("Same spec as the proposal", True),
+                    heading("How These Encino Yards Were Built From Start to Finish", "h2", HEADING, 36, True),
+                    sec_intro("Every turf project on this page used the same installation process we write for Encino homeowners. Installing artificial grass is not a rug. The installer removes the natural grass, builds the base, sets the infill, hides the seam, and makes sure water drains away. That is a low-maintenance lawn you do not have to mow."),
+                    row(
+                        [
+                            mini("1. Walkthrough and turf estimate", "A free consultation on the Encino property. We measure the outdoor space, talk through kids and pets, and send a written turf estimate. We do not guess the cost of artificial grass per square foot over the phone."),
+                            mini("2. Base preparation and drainage", "We pull the grass lawn, compact the base, and set edge restraint. Irrigation that served the old lawn is shut down or kept for planting. Yard drains move water off the lot when the grade needs it."),
+                            mini("3. Install turf, infill, and seams", "The turf installer rolls out artificial grass and synthetic turf, hides the seam, and brushes infill. Pet turf installation uses infill chosen for dogs. A putting green next to the lawn is a separate line when you want one."),
+                        ],
+                        24,
+                    ),
+                ],
+                WHITE,
+                96,
+                "o1b-watermark o1b-wm-process",
+            ),
+            band(
+                [
                     eyebrow("Watch the work", True),
-                    heading("A Finished Landscaping Project Up Close", "h2", HEADING, 36, True),
-                    sec_intro("A walkthrough of a completed install. You can see the turf seams, the paver edges, and how the levels meet - the details that decide whether a yard still looks right in year five."),
+                    heading("Outdoor Space After Artificial Turf Installation in Encino", "h2", HEADING, 36, True),
+                    sec_intro("A walkthrough of a completed turf installation in Encino. You can see the seams, the paver edges, and how the levels meet - the details that decide whether Encino families still like the outdoor living space in year five."),
                     showcase_stage("project-05"),
                 ],
                 TINT,
                 96,
                 "o1b-watermark o1b-wm-showcase",
             ),
-            closing("Want a Yard That Looks Like These Projects?", "These landscaping projects in Encino started with a walkthrough and a written scope. Call 818-297-2475 or request a free estimate and we will measure your yard this week."),
+            band(
+                [
+                    eyebrow("Before you book", True),
+                    heading("Questions Encino Homeowners Ask About These Turf Projects", "h2", HEADING, 36, True),
+                    faq(
+                        [
+                            ("Can synthetic grass be combined with pavers and patios?", "Yes. We install paver patios, walkways, driveways, and pool decks alongside turf, and we quote a full yard as one plan when you want both. Pavers are set on a compacted base with bedding sand and edge restraints."),
+                            ("How long does artificial grass installation take?", "A front yard turf replacement is often a few days. A larger back yard or a lawn paired with pavers usually runs about one to two weeks. A full front-and-back transformation with irrigation, drainage, and hardscape can take several weeks. Your written proposal includes the expected timeline."),
+                            ("How much does artificial grass cost in Encino?", "Price depends on square footage, how much demolition and grading the yard needs, the turf pile you choose, and drainage. That is why estimates you collect can range so widely. We measure on site and give you a written number tied to a specific material and base spec instead of a per-foot guess over the phone."),
+                            ("Does artificial turf require a drainage system?", "Yes. We compact a draining base under the turf and, when the yard needs it, install yard drains that move water off the property. On sloped Valley lots this is usually the part that protects everything else you are paying for."),
+                            ("Can I see materials before I decide?", "Yes. Visit the Encino showroom at 16400 Ventura Blvd, Suite 319 to compare turf pile and color, paver styles, and finish materials at full size."),
+                            ("Is your artificial turf safe for dogs?", "Yes. Pet installations use a permeable base and drainage layer so urine passes through instead of pooling, plus infill chosen for pet use. Tell us at the walkthrough that you have dogs so the base is built for it from the start."),
+                        ]
+                    ),
+                ],
+                WHITE,
+                96,
+                "o1b-watermark o1b-wm-faq",
+            ),
+            closing("Want a Yard That Looks Like These Artificial Grass Projects?", "These Encino yards started with a walkthrough and a written scope for artificial grass installation in Encino. Call 818-297-2475 or request a free consultation and we will measure your yard this week."),
         ],
     )
 
@@ -1794,8 +1944,8 @@ def build_contact():
         "Contact Us",
         [
             page_hero(
-                "Request a Free Estimate in Encino",
-                "Tell us about the yard. We follow up to schedule a walkthrough, measure on site, and send a written scope - no phone quote guessed by the square foot.",
+                "Free Estimate for Artificial Grass Installation in Encino",
+                "Request a free estimate for turf, artificial turf, or a full lawn. We measure on site - no number guessed per square foot over the phone.",
                 "Contact Us",
                 ("Call 818-297-2475", "tel:+18182972475", "ghost"),
                 ("Get Your Free Estimate", "#estimate", "gold"),
@@ -1807,8 +1957,8 @@ def build_contact():
                             col(
                                 [
                                     eyebrow("Visit our showroom"),
-                                    heading("How to Get a Free Estimate in Encino", "h2", WHITE, 36),
-                                    text("<p>Option 1 Builders is at 16400 Ventura Blvd, Suite 319. Call, email, or use the form. We schedule a walkthrough, measure the space, and follow up with a written scope and price. You can also stop by the showroom to see turf and pavers at full size.</p>", "#d5d3cc", 16),
+                                    heading("How to Install Artificial Grass After a Free Quote", "h2", WHITE, 36),
+                                    text("<p>Option 1 Builders is the turf installation company at 16400 Ventura Blvd, Suite 319, serving Encino and Sherman Oaks. Call, email, or use the form. We schedule a walkthrough, measure the outdoor space, and follow up with a written turf estimate. You can also stop by the showroom to see artificial grass, synthetic turf, and pavers at full size. Homeowners usually call when a natural grass lawn they have to mow and water is failing. The written scope covers how we install artificial grass, the edge restraint, the seams, and any irrigation we shut down or keep.</p>", "#d5d3cc", 16),
                                     nap_item("Address", "16400 Ventura Blvd, Suite 319, Encino, CA 91436"),
                                     nap_item("Phone", '<a href="tel:+18182972475">818-297-2475</a>'),
                                     nap_item("Email", '<a href="mailto:info.option1builders@gmail.com">info.option1builders@gmail.com</a>'),
@@ -1838,14 +1988,34 @@ def build_contact():
             ),
             band(
                 [
+                    eyebrow("What the number includes", True),
+                    heading("How Much Does Artificial Grass Cost in Encino?", "h2", HEADING, 36, True),
+                    sec_intro("Artificial grass cost and installation cost depend on demolition, grade, the turf pile you choose, and proper drainage. That is why Encino bids for the same grass lawn can run from ten thousand to fifty-five thousand. We do not quote a per square foot number before we walk the property."),
+                    row(
+                        [
+                            mini("Artificial grass installation, written as lines", "The turf estimate lists demolition, base, artificial grass material, edge restraint, infill, and drainage as separate lines. A homeowner can see which of those a cheaper bid left out before they install artificial grass."),
+                            mini("Pet turf, putting greens, and synthetic lawns", "Pet turf, a putting green, or a full artificial lawn can be quoted on its own or with a paver patio. Synthetic grass and synthetic turf use the same walkthrough. Tell us if you have dogs so the infill and base are built for it from the start."),
+                            mini("Why we will not guess the cost of artificial grass", "Price depends on the size of the project, how much natural grass we have to pull, and how water leaves the yard. Professional installers measure first. The written number is the cost of artificial grass installation for your Encino or Sherman Oaks lot, not an average cost pulled from a chart."),
+                        ],
+                        24,
+                    ),
+                ],
+                WHITE,
+                96,
+                "o1b-watermark o1b-wm-why",
+            ),
+            band(
+                [
                     eyebrow("Before you call", True),
-                    heading("Questions About a Free Estimate", "h2", HEADING, 36, True),
+                    heading("Questions About Artificial Grass Cost and a Free Estimate", "h2", HEADING, 36, True),
                     faq(
                         [
-                            ("Is the estimate really free?", "Yes. The on-site walkthrough and the written scope are free. You are not charged to have us measure the yard or explain the base and drainage."),
+                            ("Is the estimate really free?", "Yes. The on-site walkthrough and the written scope are free. You are not charged to have us measure the yard or explain the base and drainage. That free quote covers artificial grass installation in Encino as well as pavers when you want both."),
+                            ("How much does artificial grass cost in Encino?", "Price depends on square footage, how much demolition and grading the yard needs, the turf pile you choose, and drainage. That is why estimates you collect can range so widely. We measure on site and give you a written number tied to a specific material and base spec instead of a per-foot guess over the phone."),
+                            ("Do you give prices over the phone?", "Not a final number. Artificial grass cost depends on demolition, grade, turf pile, and drainage. We measure on site and send a written number tied to a specific spec for turf installation in Encino."),
                             ("How soon can you come out?", "Call 818-297-2475 and we will find the next open walkthrough. Some Google reviews mention a wait when the crew is booked. We tell you that date up front."),
-                            ("Do you give prices over the phone?", "Not a final number. Price depends on demolition, grade, turf pile, and drainage. We measure on site and send a written number tied to a specific spec."),
-                            ("What should I have ready?", "Your address, whether it is the front or back yard, a rough square footage if you have it, and whether you have dogs. Photos help if you cannot meet in person at first."),
+                            ("What should I have ready?", "Your address, whether it is the front or back yard, a rough square footage if you have it, and whether you have dogs. Photos help if you cannot meet in person at first. Serving Encino, Sherman Oaks, and the rest of the Valley."),
+                            ("Do you provide free estimates in Encino?", "Yes. The on-site walkthrough is free. Call 818-297-2475, email info.option1builders@gmail.com, or submit the form on this page. We schedule a walkthrough, measure the space, and follow up with a written scope and price."),
                         ]
                     ),
                 ],
@@ -1855,8 +2025,8 @@ def build_contact():
             ),
             band(
                 [
-                    heading("Prefer to Talk Instead of Typing?", "h2", HEADING, 40, True),
-                    text("<p>A free estimate in Encino starts with a phone call just as easily as the form. Call 818-297-2475 or email info.option1builders@gmail.com and we will get you on the calendar.</p>", BODY, 17, True),
+                    heading("Prefer to Talk Through Your Artificial Grass Estimate?", "h2", HEADING, 40, True),
+                    text("<p>A free estimate for artificial grass installation in Encino starts with a phone call just as easily as the form. Call 818-297-2475 or email info.option1builders@gmail.com and we will get you on the calendar.</p>", BODY, 17, True),
                     actions(("Call 818-297-2475", "tel:+18182972475", "gold"), ("Email Us", "mailto:info.option1builders@gmail.com", "dark")),
                 ],
                 WHITE,
@@ -2123,7 +2293,7 @@ def build_blog():
                                     heading("Artificial grass", "p", GOLD, 12, extra=ty(size=12, weight="600", transform="uppercase", ls=1.6)),
                                     heading("What a Cheap Turf Bid Usually Leaves Out", "h3", HEADING, 22),
                                     text("<p>The number on a turf bid is not the pile height. It is the base. If the estimate does not name demolition, compaction, drainage, and edge restraint as separate lines, you are comparing a lawn to a rug. That is why Encino bids for the same yard can run from ten thousand to fifty-five thousand.</p>", BODY, 16),
-                                    actions(("See turf installation", "/services/artificial-grass-installation/", "dark"), None, False),
+                                    actions(("See turf installation", "/services/turf-and-soil-supplier/", "dark"), None, False),
                                 ],
                                 50,
                             ),
@@ -2159,6 +2329,10 @@ def build_service_page(svc):
         eyebrow("What we install"),
         text(f"<p>{svc['lead']}</p>", BODY, 17),
     ]
+    for para in svc.get("lead_more") or []:
+        overview.append(text(f"<p>{para}</p>", BODY, 17))
+    for para in svc.get("article_extra") or []:
+        overview.append(text(f"<p>{para}</p>", BODY, 17))
     if svc["image"]:
         key = svc["image"].replace(".jpg", "")
         cls = "o1b-service-media"
@@ -2194,9 +2368,20 @@ def build_service_page(svc):
         _href, label = svc["blog_note"]
         includes.append(
             text(
-                f'<p>Read <a href="/blog/#turf-base">{label}</a> on the Encino landscaping blog.</p>',
+                f'<p>Read <a href="/what-a-cheap-turf-bid-usually-leaves-out/">{label}</a> on the Encino landscaping blog.</p>',
                 BODY,
                 17,
+            )
+        )
+    extra_bands = []
+    for sec in svc.get("extra_sections") or []:
+        extra_bands.append(
+            band(
+                [heading(sec["h2"], "h2", HEADING, 36, extra={"typography_font_size_mobile": slider(26)})]
+                + [text(f"<p>{p}</p>", BODY, 17) for p in sec["paras"]],
+                WHITE,
+                72,
+                "o1b-service-extra",
             )
         )
     trust = text(
@@ -2217,8 +2402,9 @@ def build_service_page(svc):
                 chips=service_hero_chips(svc),
             ),
             band(overview, WHITE, 96, "o1b-watermark o1b-watermark-left o1b-wm-services"),
-            service_cta_band(),
+            service_cta_band(svc.get("cta_h2", "Request a Free Estimate")),
             band(includes + service_estimate(svc) + [trust], WHITE, 96, "o1b-service-scope"),
+            *extra_bands,
             band(
                 [awards_row(True), review_feed()],
                 TINT,
@@ -2228,7 +2414,7 @@ def build_service_page(svc):
             band(
                 [
                     eyebrow("Frequently asked questions", True),
-                    heading(f'Questions About {svc["nav"]}', "h2", HEADING, 36, True),
+                    heading(svc.get("faq_h2", f'Questions About {svc["nav"]}'), "h2", HEADING, 36, True),
                     faq(svc["faqs"]),
                 ],
                 WHITE,
@@ -2238,7 +2424,7 @@ def build_service_page(svc):
             band(
                 [
                     eyebrow("Related services", True),
-                    heading("Other Work We Quote on Its Own", "h2", HEADING, 36, True),
+                    heading(svc.get("h2_related", "Other Encino Work Quoted Beside This Job"), "h2", HEADING, 36, True),
                     service_cards(related, "/services/", seven=False),
                 ],
                 TINT,
