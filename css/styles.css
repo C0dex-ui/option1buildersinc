@@ -212,7 +212,7 @@ ul{margin:0;padding:0;list-style:none}
 .hero--page{min-height:420px;padding:72px 0 64px}
 .hero--page .hero__in{max-width:920px}
 .hero--page h1{
-  font-size:clamp(1.7rem,3.6vw,2.85rem);margin-bottom:18px;padding-bottom:20px;
+  font-size:clamp(1.7rem,3.6vw,2.15rem);margin-bottom:18px;padding-bottom:20px;
 }
 .crumbs{
   display:flex;flex-wrap:wrap;gap:6px 8px;justify-content:center;

@@ -1761,7 +1761,7 @@ def build_services():
         "Services",
         [
             page_hero(
-                "Encino Landscaping Services in CA: Landscaper Landscape Design and Lawn",
+                "Landscaping Services in Encino",
                 "Encino landscaping, landscape design, and landscape installation quoted as separate lines - so you can see the base, the drainage, and the material before demo starts.",
                 "Services",
             ),
